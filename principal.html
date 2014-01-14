@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Juego MasterMind</title>
+    <script type="text/javascript" src="js/jsPrincipal.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css"> 
+</head>
+
+<body>
+
+  <br>
+  <div align="center">
+  	<font size="+6" color="FF0000">Juego Mastermind</font>-->
+ 
+  <table bgcolor="#33FF66" style = "border-left:6px yellow solid;border-top:8px yellow solid; border-right:6px yellow solid;border-bottom:8px yellow solid;" id="tablero">
+  	<tr id="region1" bgcolor="#FF0000">
+       <!--Fila 1: Contiene los circulos para hacer combinaciones-->
+       <td>
+           <table>
+               <tr id="fila1">
+                    <td><img src="img/circulo1.png" name="c1" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c2" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c3" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c4" width="36" height="36" border="0" alt=""/></td>
+                    <td>
+        				<table>
+            				<tr>
+                				<td><img src="img/circulo1.png" name="c1_p" width="14" height="14" border="0" alt=""/></td>
+                				<td><img src="img/circulo1.png" name="c2_p" width="14" height="14" border="0" alt=""/></td>
+                			</tr>
+                			<tr>
+                				<td><img src="img/circulo1.png" name="c3_p" width="14" height="14" border="0" alt=""/></td>
+                				<td><img src="img/circulo1.png" name="c4_p" width="14" height="14" border="0" alt=""/></td>
+                			</tr>
+            			</table>
+     	 			</td>
+               </tr>
+               <tr id="fila2">
+        	   	   <td><img src="img/circulo1.png" name="c5" width="36" height="36" border="0" alt=""/></td>
+        		   <td><img src="img/circulo1.png" name="c6" width="36" height="36" border="0" alt=""/></td>
+       			   <td><img src="img/circulo1.png" name="c7" width="36" height="36" border="0" alt=""/></td>
+       			   <td><img src="img/circulo1.png" name="c8" width="36" height="36" border="0" alt=""/></td>
+        		   <td>
+        		   	   <table>
+            		       <tr>
+                			   <td><img src="img/circulo1.png" name="c5_p" width="14" height="14" border="0" alt=""/></td>
+                			   <td><img src="img/circulo1.png" name="c6_p" width="14" height="14" border="0" alt=""/></td>
+                		   </tr>
+                		   <tr>
+                    		   <td><img src="img/circulo1.png" name="c7_p" width="14" height="14" border="0" alt=""/></td>
+                			   <td><img src="img/circulo1.png" name="84_p" width="14" height="14" border="0" alt=""/></td>
+                		   </tr>
+            	      </table>
+        	      </td>
+    		   </tr>
+			   <tr id="fila3">
+    			   <td><img src="img/circulo1.png" name="c9" width="36" height="36" border="0" alt=""/></td>
+                   <td><img src="img/circulo1.png" name="c10" width="36" height="36" border="0" alt=""/></td>
+                   <td><img src="img/circulo1.png" name="c11" width="36" height="36" border="0" alt=""/></td>
+                   <td><img src="img/circulo1.png" name="c12" width="36" height="36" border="0" alt=""/></td>
+        	   	   <td>
+                       <table>
+                           <tr>
+                               <td><img src="img/circulo1.png" name="c9_p" width="14" height="14" border="0" alt=""/></td>
+                               <td><img src="img/circulo1.png" name="c10_p" width="14" height="14" border="0" alt=""/></td>
+                           </tr>
+                           <tr>
+                               <td><img src="img/circulo1.png" name="c11_p" width="14" height="14" border="0" alt=""/></td>
+                               <td><img src="img/circulo1.png" name="c12_p" width="14" height="14" border="0" alt=""/></td>
+                           </tr>
+                       </table>
+        	   	   </td>
+	 		    </tr>
+				<tr id="fila4">
+    				<td><img src="img/circulo1.png" name="c13" width="36" height="36" border="0" alt=""/></td>
+        			<td><img src="img/circulo1.png" name="c14" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c15" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c16" width="36" height="36" border="0" alt=""/></td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td><img src="img/circulo1.png" name="c13_p" width="14" height="14" border="0" alt=""/></td>
+                                <td><img src="img/circulo1.png" name="c14_p" width="14" height="14" border="0" alt=""/></td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/circulo1.png" name="c15_p" width="14" height="14" border="0" alt=""/></td>
+                                <td><img src="img/circulo1.png" name="c16_p" width="14" height="14" border="0" alt=""/></td>
+                            </tr>
+                        </table>
+					</td>
+				</tr>
+                <tr id="fila5">
+                    <td><img src="img/circulo1.png" name="c17" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c18" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c19" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c20" width="36" height="36" border="0" alt=""/></td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td><img src="img/circulo1.png" name="c17_p" width="14" height="14" border="0" alt=""/></td>
+                                <td><img src="img/circulo1.png" name="c18_p" width="14" height="14" border="0" alt=""/></td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/circulo1.png" name="c19_p" width="14" height="14" border="0" alt=""/></td>
+                                <td><img src="img/circulo1.png" name="c20_p" width="14" height="14" border="0" alt=""/></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr id="fila6">
+                    <td><img src="img/circulo1.png" name="c21" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c22" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c23" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c24" width="36" height="36" border="0" alt=""/></td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td><img src="img/circulo1.png" name="c21_p" width="14" height="14" border="0" alt=""/></td>
+                                <td><img src="img/circulo1.png" name="c22_p" width="14" height="14" border="0" alt=""/></td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/circulo1.png" name="c23_p" width="14" height="14" border="0" alt=""/></td>
+                                <td><img src="img/circulo1.png" name="c24_p" width="14" height="14" border="0" alt=""/></td>
+                            </tr>
+                        </table>
+                   </td>
+                </tr>
+                <tr id="fila7">
+                    <td><img src="img/circulo1.png" name="c25" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c26" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c27" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c28" width="36" height="36" border="0" alt=""/></td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td><img src="img/circulo1.png" name="c25_p" width="14" height="14" border="0" alt=""/></td>
+                                <td><img src="img/circulo1.png" name="c26_p" width="14" height="14" border="0" alt=""/></td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/circulo1.png" name="c27_p" width="14" height="14" border="0" alt=""/></td>
+                                <td><img src="img/circulo1.png" name="c28_p" width="14" height="14" border="0" alt=""/></td>
+                            </tr>
+                         </table>
+                     </td>
+                </tr>
+                <tr id="fila8">
+                    <td><img src="img/circulo1.png" name="c29" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c30" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c31" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/circulo1.png" name="c32" width="36" height="36" border="0" alt=""/></td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td><img src="img/circulo1.png" name="c29_p" width="14" height="14" border="0" alt=""/></td>
+                                <td><img src="img/circulo1.png" name="c30_p" width="14" height="14" border="0" alt=""/></td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/circulo1.png" name="c31_p" width="14" height="14" border="0" alt=""/></td>
+                                <td><img src="img/circulo1.png" name="c32_p" width="14" height="14" border="0" alt=""/></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+           </table>
+       </td>
+    </tr>
+    
+    <tr id="region2">
+    	<!--Contiene un espacio-->
+        <td><br/></td>
+    </tr>
+    
+    <tr id="region3">
+    	<!--Contiene los colores-->
+        <td>
+        	<table>
+            	<tr id="filaColores1" bgcolor="#000000">
+                    <td><img src="img/color_rojo.png" name="colores1" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/color_verde.png" name="colores2" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/color_azul.png" name="colores3" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/color_amarillo.png" name="colores4" width="36" height="36" border="0" alt=""/></td>
+           	    </tr>
+                <tr id="filaColores2" bgcolor="#000000">
+                    <td><img src="img/color_marron.png" name="colores5" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/color_carne.png" name="colores6" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/color_negro.png" name="colores7" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/color_blanco.png" name="colores8" width="36" height="36" border="0" alt=""/></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    
+    <tr id="region4">
+    	<!--Contiene un espacio-->
+        <td><br/></td>
+    </tr>
+    
+    <tr id="region5">
+    	<!--Contiene los botones-->
+        <td>
+        	<table>
+                <tr>
+                    <td><input type="button" id="boton1" value="Comprobar" name="comprobar"/></td>
+                    <td><input type="button" id="boton2" value="Reiniciar" name="reiniciar"/></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    
+  
+  </table>
+  
+  </div>  
+  
+</body>
+</html>
