@@ -88,15 +88,58 @@ function insertaFilas(){
 }
 
 function generaTablero(){
+ 
+  // Crea un elemento <table> y un elemento <tbody>
+  var tabla   = document.createElement("table");
+  tabla.setAttribute("id", "miTabla");
+  var tblBody = document.createElement("tbody");
+ 
+  // Crea las celdas
+  for (var i = 0; i < 8; i++) {
+    // Crea las hileras de la tabla
+    var tr = document.createElement("tr");
+ 
+    for (var j = 0; j < 4; j++) {
+      	var td = document.createElement("td");
+      	var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
+	    imagen.setAttribute("src", "/home/francisco/Documentos/Proyecto/img/circulo1.png"); 
+		imagen.setAttribute("width", "36");
+		imagen.setAttribute("height", "36");
+     	td.appendChild(imagen);
+      	tr.appendChild(td);
+    }
+ 
+    // agrega la hilera al final de la tabla (al final del elemento tblbody)
+    tblBody.appendChild(tr);
+  }
+ 
+  // posiciona el <tbody> debajo del elemento <table>
+  tabla.appendChild(tblBody);
+
+  miCapa = document.getElementById('resultado');
+  miCapa.appendChild(tabla);
+}
+
+/*function generaTablero(){
 
 	miTabla = document.createElement("table");
 	miTabla.setAttribute("id", "miTabla");
-	tbBody = document.createElement("tbody");	
+	tbBody = document.createElement("tbody");	//Tabla principal
+
 	tr = document.createElement("tr");	
 	td1 = document.createElement("td");
 	td2 = document.createElement("td");	
 	td3 = document.createElement("td");
 	td4 = document.createElement("td");
+	td5 = document.createElement("td");	//Fila que contendrá una tabla con dos filas para el número de aciertos
+
+	miTabla2 = document.createElement("table");
+	miTabla2.setAttribute("id", "miTabla2");
+	tbBody2 = document.createElement("tbody");	//Tabla para el número de aciertos
+
+	tr_1 = document.createElement("tr");
+	td1_1 = document.createElement("td");
+	td2_1 = document.createElement("td");
 
 	var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
     imagen.setAttribute("src", "/home/francisco/Documentos/Proyecto/img/circulo1.png"); 
@@ -130,6 +173,28 @@ function generaTablero(){
 	td4.appendChild(imagen4); //Añadimos la imagen a la columna
 	tr.appendChild(td4);	//Añadimos la columna a la fila
 
+	var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
+    imagen.setAttribute("src", "/home/francisco/Documentos/Proyecto/img/circulo1.png"); 
+	imagen.setAttribute("width", "14");
+	imagen.setAttribute("height", "14");
+
+	td1_1.appendChild(imagen);
+	tr_1.appendChild(td1_1);
+
+	var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
+    imagen.setAttribute("src", "/home/francisco/Documentos/Proyecto/img/circulo1.png"); 
+	imagen.setAttribute("width", "14");
+	imagen.setAttribute("height", "14");
+
+	td1_2.appendChild(imagen);
+	tr_1.appendChild(td1_2);
+
+	tbBody2.appendChild(tr_1);
+	miTabla2.appendChild(tbBody2);
+
+	td5.appendChild(tr_1);
+	tr.appendChild(td5);
+
 	tbBody.appendChild(tr);	
 	miTabla.appendChild(tbBody);
 
@@ -139,9 +204,7 @@ function generaTablero(){
 	for(var i=0; i<7; i++){
 		nuevafila();
 	}
-
-	
-}
+}*/
 
 function nuevafila() {
 
