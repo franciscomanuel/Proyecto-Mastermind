@@ -5,24 +5,27 @@
 	<title>Juego MasterMind</title>
     <script type="text/javascript" src="js/jsPrincipal.js"></script>
     <link rel="stylesheet" type="text/css" href="css/estilo.css"> 
+    
 </head>
 
-<body>
+<body onload="generaTablero();">
 
   <br>
   <div align="center">
-  	<font size="+6" color="FF0000">Juego Mastermind</font>-->
+  	<font size="+6" color="FF0000">Juego Mastermind</font>
  
-  <table bgcolor="#33FF66" style = "border-left:6px yellow solid;border-top:8px yellow solid; border-right:6px yellow solid;border-bottom:8px yellow solid;" id="tablero">
+  <table bgcolor="#888888" style = "border-left:6px #222222 solid;border-top:8px #222222 solid; border-right:6px #222222 solid;border-bottom:8px #222222 solid;" id="tablero">
   	<tr id="region1" bgcolor="#FF0000">
        <!--Fila 1: Contiene los circulos para hacer combinaciones-->
        <td>
-           <table>
+            <div id="resultado"></div>
+           <!--<table id="miTabla">
+                <tbody>
                <tr id="fila1">
-                    <td><img src="img/circulo1.png" name="c1" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c2" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c3" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c4" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col1_1" src="img/circulo1.png" name="c1" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col1_2" src="img/circulo1.png" name="c2" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col1_3" src="img/circulo1.png" name="c3" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col1_4" src="img/circulo1.png" name="c4" width="36" height="36" border="0" alt=""/></td>
                     <td>
         				<table>
             				<tr>
@@ -37,10 +40,10 @@
      	 			</td>
                </tr>
                <tr id="fila2">
-        	   	   <td><img src="img/circulo1.png" name="c5" width="36" height="36" border="0" alt=""/></td>
-        		   <td><img src="img/circulo1.png" name="c6" width="36" height="36" border="0" alt=""/></td>
-       			   <td><img src="img/circulo1.png" name="c7" width="36" height="36" border="0" alt=""/></td>
-       			   <td><img src="img/circulo1.png" name="c8" width="36" height="36" border="0" alt=""/></td>
+        	   	   <td><img id="col2_1" src="img/circulo1.png" name="c5" width="36" height="36" border="0" alt=""/></td>
+        		   <td><img id="col2_2" src="img/circulo1.png" name="c6" width="36" height="36" border="0" alt=""/></td>
+       			   <td><img id="col2_3" src="img/circulo1.png" name="c7" width="36" height="36" border="0" alt=""/></td>
+       			   <td><img id="col2_4" src="img/circulo1.png" name="c8" width="36" height="36" border="0" alt=""/></td>
         		   <td>
         		   	   <table>
             		       <tr>
@@ -55,10 +58,10 @@
         	      </td>
     		   </tr>
 			   <tr id="fila3">
-    			   <td><img src="img/circulo1.png" name="c9" width="36" height="36" border="0" alt=""/></td>
-                   <td><img src="img/circulo1.png" name="c10" width="36" height="36" border="0" alt=""/></td>
-                   <td><img src="img/circulo1.png" name="c11" width="36" height="36" border="0" alt=""/></td>
-                   <td><img src="img/circulo1.png" name="c12" width="36" height="36" border="0" alt=""/></td>
+    			   <td><img id="col3_1" src="img/circulo1.png" name="c9" width="36" height="36" border="0" alt=""/></td>
+                   <td><img id="col3_2" src="img/circulo1.png" name="c10" width="36" height="36" border="0" alt=""/></td>
+                   <td><img id="col3_3" src="img/circulo1.png" name="c11" width="36" height="36" border="0" alt=""/></td>
+                   <td><img id="col3_4" src="img/circulo1.png" name="c12" width="36" height="36" border="0" alt=""/></td>
         	   	   <td>
                        <table>
                            <tr>
@@ -73,10 +76,10 @@
         	   	   </td>
 	 		    </tr>
 				<tr id="fila4">
-    				<td><img src="img/circulo1.png" name="c13" width="36" height="36" border="0" alt=""/></td>
-        			<td><img src="img/circulo1.png" name="c14" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c15" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c16" width="36" height="36" border="0" alt=""/></td>
+    				<td><img id="col4_1" src="img/circulo1.png" name="c13" width="36" height="36" border="0" alt=""/></td>
+        			<td><img id="col4_2" src="img/circulo1.png" name="c14" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col4_3" src="img/circulo1.png" name="c15" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col4_4" src="img/circulo1.png" name="c16" width="36" height="36" border="0" alt=""/></td>
                     <td>
                         <table>
                             <tr>
@@ -91,10 +94,10 @@
 					</td>
 				</tr>
                 <tr id="fila5">
-                    <td><img src="img/circulo1.png" name="c17" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c18" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c19" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c20" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col5_1" src="img/circulo1.png" name="c17" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col5_2" src="img/circulo1.png" name="c18" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col5_3" src="img/circulo1.png" name="c19" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col5_4" src="img/circulo1.png" name="c20" width="36" height="36" border="0" alt=""/></td>
                     <td>
                         <table>
                             <tr>
@@ -109,10 +112,10 @@
                     </td>
                 </tr>
                 <tr id="fila6">
-                    <td><img src="img/circulo1.png" name="c21" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c22" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c23" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c24" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col6_1" src="img/circulo1.png" name="c21" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col6_2" src="img/circulo1.png" name="c22" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col6_3" src="img/circulo1.png" name="c23" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col6_4" src="img/circulo1.png" name="c24" width="36" height="36" border="0" alt=""/></td>
                     <td>
                         <table>
                             <tr>
@@ -127,10 +130,10 @@
                    </td>
                 </tr>
                 <tr id="fila7">
-                    <td><img src="img/circulo1.png" name="c25" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c26" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c27" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c28" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col7_1" src="img/circulo1.png" name="c25" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col7_2" src="img/circulo1.png" name="c26" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col7_3" src="img/circulo1.png" name="c27" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col7_4" src="img/circulo1.png" name="c28" width="36" height="36" border="0" alt=""/></td>
                     <td>
                         <table>
                             <tr>
@@ -145,10 +148,10 @@
                      </td>
                 </tr>
                 <tr id="fila8">
-                    <td><img src="img/circulo1.png" name="c29" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c30" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c31" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/circulo1.png" name="c32" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col8_1" src="img/circulo1.png" name="c29" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col8_2" src="img/circulo1.png" name="c30" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col8_3" src="img/circulo1.png" name="c31" width="36" height="36" border="0" alt=""/></td>
+                    <td><img id="col8_4" src="img/circulo1.png" name="c32" width="36" height="36" border="0" alt=""/></td>
                     <td>
                         <table>
                             <tr>
@@ -162,7 +165,8 @@
                         </table>
                     </td>
                 </tr>
-           </table>
+                </tbody>
+           </table>-->
        </td>
     </tr>
     
@@ -175,17 +179,15 @@
     	<!--Contiene los colores-->
         <td>
         	<table>
-            	<tr id="filaColores1" bgcolor="#000000">
-                    <td><img src="img/color_rojo.png" name="colores1" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/color_verde.png" name="colores2" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/color_azul.png" name="colores3" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/color_amarillo.png" name="colores4" width="36" height="36" border="0" alt=""/></td>
+            	<tr id="filaColores1" bgcolor="#888888">
+                    <td><img src="img/rojo.png" name="colores1" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/verde.png" name="colores2" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/azul.png" name="colores3" width="36" height="36" border="0" alt=""/></td>
            	    </tr>
-                <tr id="filaColores2" bgcolor="#000000">
-                    <td><img src="img/color_marron.png" name="colores5" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/color_carne.png" name="colores6" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/color_negro.png" name="colores7" width="36" height="36" border="0" alt=""/></td>
-                    <td><img src="img/color_blanco.png" name="colores8" width="36" height="36" border="0" alt=""/></td>
+                <tr id="filaColores2" bgcolor="#888888">
+                    <td><img src="img/amarillo.png" name="colores5" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/naranja.png" name="colores6" width="36" height="36" border="0" alt=""/></td>
+                    <td><img src="img/morado.png" name="colores7" width="36" height="36" border="0" alt=""/></td>
                 </tr>
             </table>
         </td>
@@ -195,14 +197,31 @@
     	<!--Contiene un espacio-->
         <td><br/></td>
     </tr>
-    
+
     <tr id="region5">
+        <!--Contiene un formulario con grupo de botones para elegir la dificultad-->
+        <td>
+                <form name=miformulario>
+                    <input type="radio" name=myradio value="1" checked>Facil
+                    <input type="radio" name=myradio value="2">Medio
+                    <input type="radio" name=myradio value="3" >Dificil<br><br>
+                    <input type="Button" name="" value="Cambiar dificultad" onclick="cambiarDificultad()"> 
+                </form>
+        </td>
+    </tr>
+
+    <tr id="region6">
+        <!--Contiene un espacio-->
+        <td><br/></td>
+    </tr>
+    
+    <tr id="region7">
     	<!--Contiene los botones-->
         <td>
         	<table>
                 <tr>
                     <td><input type="button" id="boton1" value="Comprobar" name="comprobar"/></td>
-                    <td><input type="button" id="boton2" value="Reiniciar" name="reiniciar"/></td>
+                    <td><input type="button" id="boton2" value="Reiniciar" name="reiniciar" onclick="refresh()"/></td>
                 </tr>
             </table>
         </td>
@@ -211,7 +230,34 @@
   
   </table>
   
-  </div>  
+  </div>
+
+  <br><br>
   
 </body>
+
+<footer>
+    <!--<section>
+        <p> Autor: <span>Francisco Manuel Sanchez Ramos </span></p>
+        <p>Email : <span>fran319@correo.ugr.es</span></p>
+    </section>-->
+
+    <div id="seccion">
+        <p> Autor: <span>Francisco Manuel Sanchez Ramos </span></p>
+        <p>Email : <span>fran319@correo.ugr.es</span></p>
+    </div>
+
+     <div id="seccion">
+        <br>
+        <a href="https://twitter.com/fran_manu90"><img src="img/twitter2.jpg" name="twitter2"/></a>
+    </div>
+
+    <div id="seccion">
+        <p><a href="https://twitter.com/fran_manu90" class="twitter-follow-button" data-show-count="false" data-lang="es" data-size="large">Seguir a @fran_manu90</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></p>
+        <p></p>
+    </div>
+
+</footer>
+
 </html>
