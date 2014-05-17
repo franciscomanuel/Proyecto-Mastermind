@@ -1,6 +1,6 @@
 // JavaScript Document
 
-function cambiarDificultad(){
+/*function cambiarDificultad(){
 
 	var i;
 	var tabla = document.getElementById('miTabla');
@@ -31,9 +31,9 @@ function cambiarDificultad(){
    		}
    	}
 
-}
+}*/
 
-function insertaFilas(){
+/*function insertaFilas(){
 
     var table = document.getElementById("miTabla");		//Identificamos la tabla
     var tr = document.createElement("tr"); 		//Creamos una fila
@@ -85,9 +85,63 @@ function insertaFilas(){
 
 	table.appendChild(tr) 	//Añadimos la fila a la tabla
 
+}*/
+
+/*function guardarCookie(valor) {
+    document.cookie = valor;
 }
 
-function generaTablero(){
+function guardar() {
+    tuValor = document.dato.miCookie.value;
+    guardarCookie(tuValor,)	 ;
+}*/
+
+var i=0;
+
+var j=0;
+
+function seleccionarColor(){
+	j=j+1;
+}
+
+function setSrcFacil(){
+	i=i+1;
+
+    var x=document.images;
+
+    if(i%6==0){
+    	x[j].src="img/circuloRojo.png";
+    }else if(i%6==1){
+    	x[j].src="img/circuloVerde.png";
+    }else if(i%6==2){
+    	x[j].src="img/circuloAzul.png";
+    }else if(i%6==3){
+    	x[j].src="img/circuloAmarillo.png";
+    }else if(i%6==4){
+    	x[j].src="img/circuloNaranja.png";
+    }else{
+    	x[j].src="img/circuloMorado.png";
+    }
+}
+
+function nivelFacil(){
+	window.location="principal.html";
+}
+
+function nivelMedio(){
+	window.location="principal2.html";
+}
+
+function nivelDificil(){
+	window.location="principal3.html";
+}
+
+function volverMenu(){
+	window.location="inicio.html";
+}
+
+
+function generaTableroFacil(){
  
   // Crea un elemento <table> y un elemento <tbody>
   var tabla   = document.createElement("table");
@@ -101,6 +155,43 @@ function generaTablero(){
     tr.setAttribute("id", "fila" +i);
  
     for (var j = 0; j < 4; j++) {
+	    var td = document.createElement("td");
+	    td.setAttribute("id", "fila" +i +"columna" +j);
+	    var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
+		imagen.setAttribute("src", "img/circulo1.png"); 
+		imagen.setAttribute("width", "36");
+		imagen.setAttribute("height", "36");
+		imagen.setAttribute("id", "imagenFila" + i + "columna" + j);
+		imagen.setAttribute("onclick", "setSrcFacil()");
+	    td.appendChild(imagen);
+	    tr.appendChild(td);
+    }
+
+    // agrega la hilera al final de la tabla (al final del elemento tblbody)
+    tblBody.appendChild(tr);
+  }
+ 
+  // posiciona el <tbody> debajo del elemento <table>
+  tabla.appendChild(tblBody);
+
+  miCapa = document.getElementById('resultado');
+  miCapa.appendChild(tabla);
+}
+
+function generaTableroMedio(){
+ 
+  // Crea un elemento <table> y un elemento <tbody>
+  var tabla   = document.createElement("table");
+  tabla.setAttribute("id", "miTabla");
+  var tblBody = document.createElement("tbody");
+ 
+  // Crea las celdas
+  for (var i = 0; i < 8; i++) {
+    // Crea las hileras de la tabla
+    var tr = document.createElement("tr");
+    tr.setAttribute("id", "fila" +i);
+ 
+    for (var j = 0; j < 5; j++) {
 	    var td = document.createElement("td");
 	    td.setAttribute("id", "fila" +i +"columna" +j);
 	    var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
@@ -121,6 +212,42 @@ function generaTablero(){
   miCapa = document.getElementById('resultado');
   miCapa.appendChild(tabla);
 }
+
+function generaTableroDificil(){
+ 
+  // Crea un elemento <table> y un elemento <tbody>
+  var tabla   = document.createElement("table");
+  tabla.setAttribute("id", "miTabla");
+  var tblBody = document.createElement("tbody");
+ 
+  // Crea las celdas
+  for (var i = 0; i < 8; i++) {
+    // Crea las hileras de la tabla
+    var tr = document.createElement("tr");
+    tr.setAttribute("id", "fila" +i);
+ 
+    for (var j = 0; j < 6; j++) {
+	    var td = document.createElement("td");
+	    td.setAttribute("id", "fila" +i +"columna" +j);
+	    var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
+		imagen.setAttribute("src", "img/circulo1.png"); 
+		imagen.setAttribute("width", "36");
+		imagen.setAttribute("height", "36");
+	    td.appendChild(imagen);
+	    tr.appendChild(td);
+    }
+
+    // agrega la hilera al final de la tabla (al final del elemento tblbody)
+    tblBody.appendChild(tr);
+  }
+ 
+  // posiciona el <tbody> debajo del elemento <table>
+  tabla.appendChild(tblBody);
+
+  miCapa = document.getElementById('resultado');
+  miCapa.appendChild(tabla);
+}
+
 
 function generaTablaLateral(){
 
@@ -161,7 +288,7 @@ function generaTablaLateral(){
 }
 
 
-function nuevafila() {
+/*function nuevafila() {
 
 	var tbody=document.getElementsByTagName("tbody")[0]
 	var tr = document.createElement("tr");
@@ -204,9 +331,9 @@ function nuevafila() {
 
 	tbBody.appendChild(tr);
 
-}
+}*/
 
-function inserta1Columnas(){
+/*function inserta1Columnas(){
 
 	var tabla = document.getElementById('miTabla');
 
@@ -249,7 +376,7 @@ function eliminaColumna(){
 	for(var i=0; i<8; i++){
 		tabla.tBodies[0].rows[i].deleteCell(5);
 	}
-}
+}*/
 
 /*function eliminaTabla(){
 	var tabla = document.getElementById('miTabla');
@@ -259,7 +386,7 @@ function eliminaColumna(){
 	}
 }*/
 
-function refresh(){
+/*function refresh(){
     window.location.reload();
 }
 
@@ -272,7 +399,7 @@ function coge(direccion){
 function pon(otro){
 	var image = document.getElementById(otro);
 	image.src=global;
-}
+}*/
 
 
 /*window.onload = function(){
