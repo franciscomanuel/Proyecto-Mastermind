@@ -93,18 +93,16 @@ function generaTablero(){
   var tabla   = document.createElement("table");
   tabla.setAttribute("id", "miTabla");
   var tblBody = document.createElement("tbody");
-
-  var tabla2 = document.createElement("table");
-  tabla2.setAttribute("id", "miTabla2");
-  var tblBody2 = document.createElement("tbody");
  
   // Crea las celdas
   for (var i = 0; i < 8; i++) {
     // Crea las hileras de la tabla
     var tr = document.createElement("tr");
+    tr.setAttribute("id", "fila" +i);
  
     for (var j = 0; j < 4; j++) {
 	    var td = document.createElement("td");
+	    td.setAttribute("id", "fila" +i +"columna" +j);
 	    var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
 		imagen.setAttribute("src", "img/circulo1.png"); 
 		imagen.setAttribute("width", "36");
@@ -112,24 +110,6 @@ function generaTablero(){
 	    td.appendChild(imagen);
 	    tr.appendChild(td);
     }
-
-    /*var td = document.createElement("td");
-	for(var k=0; k<2; k++){
-		var tr1 = document.createElement("tr");
-		for(var l=0; l<2; l++){
-	    	var td1 = document.createElement("td");
-	    	var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
-			imagen.setAttribute("src", "/home/francisco/Documentos/Proyecto/img/circulo1.png"); 
-			imagen.setAttribute("width", "14");
-			imagen.setAttribute("height", "14");
-			td1.appendChild(imagen);
-			tr1.appendChild(td1);
-		}
-		tblBody2.appendChild(tr1);
-	}
-	tabla2.appendChild(tblBody2);
-	td.appendChild(tabla2);
-	tr.appendChild(td);*/
 
     // agrega la hilera al final de la tabla (al final del elemento tblbody)
     tblBody.appendChild(tr);
@@ -142,91 +122,44 @@ function generaTablero(){
   miCapa.appendChild(tabla);
 }
 
-/*function generaTablero(){
+function generaTablaLateral(){
 
-	miTabla = document.createElement("table");
-	miTabla.setAttribute("id", "miTabla");
-	tbBody = document.createElement("tbody");	//Tabla principal
+	var tabla2   = document.createElement("table");
+    tabla2.setAttribute("id", "miTabla2");
+    var tblBody2 = document.createElement("tbody");
 
-	tr = document.createElement("tr");	
-	td1 = document.createElement("td");
-	td2 = document.createElement("td");	
-	td3 = document.createElement("td");
-	td4 = document.createElement("td");
-	td5 = document.createElement("td");	//Fila que contendrá una tabla con dos filas para el número de aciertos
+    for(var i=0; i<8; i++){
+    	var tr=document.createElement("tr");
+    	tr.setAttribute("id", "fila" +i);
 
-	miTabla2 = document.createElement("table");
-	miTabla2.setAttribute("id", "miTabla2");
-	tbBody2 = document.createElement("tbody");	//Tabla para el número de aciertos
+    	for(var j=0; j<2; j++){
+    		var tr2=document.createElement("tr");
+    		tr2.setAttribute("id", "fil" +j);
 
-	tr_1 = document.createElement("tr");
-	td1_1 = document.createElement("td");
-	td2_1 = document.createElement("td");
+    		for(var k=0; k<2; k++){
+    			var td2=document.createElement("td");
+    			td2.setAttribute("id", "col" +k);
+    			var imagen=document.createElement("img");
+    			imagen.setAttribute("src", "img/circulo1.png"); 
+				imagen.setAttribute("width", "14");
+				imagen.setAttribute("height", "14");
+				td2.appendChild(imagen);
+				tr2.appendChild(td2);
+    		}
+    		tr.appendChild(tr2);
+    	}
 
-	var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
-    imagen.setAttribute("src", "/home/francisco/Documentos/Proyecto/img/circulo1.png"); 
-	imagen.setAttribute("width", "36");
-	imagen.setAttribute("height", "36");
+		tblBody2.appendChild(tr);
 
-	td1.appendChild(imagen); //Añadimos la imagen a la columna
-	tr.appendChild(td1);	//Añadimos la columna a la fila
+    }
 
-	var imagen2 = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
-    imagen2.setAttribute("src", "/home/francisco/Documentos/Proyecto/img/circulo1.png"); 
-	imagen2.setAttribute("width", "36");
-	imagen2.setAttribute("height", "36");
+    tabla2.appendChild(tblBody2);
 
-	td2.appendChild(imagen2); //Añadimos la imagen a la columna
-	tr.appendChild(td2);	//Añadimos la columna a la fila
+    miCapa2 = document.getElementById('resultado2');
+    miCapa2.appendChild(tabla2);
 
-	var imagen3 = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
-    imagen3.setAttribute("src", "/home/francisco/Documentos/Proyecto/img/circulo1.png"); 
-	imagen3.setAttribute("width", "36");
-	imagen3.setAttribute("height", "36");
+}
 
-	td3.appendChild(imagen3); //Añadimos la imagen a la columna
-	tr.appendChild(td3);	//Añadimos la columna a la fila
-
-	var imagen4 = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
-    imagen4.setAttribute("src", "/home/francisco/Documentos/Proyecto/img/circulo1.png"); 
-	imagen4.setAttribute("width", "36");
-	imagen4.setAttribute("height", "36");
-
-	td4.appendChild(imagen4); //Añadimos la imagen a la columna
-	tr.appendChild(td4);	//Añadimos la columna a la fila
-
-	var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
-    imagen.setAttribute("src", "/home/francisco/Documentos/Proyecto/img/circulo1.png"); 
-	imagen.setAttribute("width", "14");
-	imagen.setAttribute("height", "14");
-
-	td1_1.appendChild(imagen);
-	tr_1.appendChild(td1_1);
-
-	var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
-    imagen.setAttribute("src", "/home/francisco/Documentos/Proyecto/img/circulo1.png"); 
-	imagen.setAttribute("width", "14");
-	imagen.setAttribute("height", "14");
-
-	td1_2.appendChild(imagen);
-	tr_1.appendChild(td1_2);
-
-	tbBody2.appendChild(tr_1);
-	miTabla2.appendChild(tbBody2);
-
-	td5.appendChild(tr_1);
-	tr.appendChild(td5);
-
-	tbBody.appendChild(tr);	
-	miTabla.appendChild(tbBody);
-
-	miCapa = document.getElementById('resultado');
-	miCapa.appendChild(miTabla);
-
-	for(var i=0; i<7; i++){
-		nuevafila();
-	}
-}*/
 
 function nuevafila() {
 
@@ -282,8 +215,8 @@ function inserta1Columnas(){
 	    imagen.setAttribute("src", "img/circulo1.png"); 
 		imagen.setAttribute("width", "36");
 		imagen.setAttribute("height", "36");
-		tabla.tBodies[0].rows[i].insertCell(0);
-		tabla.tBodies[0].rows[i].cells[0].appendChild(imagen);
+		tabla.tBodies[0].rows[i].insertCell(4);
+		tabla.tBodies[0].rows[i].cells[4].appendChild(imagen);
 
 	}
 }
@@ -297,15 +230,15 @@ function inserta2Columnas(){
 	    imagen.setAttribute("src", "img/circulo1.png"); 
 		imagen.setAttribute("width", "36");
 		imagen.setAttribute("height", "36");
-		tabla.tBodies[0].rows[i].insertCell(0);
-		tabla.tBodies[0].rows[i].cells[0].appendChild(imagen);
+		tabla.tBodies[0].rows[i].insertCell(4);
+		tabla.tBodies[0].rows[i].cells[4].appendChild(imagen);
 
 		var imagen2 = document.createElement("img");
 	    imagen2.setAttribute("src", "img/circulo1.png"); 
 		imagen2.setAttribute("width", "36");
 		imagen2.setAttribute("height", "36");
-		tabla.tBodies[0].rows[i].insertCell(1);
-		tabla.tBodies[0].rows[i].cells[1].appendChild(imagen2);
+		tabla.tBodies[0].rows[i].insertCell(5);
+		tabla.tBodies[0].rows[i].cells[5].appendChild(imagen2);
 	}
 }
 
@@ -314,7 +247,7 @@ function eliminaColumna(){
 	var tabla = document.getElementById('miTabla');
 
 	for(var i=0; i<8; i++){
-		tabla.tBodies[0].rows[i].deleteCell(0);
+		tabla.tBodies[0].rows[i].deleteCell(5);
 	}
 }
 
@@ -330,9 +263,16 @@ function refresh(){
     window.location.reload();
 }
 
+var global;
 
+function coge(direccion){
+	global=direcion;
+}
 
-
+function pon(otro){
+	var image = document.getElementById(otro);
+	image.src=global;
+}
 
 
 /*window.onload = function(){

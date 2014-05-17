@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Juego MasterMind</title>
+    <script type="text/javascript" src="js/jsPrincipal.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css"> 
+     <!-- Prototype y Scriptaculous-->
+    <script type='text/javascript' src='http://www.google.com/jsapi'/>
+    <script type='text/javascript' >
+    google.load(&quot;prototype&quot;,&quot;1.6.0.3&quot;);
+    google.load(&quot;scriptaculous&quot;, &quot;1.8.2&quot;);
+    </script>
+    
+    
+</head>
+
+<body>
+  <!--  Esto es lo que arrastramos -->
+  <div id="esto_img_1" draggable="true">Este elemento se puede arrastrar (se ve: img_1)</div>
+  <div id="esto_img_2" draggable="true">Este elemento se puede arrastrar (se ve: img_2)</div>
+  <div id="esto_img_3" draggable="true">Este elemento se puede arrastrar (se ve: img_3)</div>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <!--  Esto es lo que vemos cuando arrastramos lo anterior -->
+  <div id="img_1" style="background: red">IMG 1</div>
+  <div id="img_2" style="background: green">IMG 2</div>
+  <div id="img_3" style="background: blue">IMG 3</div> 
+  <script>
+    // Indicamos las imágenes en cada evento
+    function alarrastraresto_img_1 (e ) {
+      e.dataTransfer.setDragImage  ( document.getElementById('img_1'), 0,0 );
+    }
+    function alarrastraresto_img_2 (e ) {
+      e.dataTransfer.setDragImage  ( document.getElementById('img_2'), 0,0 );
+    }
+    function alarrastraresto_img_3 (e ) {
+      e.dataTransfer.setDragImage  ( document.getElementById('img_3'), 0,0 );
+    }
+    document.getElementById('esto_img_1').ondragstart = alarrastraresto_img_1;
+    document.getElementById('esto_img_2').ondragstart = alarrastraresto_img_2;
+    document.getElementById('esto_img_3').ondragstart = alarrastraresto_img_3;
+  </script>
+</body>
+
+</html>
