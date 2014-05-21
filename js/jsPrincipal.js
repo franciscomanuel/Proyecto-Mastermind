@@ -97,15 +97,32 @@ function guardar() {
 }*/
 
 var i=0;
-
 var j=0;
+var color;
+var contador=0;
+var siguiente=0;
+var anterior=0;
 
 function seleccionarColor(){
-	j=j+1;
+  if(color){
+    j=j+1;
+    color=false;
+    i=0;
+    contador=contador+1;
+  }
+
+    if(contador==4){
+      contador=0;
+      anterior=siguiente;
+      siguiente=siguiente+1;
+      document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
+      document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');  
+    }
+	
 }
 
 function setSrcFacil(){
-	i=i+1;
+  color=true;
 
     var x=document.images;
 
@@ -122,6 +139,8 @@ function setSrcFacil(){
     }else{
     	x[j].src="img/circuloMorado.png";
     }
+
+    i=i+1;
 }
 
 function nivelFacil(){
@@ -198,6 +217,8 @@ function generaTableroMedio(){
 		imagen.setAttribute("src", "img/circulo1.png"); 
 		imagen.setAttribute("width", "36");
 		imagen.setAttribute("height", "36");
+    imagen.setAttribute("id", "imagenFila" + i + "columna" + j);
+    imagen.setAttribute("onclick", "setSrcFacil()");
 	    td.appendChild(imagen);
 	    tr.appendChild(td);
     }
@@ -233,6 +254,8 @@ function generaTableroDificil(){
 		imagen.setAttribute("src", "img/circulo1.png"); 
 		imagen.setAttribute("width", "36");
 		imagen.setAttribute("height", "36");
+    imagen.setAttribute("id", "imagenFila" + i + "columna" + j);
+    imagen.setAttribute("onclick", "setSrcFacil()");
 	    td.appendChild(imagen);
 	    tr.appendChild(td);
     }
@@ -285,6 +308,42 @@ function generaTablaLateral(){
     miCapa2 = document.getElementById('resultado2');
     miCapa2.appendChild(tabla2);
 
+}
+
+function generaBotonSel(){
+
+  var tabla3   = document.createElement("table");
+  tabla3.setAttribute("id", "miTabla3");
+
+
+  for(var i=0; i<8; i++){
+      var tr=document.createElement("tr");
+      tr.setAttribute("id", "fila" +i);
+
+      for(var j=0; j<1; j++){
+        var td=document.createElement("td");
+        td.setAttribute("id", "columna" +i);
+
+        var boton=document.createElement("input");
+        boton.setAttribute("type", "button");
+        boton.setAttribute("id", "botonSel" +i);
+        if(i>=1){
+          boton.setAttribute("style", "visibility: hidden");
+        }
+        boton.setAttribute("value", "Seleccionar Color");
+        boton.setAttribute("onclick", "seleccionarColor();");
+
+        td.appendChild(boton);
+        tr.appendChild(td);
+        tabla3.appendChild(tr);
+      }
+
+    }
+
+    
+
+    miCapa3=document.getElementById('resultado3');
+    miCapa3.appendChild(tabla3);
 }
 
 

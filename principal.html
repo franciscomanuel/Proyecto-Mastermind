@@ -10,7 +10,7 @@
     
 </head>
 
-<body onload="generaTableroFacil(),generaTablaLateral();">
+<body onload="generaTableroFacil(),generaTablaLateral(),generaBotonSel();">
 
   <br>
   <div align="center">
@@ -24,6 +24,9 @@
        </td>
        <td>
             <div id="resultado2"></div>
+       </td>
+        <td>
+            <div id="resultado3"></div>
        </td>
     </tr>
     
@@ -82,9 +85,9 @@
     	<!--Contiene los botones-->
         <td>
         	<table>
-                <tr>
+                <!--<tr>
                     <td><input type="button" id="botonSel" value="Seleccionar Color" name="color" onclick="seleccionarColor();"></td>
-                </tr>
+                </tr>-->
                 <tr>
                     <td><input type="button" id="boton1" value="Comprobar" name="comprobar"/></td>
                     <td><input type="button" id="boton2" value="Reiniciar" name="reiniciar" onclick="refresh()"/></td>
