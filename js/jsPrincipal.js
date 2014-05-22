@@ -111,6 +111,11 @@ function seleccionarColor(){
     contador=contador+1;
   }
 
+  var tabla = document.getElementById('miTabla');
+  var numColumnas = tabla.rows[0].cells.length;
+
+
+  if(numColumnas==4){
     if(contador==4){
       contador=0;
       anterior=siguiente;
@@ -118,14 +123,35 @@ function seleccionarColor(){
       document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
       document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');  
     }
+  }else if(numColumnas==5){
+    if(contador==5){
+      contador=0;
+      anterior=siguiente;
+      siguiente=siguiente+1;
+      document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
+      document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');
+    }
+  }else{
+    if(contador==6){
+      contador=0;
+      anterior=siguiente;
+      siguiente=siguiente+1;
+      document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
+      document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');
+    }
+  }
 	
 }
 
 function setSrcFacil(){
   color=true;
 
+  var tabla = document.getElementById('miTabla');
+  var numColumnas = tabla.rows[0].cells.length;
+
     var x=document.images;
 
+  if(numColumnas==4){
     if(i%6==0){
     	x[j].src="img/circuloRojo.png";
     }else if(i%6==1){
@@ -139,6 +165,47 @@ function setSrcFacil(){
     }else{
     	x[j].src="img/circuloMorado.png";
     }
+  }else if(numColumnas==5){
+    if(i%8==0){
+      x[j].src="img/circuloRojo.png";
+    }else if(i%8==1){
+      x[j].src="img/circuloVerde.png";
+    }else if(i%8==2){
+      x[j].src="img/circuloAzul.png";
+    }else if(i%8==3){
+      x[j].src="img/circuloAzulClaro.png";
+    }else if(i%8==4){
+      x[j].src="img/circuloAmarillo.png";
+    }else if(i%8==5){
+      x[j].src="img/circuloNaranja.png";
+    }else if(i%8==6){
+      x[j].src="img/circuloMorado.png";
+    }else{
+      x[j].src="img/circuloMoradoClaro.png";
+    }
+  }else if(numColumnas==6){
+    if(i%10==0){
+      x[j].src="img/circuloRojo.png";
+    }else if(i%10==1){
+      x[j].src="img/circuloVerde.png";
+    }else if(i%10==2){
+      x[j].src="img/circuloAzul.png";
+    }else if(i%10==3){
+      x[j].src="img/circuloAzulClaro.png";
+    }else if(i%10==4){
+      x[j].src="img/circuloVerdeOscuro.png";
+    }else if(i%10==5){
+      x[j].src="img/circuloAmarillo.png";
+    }else if(i%10==6){
+      x[j].src="img/circuloNaranja.png";
+    }else if(i%10==7){
+      x[j].src="img/circuloMorado.png";
+    }else if(i%10==8){
+      x[j].src="img/circuloMoradoClaro.png";
+    }else{
+      x[j].src="img/circuloGris.png";
+    }
+  }
 
     i=i+1;
 }
@@ -345,6 +412,10 @@ function generaBotonSel(){
     miCapa3=document.getElementById('resultado3');
     miCapa3.appendChild(tabla3);
 }
+
+/*function comprobar(){
+  document.getElementById('regionOculta').style.display='block';
+}*/
 
 
 /*function nuevafila() {

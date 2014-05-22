@@ -63,6 +63,15 @@ footer #seccion {
 	height: 38px;
 }
 
+#regionOculta{
+	display: none;
+}
+
+#tablaAleatoria img{
+	width: 36px;
+	height: 36px;
+}
+
 
 
 

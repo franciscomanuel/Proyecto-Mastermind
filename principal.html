@@ -34,20 +34,39 @@
     	<!--Contiene un espacio-->
         <td><br/></td>
     </tr>
+
+    <tr id="regionOculta">
+        <td>
+            <table id="tablaAleatoria">
+                <tr>
+                    <p>La combinación era:</p>
+                </tr>
+                <tr>
+                    <td><img src="img/circulo1.png"></td>
+                    <td><img src="img/circulo1.png"></td>
+                    <td><img src="img/circulo1.png"></td>
+                    <td><img src="img/circulo1.png"></td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
     
     <tr id="region3">
     	<!--Contiene los colores-->
         <td>
         	<table id="colores">
             	<tr id="filaColores1" bgcolor="#888888">
-                    <td><img onclick="coge('img/rojo.png')" src="img/rojo.png" name="colores1" alt=""/></td>
-                    <td><img onclick="coge('img/verde.png')" src="img/verde.png" name="colores2" alt=""/></td>
-                    <td><img onclick="coge('img/verde.png')" src="img/azul.png" name="colores3" alt=""/></td>
+                    <td><img src="img/rojo.png" name="colores1" alt=""/></td>
+                    <td><img src="img/verde.png" name="colores2" alt=""/></td>
+                    <td><img src="img/azul.png" name="colores3" alt=""/></td>
            	    </tr>
                 <tr id="filaColores2" bgcolor="#888888">
-                    <td><img onclick="coge('img/amarillo.png')" src="img/amarillo.png" name="colores5" alt=""/></td>
-                    <td><img onclick="coge('img/naranja.png')" src="img/naranja.png" name="colores6" alt=""/></td>
-                    <td><img onclick="coge('img/morado.png')" src="img/morado.png" name="colores7" alt=""/></td>
+                    <td><img src="img/amarillo.png" name="colores5" alt=""/></td>
+                    <td><img src="img/naranja.png" name="colores6" alt=""/></td>
+                    <td><img src="img/morado.png" name="colores7" alt=""/></td>
                 </tr>
             </table>
         </td>
@@ -89,7 +108,7 @@
                     <td><input type="button" id="botonSel" value="Seleccionar Color" name="color" onclick="seleccionarColor();"></td>
                 </tr>-->
                 <tr>
-                    <td><input type="button" id="boton1" value="Comprobar" name="comprobar"/></td>
+                    <td><input type="button" onclick="comprobar();" id="boton1" value="Comprobar" name="comprobar"/></td>
                     <td><input type="button" id="boton2" value="Reiniciar" name="reiniciar" onclick="refresh()"/></td>
                 </tr>
             </table>
