@@ -10,7 +10,7 @@
     
 </head>
 
-<body onload="generaTableroFacil(),generaTablaLateral(),generaBotonSel();">
+<body onload="genera(),generaTablaLateral(),generaBotonSel();">
 
   <br>
   <div align="center">
@@ -37,7 +37,7 @@
 
     <tr id="regionOculta">
         <td>
-            <table id="tablaAleatoria">
+            <!--<table id="tablaAleatoria">
                 <tr>
                     <p>La combinación era:</p>
                 </tr>
@@ -50,14 +50,17 @@
                 <tr>
                     <td><br></td>
                 </tr>
-            </table>
+            </table>-->
+            <p>La combinacion era:</p>
+            <div id="combinacion"></div>
+            <br>
         </td>
     </tr>
     
     <tr id="region3">
     	<!--Contiene los colores-->
         <td>
-        	<table id="colores">
+        	<table id="colores4">
             	<tr id="filaColores1" bgcolor="#888888">
                     <td><img src="img/rojo.png" name="colores1" alt=""/></td>
                     <td><img src="img/verde.png" name="colores2" alt=""/></td>
@@ -69,6 +72,39 @@
                     <td><img src="img/morado.png" name="colores7" alt=""/></td>
                 </tr>
             </table>
+
+            <table id="colores5">
+                <tr id="filaColores1" bgcolor="#888888">
+                    <td><img src="img/rojo.png" name="colores1" alt=""/></td>
+                    <td><img src="img/verde.png" name="colores2" alt=""/></td>
+                    <td><img src="img/azul.png" name="colores3" alt=""/></td>
+                    <td><img src="img/azulClaro.png" name="colores4" alt=""></td>
+                </tr>
+                <tr id="filaColores2" bgcolor="#888888">
+                    <td><img src="img/amarillo.png" name="colores5" alt=""/></td>
+                    <td><img src="img/naranja.png" name="colores6" alt=""/></td>
+                    <td><img src="img/morado.png" name="colores7" alt=""/></td>
+                    <td><img src="img/moradoClaro.png" name="colores8" alt=""></td>
+                </tr>
+            </table>
+
+            <table id="colores6">
+                <tr id="filaColores1" bgcolor="#888888">
+                    <td><img src="img/rojo.png" name="colores1" alt=""/></td>
+                    <td><img src="img/verde.png" name="colores2" alt=""/></td>
+                    <td><img src="img/azul.png" name="colores3" alt=""/></td>
+                    <td><img src="img/azulClaro.png" name="colores4" alt=""></td>
+                    <td><img src="img/verdeOscuro.png" name="colores5" alt=""></td>
+                </tr>
+                <tr id="filaColores2" bgcolor="#888888">
+                    <td><img src="img/amarillo.png" name="colores6" alt=""/></td>
+                    <td><img src="img/naranja.png" name="colores7" alt=""/></td>
+                    <td><img src="img/morado.png" name="colores8" alt=""/></td>
+                    <td><img src="img/moradoClaro.png" name="colores9" alt=""></td>
+                    <td><img src="img/gris.png" name="colores10" alt=""></td>
+                </tr>
+            </table>
+            <!--<div id="resultadoColores"></div>-->
         </td>
     </tr>
 

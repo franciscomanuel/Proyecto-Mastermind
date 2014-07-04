@@ -1,101 +1,5 @@
 // JavaScript Document
 
-/*function cambiarDificultad(){
-
-	var i;
-	var tabla = document.getElementById('miTabla');
-	var numColumnas = tabla.rows[0].cells.length;
-	var cont1=true;
-	var cont2=true;
-
-   	for (i=0;i<document.miformulario.myradio.length;i++){ 
-      	 if (document.miformulario.myradio[i].checked) 
-         	 break; 
-   	} 
-
-   	var valor = document.miformulario.myradio[i].value 
-
-   	if(valor==1){
-   		refresh();
-   	}else if(valor==2){
-   		if(numColumnas==4){
-   			inserta1Columnas();
-   		}else if(numColumnas==6){
-   			eliminaColumna();
-   		}
-   	}else{
-   		if(numColumnas==4){
-   			inserta2Columnas();
-   		}else if(numColumnas==5){
-   			inserta1Columnas();
-   		}
-   	}
-
-}*/
-
-/*function insertaFilas(){
-
-    var table = document.getElementById("miTabla");		//Identificamos la tabla
-    var tr = document.createElement("tr"); 		//Creamos una fila
-
-    var td1 = document.createElement("td");	//Creamos la primera columna
-    td1.setAttribute("id", "colum1");
-
-    var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
-    imagen.setAttribute("src", "img/circulo1.png"); 
-	imagen.setAttribute("width", "36");
-	imagen.setAttribute("height", "36");
-
-	td1.appendChild(imagen); //Añadimos la imagen a la columna
-	tr.appendChild(td1);	//Añadimos la columna a la fila
-
-
-    var td2 = document.createElement("td");
-    td2.setAttribute("id", "colum2");
-
-    var imagen = document.createElement("img");
-    imagen.setAttribute("src", "img/circulo1.png"); 
-	imagen.setAttribute("width", "36");
-	imagen.setAttribute("height", "36");
-
-	td2.appendChild(imagen);
-	tr.appendChild(td2);
-
-	var td3 = document.createElement("td");
-    td3.setAttribute("id", "colum3");
-
-    var imagen = document.createElement("img");
-    imagen.setAttribute("src", "img/circulo1.png"); 
-	imagen.setAttribute("width", "36");
-	imagen.setAttribute("height", "36");
-
-	td3.appendChild(imagen);
-	tr.appendChild(td3);
-
-	var td4 = document.createElement("td");
-    td4.setAttribute("id", "colum4");
-
-    var imagen = document.createElement("img");
-    imagen.setAttribute("src", "img/circulo1.png"); 
-	imagen.setAttribute("width", "36");
-	imagen.setAttribute("height", "36");
-
-	td4.appendChild(imagen);
-	tr.appendChild(td4);
-
-	table.appendChild(tr) 	//Añadimos la fila a la tabla
-
-}*/
-
-/*function guardarCookie(valor) {
-    document.cookie = valor;
-}
-
-function guardar() {
-    tuValor = document.dato.miCookie.value;
-    guardarCookie(tuValor,)	 ;
-}*/
-
 var i=0;
 var j=0;
 var color;
@@ -149,7 +53,7 @@ function setSrcFacil(){
   var tabla = document.getElementById('miTabla');
   var numColumnas = tabla.rows[0].cells.length;
 
-    var x=document.images;
+  var x=document.images;
 
   if(numColumnas==4){
     if(i%6==0){
@@ -210,61 +114,42 @@ function setSrcFacil(){
     i=i+1;
 }
 
+
 function nivelFacil(){
-	window.location="principal.html";
+	window.location="principal.html?tablero=4";
 }
 
 function nivelMedio(){
-	window.location="principal2.html";
+	window.location="principal.html?tablero=5";
 }
 
 function nivelDificil(){
-	window.location="principal3.html";
+	window.location="principal.html?tablero=6";
 }
 
 function volverMenu(){
 	window.location="inicio.html";
+  j=0;
 }
 
-
-function generaTableroFacil(){
- 
-  // Crea un elemento <table> y un elemento <tbody>
-  var tabla   = document.createElement("table");
-  tabla.setAttribute("id", "miTabla");
-  var tblBody = document.createElement("tbody");
- 
-  // Crea las celdas
-  for (var i = 0; i < 8; i++) {
-    // Crea las hileras de la tabla
-    var tr = document.createElement("tr");
-    tr.setAttribute("id", "fila" +i);
- 
-    for (var j = 0; j < 4; j++) {
-	    var td = document.createElement("td");
-	    td.setAttribute("id", "fila" +i +"columna" +j);
-	    var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
-		imagen.setAttribute("src", "img/circulo1.png"); 
-		imagen.setAttribute("width", "36");
-		imagen.setAttribute("height", "36");
-		imagen.setAttribute("id", "imagenFila" + i + "columna" + j);
-		imagen.setAttribute("onclick", "setSrcFacil()");
-	    td.appendChild(imagen);
-	    tr.appendChild(td);
-    }
-
-    // agrega la hilera al final de la tabla (al final del elemento tblbody)
-    tblBody.appendChild(tr);
+/*Funcion que coge el valor de la variable tablero en la url para saber el numero de columnas del tablero*/
+function genera(){
+  var Url = location.href;
+  Url = Url.replace(/.*\?(.*?)/,"$1");
+  Variables = Url.split ("&");
+  for (i = 0; i < Variables.length; i++) {
+       Separ = Variables[i].split("=");
+       eval ('var '+Separ[0]+'="'+Separ[1]+'"');
   }
- 
-  // posiciona el <tbody> debajo del elemento <table>
-  tabla.appendChild(tblBody);
 
-  miCapa = document.getElementById('resultado');
-  miCapa.appendChild(tabla);
+  generaTablero(tablero);
+  generaColores(tablero);
+  generaCombinacion(tablero);
+
 }
 
-function generaTableroMedio(){
+/*Función para generar el tablero*/
+function generaTablero(valor){
  
   // Crea un elemento <table> y un elemento <tbody>
   var tabla   = document.createElement("table");
@@ -277,54 +162,17 @@ function generaTableroMedio(){
     var tr = document.createElement("tr");
     tr.setAttribute("id", "fila" +i);
  
-    for (var j = 0; j < 5; j++) {
-	    var td = document.createElement("td");
-	    td.setAttribute("id", "fila" +i +"columna" +j);
-	    var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
-		imagen.setAttribute("src", "img/circulo1.png"); 
-		imagen.setAttribute("width", "36");
-		imagen.setAttribute("height", "36");
-    imagen.setAttribute("id", "imagenFila" + i + "columna" + j);
-    imagen.setAttribute("onclick", "setSrcFacil()");
-	    td.appendChild(imagen);
-	    tr.appendChild(td);
-    }
-
-    // agrega la hilera al final de la tabla (al final del elemento tblbody)
-    tblBody.appendChild(tr);
-  }
- 
-  // posiciona el <tbody> debajo del elemento <table>
-  tabla.appendChild(tblBody);
-
-  miCapa = document.getElementById('resultado');
-  miCapa.appendChild(tabla);
-}
-
-function generaTableroDificil(){
- 
-  // Crea un elemento <table> y un elemento <tbody>
-  var tabla   = document.createElement("table");
-  tabla.setAttribute("id", "miTabla");
-  var tblBody = document.createElement("tbody");
- 
-  // Crea las celdas
-  for (var i = 0; i < 8; i++) {
-    // Crea las hileras de la tabla
-    var tr = document.createElement("tr");
-    tr.setAttribute("id", "fila" +i);
- 
-    for (var j = 0; j < 6; j++) {
-	    var td = document.createElement("td");
-	    td.setAttribute("id", "fila" +i +"columna" +j);
-	    var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
-		imagen.setAttribute("src", "img/circulo1.png"); 
-		imagen.setAttribute("width", "36");
-		imagen.setAttribute("height", "36");
-    imagen.setAttribute("id", "imagenFila" + i + "columna" + j);
-    imagen.setAttribute("onclick", "setSrcFacil()");
-	    td.appendChild(imagen);
-	    tr.appendChild(td);
+    for (var j = 0; j < valor; j++) {
+      var td = document.createElement("td");
+      td.setAttribute("id", "fila" +i +"columna" +j);
+      var imagen = document.createElement("img"); //Creamos la imagen con sus respectivas propiedades
+      imagen.setAttribute("src", "img/circulo1.png"); 
+      imagen.setAttribute("width", "36");
+      imagen.setAttribute("height", "36");
+      imagen.setAttribute("id", "imagenFila" + i + "columna" + j);
+      imagen.setAttribute("onclick", "setSrcFacil()");
+      td.appendChild(imagen);
+      tr.appendChild(td);
     }
 
     // agrega la hilera al final de la tabla (al final del elemento tblbody)
@@ -405,133 +253,271 @@ function generaBotonSel(){
         tabla3.appendChild(tr);
       }
 
-    }
-
-    
+    }    
 
     miCapa3=document.getElementById('resultado3');
     miCapa3.appendChild(tabla3);
 }
 
-/*function comprobar(){
+function generaColores(valor){
+
+  if(valor==4){
+    document.getElementById('colores4').style.display='block';
+  }else if(valor==5){
+    document.getElementById('colores5').style.display='block';
+  }else{
+    document.getElementById('colores6').style.display='block';
+  }
+
+}
+
+function generaCombinacion(valor){
+
+  if(valor==4){
+
+    var myimages=new Array()
+
+    myimages[1]="img/rojo.png"
+    myimages[2]="img/verde.png"
+    myimages[3]="img/azul.png"
+    myimages[4]="img/amarillo.png"
+    myimages[5]="img/naranja.png"
+    myimages[6]="img/morado.png"
+
+    var tabla   = document.createElement("table");
+  tabla.setAttribute("id", "miTabla");
+  var tblBody = document.createElement("tbody");
+ 
+  // Crea las celdas
+  for (var i = 0; i < 1; i++) {
+    // Crea las hileras de la tabla
+    var tr = document.createElement("tr");
+    tr.setAttribute("id", "fila1");
+ 
+    for (var j = 0; j < valor; j++) {
+      var td = document.createElement("td");
+      td.setAttribute("id", "columna" +j);
+      var imagen = document.createElement("img"); //Creamos la imagen con sus respectivas propiedades
+      var ry=Math.floor(Math.random()*myimages.length)
+      if (ry==0)
+      ry=1
+      imagen.setAttribute("src", myimages[ry]); 
+      imagen.setAttribute("width", "36");
+      imagen.setAttribute("height", "36");
+      imagen.setAttribute("id", "secreto" + j);
+      td.appendChild(imagen);
+      tr.appendChild(td);
+    }
+
+    // agrega la hilera al final de la tabla (al final del elemento tblbody)
+    tblBody.appendChild(tr);
+  }
+ 
+  // posiciona el <tbody> debajo del elemento <table>
+  tabla.appendChild(tblBody);
+
+  miCapa = document.getElementById('combinacion');
+  miCapa.appendChild(tabla);
+
+  }else if(valor==5){
+    var myimages=new Array()
+
+    myimages[1]="img/rojo.png"
+    myimages[2]="img/verde.png"
+    myimages[3]="img/azul.png"
+    myimages[4]="img/azulClaro.png"
+    myimages[5]="img/amarillo.png"
+    myimages[6]="img/naranja.png"
+    myimages[7]="img/morado.png"
+    myimages[8]="img/moradoClaro.png"
+
+    var tabla   = document.createElement("table");
+    tabla.setAttribute("id", "miTabla");
+    var tblBody = document.createElement("tbody");
+   
+    // Crea las celdas
+    for (var i = 0; i < 1; i++) {
+      // Crea las hileras de la tabla
+      var tr = document.createElement("tr");
+      tr.setAttribute("id", "fila1");
+   
+      for (var j = 0; j < valor; j++) {
+        var td = document.createElement("td");
+        td.setAttribute("id", "columna" +j);
+        var imagen = document.createElement("img"); //Creamos la imagen con sus respectivas propiedades
+        var ry=Math.floor(Math.random()*myimages.length)
+        if (ry==0)
+        ry=1
+        imagen.setAttribute("src", myimages[ry]); 
+        imagen.setAttribute("width", "36");
+        imagen.setAttribute("height", "36");
+        imagen.setAttribute("id", "secreto" + j);
+        td.appendChild(imagen);
+        tr.appendChild(td);
+      }
+
+      // agrega la hilera al final de la tabla (al final del elemento tblbody)
+      tblBody.appendChild(tr);
+    }
+   
+    // posiciona el <tbody> debajo del elemento <table>
+    tabla.appendChild(tblBody);
+
+    miCapa = document.getElementById('combinacion');
+    miCapa.appendChild(tabla);
+  }else{
+
+    var myimages=new Array()
+
+    myimages[1]="img/rojo.png"
+    myimages[2]="img/verde.png"
+    myimages[3]="img/azul.png"
+    myimages[4]="img/azulClaro.png"
+    myimages[5]="img/verdeOscuro.png"
+    myimages[6]="img/amarillo.png"
+    myimages[7]="img/naranja.png"
+    myimages[8]="img/morado.png"
+    myimages[9]="img/moradoClaro.png"
+    myimages[10]="img/gris.png"
+
+    var tabla   = document.createElement("table");
+    tabla.setAttribute("id", "miTabla");
+    var tblBody = document.createElement("tbody");
+   
+    // Crea las celdas
+    for (var i = 0; i < 1; i++) {
+      // Crea las hileras de la tabla
+      var tr = document.createElement("tr");
+      tr.setAttribute("id", "fila1");
+   
+      for (var j = 0; j < valor; j++) {
+        var td = document.createElement("td");
+        td.setAttribute("id", "columna" +j);
+        var imagen = document.createElement("img"); //Creamos la imagen con sus respectivas propiedades
+        var ry=Math.floor(Math.random()*myimages.length)
+        if (ry==0)
+        ry=1
+        imagen.setAttribute("src", myimages[ry]); 
+        imagen.setAttribute("width", "36");
+        imagen.setAttribute("height", "36");
+        imagen.setAttribute("id", "secreto" + j);
+        td.appendChild(imagen);
+        tr.appendChild(td);
+      }
+
+      // agrega la hilera al final de la tabla (al final del elemento tblbody)
+      tblBody.appendChild(tr);
+    }
+   
+    // posiciona el <tbody> debajo del elemento <table>
+    tabla.appendChild(tblBody);
+
+    miCapa = document.getElementById('combinacion');
+    miCapa.appendChild(tabla);
+
+  }
+}
+
+function comprobar(){
   document.getElementById('regionOculta').style.display='block';
-}*/
-
-
-/*function nuevafila() {
-
-	var tbody=document.getElementsByTagName("tbody")[0]
-	var tr = document.createElement("tr");
-	var td1 = document.createElement("td");
-	var td2 = document.createElement("td");
-	var td3 = document.createElement("td");
-	var td4 = document.createElement("td");
-
-	var imagen = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
-    imagen.setAttribute("src", "/img/circulo1.png"); 
-	imagen.setAttribute("width", "36");
-	imagen.setAttribute("height", "36");
-
-	td1.appendChild(imagen); //Añadimos la imagen a la columna
-	tr.appendChild(td1);
-
-	var imagen2 = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
-    imagen2.setAttribute("src", "img/circulo1.png"); 
-	imagen2.setAttribute("width", "36");
-	imagen2.setAttribute("height", "36");
-
-	td2.appendChild(imagen2); //Añadimos la imagen a la columna
-	tr.appendChild(td2);
-
-	var imagen3 = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
-    imagen3.setAttribute("src", "img/circulo1.png"); 
-	imagen3.setAttribute("width", "36");
-	imagen3.setAttribute("height", "36");
-
-	td3.appendChild(imagen3); //Añadimos la imagen a la columna
-	tr.appendChild(td3);
-
-	var imagen4 = document.createElement("img");	//Creamos la imagen con sus respectivas propiedades
-    imagen4.setAttribute("src", "img/circulo1.png"); 
-	imagen4.setAttribute("width", "36");
-	imagen4.setAttribute("height", "36");
-
-	td4.appendChild(imagen4); //Añadimos la imagen a la columna
-	tr.appendChild(td4);
-
-	tbBody.appendChild(tr);
-
-}*/
-
-/*function inserta1Columnas(){
-
-	var tabla = document.getElementById('miTabla');
-
-	for(var i=0; i<=8; i++){
-		var imagen = document.createElement("img");
-	    imagen.setAttribute("src", "img/circulo1.png"); 
-		imagen.setAttribute("width", "36");
-		imagen.setAttribute("height", "36");
-		tabla.tBodies[0].rows[i].insertCell(4);
-		tabla.tBodies[0].rows[i].cells[4].appendChild(imagen);
-
-	}
 }
 
-function inserta2Columnas(){
+/*function generaColores(valor){
 
-	var tabla = document.getElementById('miTabla');
+  if(valor==4){
+    var tabla   = document.createElement("table");
+    tabla.setAttribute("id", "miTablaColores");
+    var tblBody = document.createElement("tbodyColores");
 
-	for(var i=0; i<=8; i++){
-		var imagen = document.createElement("img");
-	    imagen.setAttribute("src", "img/circulo1.png"); 
-		imagen.setAttribute("width", "36");
-		imagen.setAttribute("height", "36");
-		tabla.tBodies[0].rows[i].insertCell(4);
-		tabla.tBodies[0].rows[i].cells[4].appendChild(imagen);
+    var tr1=document.createElement("tr");
+    tr1.setAttribute("id", "filaColores1");
 
-		var imagen2 = document.createElement("img");
-	    imagen2.setAttribute("src", "img/circulo1.png"); 
-		imagen2.setAttribute("width", "36");
-		imagen2.setAttribute("height", "36");
-		tabla.tBodies[0].rows[i].insertCell(5);
-		tabla.tBodies[0].rows[i].cells[5].appendChild(imagen2);
-	}
-}
+    var td1 = document.createElement("td");
+    td1.setAttribute("id", "colores1_1");
 
-function eliminaColumna(){
+    var imagen = document.createElement("img"); //Creamos la imagen con sus respectivas propiedades
+    imagen.setAttribute("src", "img/rojo.png"); 
+    imagen.setAttribute("width", "36");
+    imagen.setAttribute("height", "36");
+    imagen.setAttribute("id", "rojo");
+    td1.appendChild(imagen);
+    tr1.appendChild(td1);
 
-	var tabla = document.getElementById('miTabla');
+    var td2 = document.createElement("td");
+    td2.setAttribute("id", "colores1_2");
 
-	for(var i=0; i<8; i++){
-		tabla.tBodies[0].rows[i].deleteCell(5);
-	}
+    var imagen = document.createElement("img"); //Creamos la imagen con sus respectivas propiedades
+    imagen.setAttribute("src", "img/verde.png"); 
+    imagen.setAttribute("width", "36");
+    imagen.setAttribute("height", "36");
+    imagen.setAttribute("id", "verde");
+    td2.appendChild(imagen);
+    tr1.appendChild(td2);
+
+    var td3 = document.createElement("td");
+    td3.setAttribute("id", "colores1_3");
+
+    var imagen = document.createElement("img"); //Creamos la imagen con sus respectivas propiedades
+    imagen.setAttribute("src", "img/azul.png"); 
+    imagen.setAttribute("width", "36");
+    imagen.setAttribute("height", "36");
+    imagen.setAttribute("id", "azul");
+    td3.appendChild(imagen);
+    tr1.appendChild(td3);
+
+    var tr2=document.createElement("tr");
+    tr2.setAttribute("id", "filaColores2");
+
+    var td1 = document.createElement("td");
+    td1.setAttribute("id", "colores2_1");
+
+    var imagen = document.createElement("img"); //Creamos la imagen con sus respectivas propiedades
+    imagen.setAttribute("src", "img/amarillo.png"); 
+    imagen.setAttribute("width", "36");
+    imagen.setAttribute("height", "36");
+    imagen.setAttribute("id", "amarillo");
+    td1.appendChild(imagen);
+    tr2.appendChild(td1);
+
+    var td2 = document.createElement("td");
+    td2.setAttribute("id", "colores2_2");
+
+    var imagen = document.createElement("img"); //Creamos la imagen con sus respectivas propiedades
+    imagen.setAttribute("src", "img/naranja.png"); 
+    imagen.setAttribute("width", "36");
+    imagen.setAttribute("height", "36");
+    imagen.setAttribute("id", "naranja");
+    td2.appendChild(imagen);
+    tr2.appendChild(td2);
+
+    var td3 = document.createElement("td");
+    td3.setAttribute("id", "colores2_3");
+
+    var imagen = document.createElement("img"); //Creamos la imagen con sus respectivas propiedades
+    imagen.setAttribute("src", "img/morado.png"); 
+    imagen.setAttribute("width", "36");
+    imagen.setAttribute("height", "36");
+    imagen.setAttribute("id", "morado");
+    td3.appendChild(imagen);
+    tr2.appendChild(td3);
+
+    tblBody.appendChild(tr1);
+    tblBody.appendChild(tr2);
+
+    tabla.appendChild(tblBody);
+
+    miCapa2 = document.getElementById('resultadoColores');
+    miCapa2.appendChild(tabla);
+
+  }else if(valor==5){
+
+  }else{
+
+  }
+
+
 }*/
 
-/*function eliminaTabla(){
-	var tabla = document.getElementById('miTabla');
-
-	for(var i=0; i<8; i++){
-		tabla.deleteRow(0);
-	}
-}*/
-
-/*function refresh(){
-    window.location.reload();
-}
-
-var global;
-
-function coge(direccion){
-	global=direcion;
-}
-
-function pon(otro){
-	var image = document.getElementById(otro);
-	image.src=global;
-}*/
 
 
-/*window.onload = function(){
-	document.onclick = cambiarDificultad;	
-}*/
+

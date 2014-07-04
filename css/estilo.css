@@ -63,7 +63,7 @@ footer #seccion {
 	height: 38px;
 }
 
-#regionOculta{
+#regionOculta, #colores4, #colores5, #colores6{
 	display: none;
 }
 
