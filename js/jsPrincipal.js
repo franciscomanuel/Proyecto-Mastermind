@@ -422,6 +422,10 @@ function comprobar(){
   document.getElementById('regionOculta').style.display='block';
 }
 
+function refresh(){
+    window.location.reload();
+}
+
 /*function generaColores(valor){
 
   if(valor==4){
