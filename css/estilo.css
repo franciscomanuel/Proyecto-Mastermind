@@ -67,6 +67,10 @@ footer #seccion {
 	display: none;
 }
 
+#contenedor2, #contenedor3, #contenedor4{
+	display: none;
+}
+
 #tablaAleatoria img{
 	width: 36px;
 	height: 36px;
@@ -96,6 +100,11 @@ section{
 .logo{
 	width: 50%;
 	height: 5%;
+}
+
+#flecha{
+	width: 100px;
+	height: 100px;
 }
 
 /*img:hover {

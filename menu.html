@@ -4,24 +4,80 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Juego MasterMind</title>
     <script type="text/javascript" src="js/jsPrincipal.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">     
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+    <!--Sonido menu--> 
+    <!--<embed src="audios/mario.mp3" autostart="true" loop="true"
+		hidden="true" volume="60">
+	</embed>-->
 </head>
 
-<body align="center" bgcolor="#E6E6FA">
+<body align="center" background="img/fondo6.png">
 
-	<h1><img src="img/logo.png" class="logo"></h1>
+	<!--<embed id="volumen" src="audios/mario.mp3" autostart="true" loop="true"
+		hidden="true" volume="60">
+	</embed>-->
 
-	<section id="instrucciones">
-		<a href="inicio.html"><img src="img/instrucciones.png" onmouseover="this.width=260;this.height=260;" onmouseout="this.width=220;this.height=220;" width="220" height="220" /></a>
+	<!--<embed src="audios/mario.mp3" id="audio1"><li id='Volume_Up'>Volume Up</li>
+
+	<script>
+	document.getElementById('Volume_Up').addEventListener('click',Volume_Up_Function,true);
+
+	function Volume_Up_Function(){
+
+	    document.getElementById('audio1').volume++;
+
+	}
+	</script>-->
+
+	<h1><img src="img/logo2.png" class="logo"></h1>
+
+	<div id="contenedor1">
+		<section id="instrucciones">
+			<a href="#instruciones" onclick="generaInstrucciones()"><img src="img/instrucciones.png" onmouseover="this.width=260;this.height=260;" onmouseout="this.width=220;this.height=220;" width="220" height="220" /></a>
+		</section>
+
+		<section id="jugar">
+			<a href="#jugar" onclick="generaPlay()"><img src="img/jugar.png"onmouseover="this.width=380;this.height=380;" onmouseout="this.width=350;this.height=350;" width="350" height="350" /></a>
+		</section>
+
+		<section id="opciones">
+			<a href="#opciones" onclick='generaOpciones()'><img src="img/opciones.png" onmouseover="this.width=260;this.height=260;" onmouseout="this.width=220;this.height=220;" width="220" height="220" /></a>
+		</section>
+	</div>
+	
+
+	<div id="contenedor2">
+		<section>
+			<audio id="volumen" autoplay="autoplay">
+				<source src="audios/mario.mp3" type="audio/mpeg"/>
+			</audio>
+
+			<input type="button" onclick='silenciar();' value="Silenciar" /><br>
+			<input type="button" onclick='pausar();' value="Pausar" /><br>
+
+			<input type="button" onclick="bajarVolumen()" value="Bajar Volumen" /><br>
+			<input type="button" onclick="subirVolumen()" value="Subir Volumen" /><br>
+
+			<input type="button" onclick='playPause();' value="Play/Pause" /><br>
+
+			<a href="#" onclick="volverMenu()"><img src="img/atras.jpg" id="flecha""></a><br>
+
 	</section>
+	</div>
 
-	<section id="jugar">
-		<a href="inicio.html"><img src="img/jugar.png"onmouseover="this.width=380;this.height=380;" onmouseout="this.width=350;this.height=350;" width="350" height="350" /></a>
-	</section>
+	<div id="contenedor3">
+		<p>Hola</p>
+		<a href="#" onclick="volverMenu()"><img src="img/atras.jpg" id="flecha""></a><br>
+	</div>
 
-	<section id="opciones">
-		<a href="inicio.html"><img src="img/opciones.png" onmouseover="this.width=260;this.height=260;" onmouseout="this.width=220;this.height=220;" width="220" height="220" /></a>
-	</section>
+	<div id="contenedor4">
+
+		<p>Seleccionar nivel de dificultad:</p>
+		<input type="button" name="botonFacil" id="botonFacil" value="Facil" onclick="nivelFacil();">
+		<input type="button" name="botonMedio" id="botonMedio" value="Medio" onclick="nivelMedio();">
+		<input type="button" name="botonDificil" id="botonDificil" value="Dificil" onclick="nivelDificil();">
+		<a href="#" onclick="volverMenu()"><img src="img/atras.jpg" id="flecha"></a><br>
 	
 
 </body>

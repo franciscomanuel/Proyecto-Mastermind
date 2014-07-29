@@ -127,10 +127,11 @@ function nivelDificil(){
 	window.location="principal.html?tablero=6";
 }
 
-function volverMenu(){
-	window.location="inicio.html";
+function volverInicio(){
+	window.location="menu.html#play";
   j=0;
 }
+
 
 /*Funcion que coge el valor de la variable tablero en la url para saber el numero de columnas del tablero*/
 function genera(){
@@ -270,6 +271,7 @@ function generaColores(valor){
   }
 
 }
+
 
 function generaCombinacion(valor){
 
@@ -425,6 +427,69 @@ function comprobar(){
 function refresh(){
     window.location.reload();
 }
+
+function silenciar(){
+  document.getElementById('volumen').muted = true;
+}
+
+function pausar(){
+  document.getElementById('volumen').pause();
+}
+
+function bajarVolumen(){
+  document.getElementById('volumen').volume-=20;
+}
+
+function playPause() {
+        var audioPlayer = document.getElementsByTagName('audio')[0];
+        if(audioPlayer!=undefined) {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+            } else {
+                audioPlayer.pause();
+            }
+        } else {
+            loadPlayer();
+        }
+}
+
+function bajarVolumen(){
+  document.getElementById('volumen').volume-=0.1;
+}
+
+function subirVolumen(){
+  document.getElementById('volumen').volume+=0.1;
+}
+
+function generaOpciones(){
+  document.getElementById('contenedor2').style.display='block';
+  document.getElementById('contenedor1').style.display='none';
+  document.getElementById('contenedor3').style.display='none';
+  document.getElementById('contenedor4').style.display='none';
+}
+
+function generaInstrucciones(){
+  document.getElementById('contenedor3').style.display='block';
+  document.getElementById('contenedor2').style.display='none';
+  document.getElementById('contenedor1').style.display='none';
+  document.getElementById('contenedor4').style.display='none';
+}
+
+function generaPlay(){
+  document.getElementById('contenedor4').style.display='block';
+  document.getElementById('contenedor2').style.display='none';
+  document.getElementById('contenedor3').style.display='none';
+  document.getElementById('contenedor1').style.display='none';
+}
+
+function volverMenu(){
+  document.getElementById('contenedor1').style.display='block';
+  document.getElementById('contenedor2').style.display='none';
+  document.getElementById('contenedor3').style.display='none';
+  document.getElementById('contenedor4').style.display='none';
+}
+
+   
 
 /*function generaColores(valor){
 
