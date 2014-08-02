@@ -102,10 +102,54 @@ section{
 	height: 5%;
 }
 
-#flecha{
-	width: 100px;
-	height: 100px;
+#flecha_izquierda, #flecha_derecha{
+	width: 300px;
+	height: 300px;
 }
+
+#flecha_derecha{
+	padding-top: 58px;
+}
+
+#flechas, #flechas2{
+	width: 100%;
+	padding-top: 10%;
+}
+
+#flechas2{
+	display: none;
+}
+
+#contenedor3 div{
+	position: absolute;
+}
+
+section#f_izquierda, #f_derecha{
+	float: left;
+	width: 600px;
+}
+
+#instrucciones1, #instrucciones2{
+	background: white;
+	width: 650px;
+	border: 1px solid grey;
+	margin-right: 300px;
+	margin-left: 300px;
+}
+
+#instrucciones2{
+	display: none;
+}
+
+#contenedor3 p{
+	font-weight:bold;
+}
+
+#contenedor3 h2{
+	font-weight:bold;
+	text-decoration: underline;
+}
+
 
 /*img:hover {
   border: 1px solid red;

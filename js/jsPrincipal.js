@@ -144,6 +144,7 @@ function genera(){
   }
 
   generaTablero(tablero);
+  generaTablaLateral(tablero);
   generaColores(tablero);
   generaCombinacion(tablero);
 
@@ -188,7 +189,7 @@ function generaTablero(valor){
 }
 
 
-function generaTablaLateral(){
+function generaTablaLateral(valor){
 
 	var tabla2   = document.createElement("table");
     tabla2.setAttribute("id", "miTabla2");
@@ -202,16 +203,32 @@ function generaTablaLateral(){
     		var tr2=document.createElement("tr");
     		tr2.setAttribute("id", "fil" +j);
 
-    		for(var k=0; k<2; k++){
-    			var td2=document.createElement("td");
-    			td2.setAttribute("id", "col" +k);
-    			var imagen=document.createElement("img");
-    			imagen.setAttribute("src", "img/circulo1.png"); 
-				imagen.setAttribute("width", "14");
-				imagen.setAttribute("height", "14");
-				td2.appendChild(imagen);
-				tr2.appendChild(td2);
-    		}
+
+        if(valor==4){
+      		for(var k=0; k<2; k++){
+      			var td2=document.createElement("td");
+      			td2.setAttribute("id", "col" +k);
+      			var imagen=document.createElement("img");
+      			imagen.setAttribute("src", "img/circulo1.png"); 
+    				imagen.setAttribute("width", "14");
+    				imagen.setAttribute("height", "14");
+    				td2.appendChild(imagen);
+    				tr2.appendChild(td2);
+      		}
+        }else{
+
+          for(var k=0; k<3; k++){
+            var td2=document.createElement("td");
+            td2.setAttribute("id", "col" +k);
+            var imagen=document.createElement("img");
+            imagen.setAttribute("src", "img/circulo1.png"); 
+            imagen.setAttribute("width", "14");
+            imagen.setAttribute("height", "14");
+            td2.appendChild(imagen);
+            tr2.appendChild(td2);
+          }
+        }
+
     		tr.appendChild(tr2);
     	}
 
@@ -487,6 +504,22 @@ function volverMenu(){
   document.getElementById('contenedor2').style.display='none';
   document.getElementById('contenedor3').style.display='none';
   document.getElementById('contenedor4').style.display='none';
+}
+
+function generaInstruccion1(){
+  document.getElementById('instrucciones1').style.display='block';
+  document.getElementById('instrucciones2').style.display='none';
+
+  document.getElementById('flechas').style.display='block';
+  document.getElementById('flechas2').style.display='none';
+}
+
+function generaInstruccion2(){
+  document.getElementById('instrucciones2').style.display='block';
+  document.getElementById('instrucciones1').style.display='none';
+
+  document.getElementById('flechas2').style.display='block';
+  document.getElementById('flechas').style.display='none';
 }
 
    

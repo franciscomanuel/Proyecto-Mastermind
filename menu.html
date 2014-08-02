@@ -59,16 +59,46 @@
 			<input type="button" onclick="bajarVolumen()" value="Bajar Volumen" /><br>
 			<input type="button" onclick="subirVolumen()" value="Subir Volumen" /><br>
 
-			<input type="button" onclick='playPause();' value="Play/Pause" /><br>
+			<input type="button" onclick='playPause();' value="Play/Pause" />
 
-			<a href="#" onclick="volverMenu()"><img src="img/atras.jpg" id="flecha""></a><br>
-
-	</section>
+			<section id="flechas">
+				<section id="f_izquierda">
+					<a href="#" onclick="volverMenu()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
+				</section>	
+			</section>				
+		</section>
 	</div>
 
 	<div id="contenedor3">
-		<p>Hola</p>
-		<a href="#" onclick="volverMenu()"><img src="img/atras.jpg" id="flecha""></a><br>
+
+		<div id="instrucciones1">
+			<h2>Descripción:</h2>
+			<p>Mastermind es un juego de lógica para ser jugado por una persona contra el ordenador. Este juego puede considerarse educativo ya que ayuda a desarrollar ciertas destrezas en el área lógico matemática. El objetivo es descifrar el código de colores que creó la máquina. Para hacerlo necesitarás ir descartando posibilidades según las pistas que te proporcionará.</p>
+		</div>
+
+		<div id="flechas">
+			<section id="f_izquierda">
+				<a href="#" onclick="volverMenu()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
+			</section>	
+			<section id="f_derecha">
+				<a href="#" onclick="generaInstruccion2()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
+			</section>
+		</div>
+
+		<div id="instrucciones2">
+			<h2>Tablero</h2>
+			<p>El tablero puede ser de distintas dimensiones según se seleccione el nivel de dificultad. Siendo de 4x8 para el nivel
+				facil, 5x8 para nivel medio y de 6x8 para nivel dificil. También el número de colores para escoger dependerá del nivel seleccionado: 6 colores para el nivel facil, 8 para medio y 10 para dificil.</p>
+		</div>
+
+		<div id="flechas2">
+			<section id="f_izquierda">
+				<a href="#" onclick="generaInstruccion1()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
+			</section>	
+			<section id="f_derecha">
+				<a href="#"  ><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
+			</section>
+		</div>
 	</div>
 
 	<div id="contenedor4">
@@ -77,7 +107,12 @@
 		<input type="button" name="botonFacil" id="botonFacil" value="Facil" onclick="nivelFacil();">
 		<input type="button" name="botonMedio" id="botonMedio" value="Medio" onclick="nivelMedio();">
 		<input type="button" name="botonDificil" id="botonDificil" value="Dificil" onclick="nivelDificil();">
-		<a href="#" onclick="volverMenu()"><img src="img/atras.jpg" id="flecha"></a><br>
+		
+		<section id="flechas">
+				<section id="f_izquierda">
+					<a href="#" onclick="volverMenu()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
+				</section>	
+			</section>
 	
 
 </body>
