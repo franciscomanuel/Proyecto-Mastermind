@@ -111,12 +111,12 @@ section{
 	padding-top: 58px;
 }
 
-#flechas, #flechas2{
+#flechas, #flechas2, #flechas3, #flechas4, #flechas5{
 	width: 100%;
-	padding-top: 10%;
+	padding-top: 20%;
 }
 
-#flechas2{
+#flechas2, #flechas3, #flechas4, #flechas5{
 	display: none;
 }
 
@@ -129,17 +129,25 @@ section#f_izquierda, #f_derecha{
 	width: 600px;
 }
 
-#instrucciones1, #instrucciones2{
+#instrucciones1, #instrucciones2, #instrucciones3, #instrucciones4, #instruncciones5{
 	background: white;
 	width: 650px;
 	border: 1px solid grey;
 	margin-right: 300px;
 	margin-left: 300px;
+	display: block;
 }
 
-#instrucciones2{
+#instrucciones2, #instrucciones3, #instrucciones4, #instrucciones5{
 	display: none;
 }
+
+#instrucciones3 img{
+	margin-right: 50px;
+	width: 150px;
+	height: 200px;
+}
+
 
 #contenedor3 p{
 	font-weight:bold;
@@ -148,6 +156,11 @@ section#f_izquierda, #f_derecha{
 #contenedor3 h2{
 	font-weight:bold;
 	text-decoration: underline;
+}
+
+#contenedor3 span{
+	font-weight:bold;
+	margin-right: 25%;
 }
 
 
