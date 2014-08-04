@@ -111,12 +111,12 @@ section{
 	padding-top: 58px;
 }
 
-#flechas, #flechas2, #flechas3, #flechas4, #flechas5{
+#flechas, #flechas2, #flechas3, #flechas4, #flechas5, #flechas6, #flechas7, #flechas8, #flechas9{
 	width: 100%;
 	padding-top: 20%;
 }
 
-#flechas2, #flechas3, #flechas4, #flechas5{
+#flechas2, #flechas3, #flechas4, #flechas5, #flechas6, #flechas7, #flechas8, #flechas9{
 	display: none;
 }
 
@@ -129,7 +129,7 @@ section#f_izquierda, #f_derecha{
 	width: 600px;
 }
 
-#instrucciones1, #instrucciones2, #instrucciones3, #instrucciones4, #instruncciones5{
+#instrucciones1, #instrucciones2, #instrucciones3, #instrucciones4, #instrucciones5, #instrucciones6, #instrucciones7, #instrucciones8, #instrucciones9{
 	background: white;
 	width: 650px;
 	border: 1px solid grey;
@@ -138,12 +138,17 @@ section#f_izquierda, #f_derecha{
 	display: block;
 }
 
-#instrucciones2, #instrucciones3, #instrucciones4, #instrucciones5{
+#instrucciones2, #instrucciones3, #instrucciones4, #instrucciones5, #instrucciones6, #instrucciones7, #instrucciones8, #instrucciones9{
 	display: none;
 }
 
 #instrucciones3 img{
 	margin-right: 50px;
+	width: 150px;
+	height: 200px;
+}
+
+#instrucciones8 img{
 	width: 150px;
 	height: 200px;
 }

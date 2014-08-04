@@ -538,11 +538,21 @@ function generaInstruccion1(){
   document.getElementById('instrucciones2').style.display='none';
   document.getElementById('instrucciones3').style.display='none';
   document.getElementById('instrucciones4').style.display='none';
+  document.getElementById('instrucciones5').style.display='none';
+  document.getElementById('instrucciones6').style.display='none';
+  document.getElementById('instrucciones7').style.display='none';
+  document.getElementById('instrucciones8').style.display='none';
+  document.getElementById('instrucciones9').style.display='none';
 
   document.getElementById('flechas').style.display='block';
   document.getElementById('flechas2').style.display='none';
   document.getElementById('flechas3').style.display='none';
   document.getElementById('flechas4').style.display='none';
+  document.getElementById('flechas5').style.display='none';
+  document.getElementById('flechas6').style.display='none';
+  document.getElementById('flechas7').style.display='none';
+  document.getElementById('flechas8').style.display='none';
+  document.getElementById('flechas9').style.display='none';
 }
 
 function generaInstruccion2(){
@@ -550,11 +560,21 @@ function generaInstruccion2(){
   document.getElementById('instrucciones1').style.display='none';
   document.getElementById('instrucciones3').style.display='none';
   document.getElementById('instrucciones4').style.display='none';
+  document.getElementById('instrucciones5').style.display='none';
+  document.getElementById('instrucciones6').style.display='none';
+  document.getElementById('instrucciones7').style.display='none';
+  document.getElementById('instrucciones8').style.display='none';
+  document.getElementById('instrucciones9').style.display='none';
 
   document.getElementById('flechas2').style.display='block';
   document.getElementById('flechas').style.display='none';
   document.getElementById('flechas3').style.display='none';
   document.getElementById('flechas4').style.display='none';
+  document.getElementById('flechas5').style.display='none';
+  document.getElementById('flechas6').style.display='none';
+  document.getElementById('flechas7').style.display='none';
+  document.getElementById('flechas8').style.display='none';
+  document.getElementById('flechas9').style.display='none';
 }
 
 function generaInstruccion3(){
@@ -562,11 +582,21 @@ function generaInstruccion3(){
   document.getElementById('instrucciones1').style.display='none';
   document.getElementById('instrucciones2').style.display='none';
   document.getElementById('instrucciones4').style.display='none';
+  document.getElementById('instrucciones5').style.display='none';
+  document.getElementById('instrucciones6').style.display='none';
+  document.getElementById('instrucciones7').style.display='none';
+  document.getElementById('instrucciones8').style.display='none';
+  document.getElementById('instrucciones9').style.display='none';
 
   document.getElementById('flechas3').style.display='block';
   document.getElementById('flechas').style.display='none';
   document.getElementById('flechas2').style.display='none';
   document.getElementById('flechas4').style.display='none';
+  document.getElementById('flechas5').style.display='none';
+  document.getElementById('flechas6').style.display='none';
+  document.getElementById('flechas7').style.display='none';
+  document.getElementById('flechas8').style.display='none';
+  document.getElementById('flechas9').style.display='none';
 }
 
 function generaInstruccion4(){
@@ -574,11 +604,131 @@ function generaInstruccion4(){
   document.getElementById('instrucciones1').style.display='none';
   document.getElementById('instrucciones2').style.display='none';
   document.getElementById('instrucciones3').style.display='none';
+  document.getElementById('instrucciones5').style.display='none';
+  document.getElementById('instrucciones6').style.display='none';
+  document.getElementById('instrucciones7').style.display='none';
+  document.getElementById('instrucciones8').style.display='none';
+  document.getElementById('instrucciones9').style.display='none';
 
   document.getElementById('flechas4').style.display='block';
   document.getElementById('flechas').style.display='none';
   document.getElementById('flechas2').style.display='none';
   document.getElementById('flechas3').style.display='none';
+  document.getElementById('flechas5').style.display='none';
+  document.getElementById('flechas6').style.display='none';
+  document.getElementById('flechas7').style.display='none';
+  document.getElementById('flechas8').style.display='none';
+  document.getElementById('flechas9').style.display='none';
+}
+
+function generaInstruccion5(){
+  document.getElementById('instrucciones5').style.display='block';
+  document.getElementById('instrucciones1').style.display='none';
+  document.getElementById('instrucciones2').style.display='none';
+  document.getElementById('instrucciones3').style.display='none';
+  document.getElementById('instrucciones4').style.display='none';
+  document.getElementById('instrucciones6').style.display='none';
+  document.getElementById('instrucciones7').style.display='none';
+  document.getElementById('instrucciones8').style.display='none';
+  document.getElementById('instrucciones9').style.display='none';
+
+  document.getElementById('flechas5').style.display='block';
+  document.getElementById('flechas').style.display='none';
+  document.getElementById('flechas2').style.display='none';
+  document.getElementById('flechas3').style.display='none';
+  document.getElementById('flechas4').style.display='none';
+  document.getElementById('flechas6').style.display='none';
+  document.getElementById('flechas7').style.display='none';
+  document.getElementById('flechas8').style.display='none';
+  document.getElementById('flechas9').style.display='none';
+}
+
+function generaInstruccion6(){
+  document.getElementById('instrucciones6').style.display='block';
+  document.getElementById('instrucciones1').style.display='none';
+  document.getElementById('instrucciones2').style.display='none';
+  document.getElementById('instrucciones3').style.display='none';
+  document.getElementById('instrucciones4').style.display='none';
+  document.getElementById('instrucciones5').style.display='none';
+  document.getElementById('instrucciones7').style.display='none';
+  document.getElementById('instrucciones8').style.display='none';
+  document.getElementById('instrucciones9').style.display='none';
+
+  document.getElementById('flechas6').style.display='block';
+  document.getElementById('flechas').style.display='none';
+  document.getElementById('flechas2').style.display='none';
+  document.getElementById('flechas3').style.display='none';
+  document.getElementById('flechas4').style.display='none';
+  document.getElementById('flechas5').style.display='none';
+  document.getElementById('flechas7').style.display='none';
+  document.getElementById('flechas8').style.display='none';
+  document.getElementById('flechas9').style.display='none';
+}
+
+function generaInstruccion7(){
+  document.getElementById('instrucciones7').style.display='block';
+  document.getElementById('instrucciones1').style.display='none';
+  document.getElementById('instrucciones2').style.display='none';
+  document.getElementById('instrucciones3').style.display='none';
+  document.getElementById('instrucciones4').style.display='none';
+  document.getElementById('instrucciones5').style.display='none';
+  document.getElementById('instrucciones6').style.display='none';
+  document.getElementById('instrucciones8').style.display='none';
+  document.getElementById('instrucciones9').style.display='none';
+
+  document.getElementById('flechas7').style.display='block';
+  document.getElementById('flechas').style.display='none';
+  document.getElementById('flechas2').style.display='none';
+  document.getElementById('flechas3').style.display='none';
+  document.getElementById('flechas4').style.display='none';
+  document.getElementById('flechas5').style.display='none';
+  document.getElementById('flechas6').style.display='none';
+  document.getElementById('flechas8').style.display='none';
+  document.getElementById('flechas9').style.display='none';
+}
+
+function generaInstruccion8(){
+  document.getElementById('instrucciones8').style.display='block';
+  document.getElementById('instrucciones1').style.display='none';
+  document.getElementById('instrucciones2').style.display='none';
+  document.getElementById('instrucciones3').style.display='none';
+  document.getElementById('instrucciones4').style.display='none';
+  document.getElementById('instrucciones5').style.display='none';
+  document.getElementById('instrucciones6').style.display='none';
+  document.getElementById('instrucciones7').style.display='none';
+  document.getElementById('instrucciones9').style.display='none';
+
+  document.getElementById('flechas8').style.display='block';
+  document.getElementById('flechas').style.display='none';
+  document.getElementById('flechas2').style.display='none';
+  document.getElementById('flechas3').style.display='none';
+  document.getElementById('flechas4').style.display='none';
+  document.getElementById('flechas5').style.display='none';
+  document.getElementById('flechas6').style.display='none';
+  document.getElementById('flechas7').style.display='none';
+  document.getElementById('flechas9').style.display='none';
+}
+
+function generaInstruccion9(){
+  document.getElementById('instrucciones9').style.display='block';
+  document.getElementById('instrucciones1').style.display='none';
+  document.getElementById('instrucciones2').style.display='none';
+  document.getElementById('instrucciones3').style.display='none';
+  document.getElementById('instrucciones4').style.display='none';
+  document.getElementById('instrucciones5').style.display='none';
+  document.getElementById('instrucciones6').style.display='none';
+  document.getElementById('instrucciones8').style.display='none';
+  document.getElementById('instrucciones7').style.display='none';
+
+  document.getElementById('flechas9').style.display='block';
+  document.getElementById('flechas').style.display='none';
+  document.getElementById('flechas2').style.display='none';
+  document.getElementById('flechas3').style.display='none';
+  document.getElementById('flechas4').style.display='none';
+  document.getElementById('flechas5').style.display='none';
+  document.getElementById('flechas6').style.display='none';
+  document.getElementById('flechas8').style.display='none';
+  document.getElementById('flechas7').style.display='none';
 }
 
    

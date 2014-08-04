@@ -34,7 +34,7 @@
 
 	<div id="contenedor1">
 		<section id="instrucciones">
-			<a href="#instruciones" onclick="generaInstrucciones()"><img src="img/instrucciones.png" onmouseover="this.width=260;this.height=260;" onmouseout="this.width=220;this.height=220;" width="220" height="220" /></a>
+			<a href="#instrucciones" onclick="generaInstrucciones()"><img src="img/instrucciones.png" onmouseover="this.width=260;this.height=260;" onmouseout="this.width=220;this.height=220;" width="220" height="220" /></a>
 		</section>
 
 		<section id="jugar">
@@ -81,7 +81,7 @@
 				<a href="#" onclick="volverMenu()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
 			</section>	
 			<section id="f_derecha">
-				<a href="#" onclick="generaInstruccion2()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
+				<a href="#instrucciones" onclick="generaInstruccion2()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
 			</section>
 		</div>
 
@@ -93,10 +93,10 @@
 
 		<div id="flechas2">
 			<section id="f_izquierda">
-				<a href="#" onclick="generaInstruccion1()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
+				<a href="#instrucciones" onclick="generaInstruccion1()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
 			</section>	
 			<section id="f_derecha">
-				<a href="#" onclick="generaInstruccion3()" ><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
+				<a href="#instrucciones" onclick="generaInstruccion3()" ><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
 			</section>
 		</div>
 
@@ -112,26 +112,110 @@
 
 		<div id="flechas3">
 			<section id="f_izquierda">
-				<a href="#" onclick="generaInstruccion2()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
+				<a href="#instrucciones" onclick="generaInstruccion2()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
 			</section>	
 			<section id="f_derecha">
-				<a href="#" onclick="generaInstruccion4()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
+				<a href="#instrucciones" onclick="generaInstruccion4()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
 			</section>
 		</div>
 
 		<div id="instrucciones4">
 			<h2>Combinación secreta:</h2>
-			<p>Una vez seleccionado el nivel de dificultad que uno desee, se generará automáticamente una combinación secreta. Esta combinación permanecerá oculta hasta que el jugador la adivine o se quede sin más filas para probar combinaciones. </p>
+			<p>Una vez seleccionado el nivel de dificultad que uno desee, se generará automáticamente una combinación secreta con los distintos colores posibles. Esta combinación permanecerá oculta hasta que el jugador la adivine o se quede sin más filas para probar combinaciones. </p>
 		</div>
 
 		<div id="flechas4">
 			<section id="f_izquierda">
-				<a href="#" onclick="generaInstruccion3()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
+				<a href="#instrucciones" onclick="generaInstruccion3()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
 			</section>	
 			<section id="f_derecha">
-				<a href="#" onclick=""><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
+				<a href="#instrucciones" onclick="generaInstruccion5()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
 			</section>
 		</div>
+
+		<div id="instrucciones5">
+			<h2>Objetivo:</h2>
+			<p>El objetivo de este juego es que el jugador adivine esta combinación antes de que se quede sin más opciones (se rellene todo el tablero y no se encuentre la combinación). </p>
+		</div>
+
+		<div id="flechas5">
+			<section id="f_izquierda">
+				<a href="#instrucciones" onclick="generaInstruccion4()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
+			</section>	
+			<section id="f_derecha">
+				<a href="#instrucciones" onclick="generaInstruccion6()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
+			</section>
+		</div>
+
+		<div id="instrucciones6">
+			<h2>Como jugar:</h2>
+			<p>Según el nivel seleccionado el tablero tendrá distintas dimensiones. A modo de ejemplo vamos a suponer que se ha seleccionado el nivel facil, por lo tanto el tablero tendrá una dimension de 8 filas por 4 columnas cada fila. El jugador deberá ir rellenando cada fila en orden, empezando por la fila de arriba del tablero y acabando por la de abajo. No se podrá rellenar una fila inferior antes que una superior.</p>
+			<p>Lo mismo ocurre con las columnas para una fila. Se rellenan de izquierda a derecha. </p>
+			<p>Tampoco está permitido dejarse una fila sin rellenar o una columna.</p>
+		</div>
+
+		<div id="flechas6">
+			<section id="f_izquierda">
+				<a href="#instrucciones" onclick="generaInstruccion4()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
+			</section>	
+			<section id="f_derecha">
+				<a href="#instrucciones" onclick="generaInstruccion7()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
+			</section>
+		</div>
+
+		<div id="instrucciones7">
+			<h2>Como rellenar la primera fila:</h2>
+			<p>Para poner el primer color en el tablero es necesario situarse en la primera columna de la primera fila y pinchar repetidas veces sobre la casilla. Por cada vez que se pinche aparecerá un color distinto de entre todos los colores posibles. Para poder fijar el color que más se desee el jugador deberá apretar el boton de "seleccionar color a su derecha". Esto fijará el color para esa columna y ahora debemos repetir lo mismo para la siguiente columna, y así sucesivamente hasta rellenar los cuatro colores de la primera fila. </p>
+
+			<img src="img/seleccionarColor.png">
+
+			<p>Los colores debajo del tablero solo sirven para indicar al jugador que colores tiene para realizar las posibles combinaciones, no se usan para nada.</p>
+
+		</div>
+
+		<div id="flechas7">
+			<section id="f_izquierda">
+				<a href="#instrucciones" onclick="generaInstruccion6()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
+			</section>	
+			<section id="f_derecha">
+				<a href="#instrucciones" onclick="generaInstruccion8()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
+			</section>
+		</div>
+
+		<div id="instrucciones8">
+			<h2>Comprobar la fila:</h2>
+			<p>El siguiente paso para cuando el jugador haya rellenado la primera fila es comprobarla con la combinación secreta. No se puede rellenar una segunda fila si la primera no ha sido comprobada antes. Para comprobar la fila insertada se debe apretar el botón "comprobar" al final del tablero. Esto comparará tu combinación con la secreta y devolverá en la tabla a la derecha de la fila tantas bolas negras como colores hayan coincidido en la misma posición y tantas bolas blancas como colores hayan coincidido pero en posiciones distintas.</p>
+
+			<img src="img/comprobar.png">
+			<br>
+
+		</div>
+
+		<div id="flechas8">
+			<section id="f_izquierda">
+				<a href="#instrucciones" onclick="generaInstruccion7()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
+			</section>	
+			<section id="f_derecha">
+				<a href="#instrucciones" onclick="generaInstruccion9()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
+			</section>
+		</div>
+
+		<div id="instrucciones9">
+			<h2>Finalizar juego</h2>
+			<p>El juego finaliza cuando el jugador dá con la combinación secreta o cuando se queda sin filas para poder seguir probando nuevas combinaciones. </p>
+
+		</div>
+
+		<div id="flechas9">
+			<section id="f_izquierda">
+				<a href="#instrucciones" onclick="generaInstruccion8()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
+			</section>	
+			<section id="f_derecha">
+				<a href="#" onclick="volverMenu()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
+			</section>
+		</div>
+
+
 
 	</div>
 
