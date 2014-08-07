@@ -53,19 +53,25 @@
 				<source src="audios/mario.mp3" type="audio/mpeg"/>
 			</audio>
 
-			<input type="button" onclick='silenciar();' value="Silenciar" /><br>
-			<input type="button" onclick='pausar();' value="Pausar" /><br>
+			<div>
+				<section class="menuSonido">
+					<img src="img/play-stop.png" onclick="playPause();" onmouseover="this.width=460;this.height=260;" onmouseout="this.width=400;this.height=200;" width="400" height="200" />
+				</section>
 
-			<input type="button" onclick="bajarVolumen()" value="Bajar Volumen" /><br>
-			<input type="button" onclick="subirVolumen()" value="Subir Volumen" /><br>
+				<section class="menuSonido">
+					<img src="img/subir.png" onclick="subirVolumen();" onmouseover="this.width=460;this.height=260;" onmouseout="this.width=400;this.height=200;" width="400" height="200" />
+				</section>
 
-			<input type="button" onclick='playPause();' value="Play/Pause" />
+				<section class="menuSonido">
+					<img src="img/bajar.png" onclick="bajarVolumen();" onmouseover="this.width=460;this.height=260;" onmouseout="this.width=400;this.height=200;" width="400" height="200" />
+				</section>
+			</div>
 
-			<section id="flechas">
+			<div id="flechas10">
 				<section id="f_izquierda">
 					<a href="#" onclick="volverMenu()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
 				</section>	
-			</section>				
+			</div>				
 		</section>
 	</div>
 
@@ -221,16 +227,32 @@
 
 	<div id="contenedor4">
 
-		<p>Seleccionar nivel de dificultad:</p>
-		<input type="button" name="botonFacil" id="botonFacil" value="Facil" onclick="nivelFacil();">
+		<p id="letraNiveles">Seleccionar nivel de dificultad:</p>
+		<!--<input type="button" name="botonFacil" id="botonFacil" value="Facil" onclick="nivelFacil();">
 		<input type="button" name="botonMedio" id="botonMedio" value="Medio" onclick="nivelMedio();">
-		<input type="button" name="botonDificil" id="botonDificil" value="Dificil" onclick="nivelDificil();">
-		
-		<section id="flechas">
-				<section id="f_izquierda">
-					<a href="#" onclick="volverMenu()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
-				</section>	
+		<input type="button" name="botonDificil" id="botonDificil" value="Dificil" onclick="nivelDificil();">-->
+
+		<div id="niveles">
+			<section class="menuNiveles">
+					<a href="#" onclick="nivelFacil();"><img src="img/nivelFacil.png" onclick="nivelFacil();" onmouseover="this.width=230;this.height=270;" onmouseout="this.width=180;this.height=230;" width="180" height="230" /></a>
 			</section>
+
+			<section class="menuNiveles">
+					<a href="#" onclick="nivelMedio();"><img src="img/nivelMedio.png" onclick="nivelMedio();" onmouseover="this.width=230;this.height=270;" onmouseout="this.width=180;this.height=230;" width="180" height="230" /></a>
+			</section>
+
+			<section class="menuNiveles">
+					<a href="#" onclick="nivelDificil();"><img src="img/nivelDificil.png" onclick="nivelDificil();" onmouseover="this.width=230;this.height=270;" onmouseout="this.width=180;this.height=230;" width="180" height="230" /></a>
+			</section>
+		</div>
+		
+		<div id="flechas">
+			<section id="f_izquierda">
+				<a href="#" onclick="volverMenu()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
+			</section>	
+		</div>
+
+	</div>
 	
 
 </body>

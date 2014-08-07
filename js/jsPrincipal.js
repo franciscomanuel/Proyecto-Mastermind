@@ -476,6 +476,10 @@ function silenciar(){
   document.getElementById('volumen').muted = true;
 }
 
+function activar(){
+  document.getElementById('volumen').muted = false;
+}
+
 function pausar(){
   document.getElementById('volumen').pause();
 }

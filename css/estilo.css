@@ -97,6 +97,18 @@ section{
 	float: left;
 }
 
+.menuNiveles{
+	margin-left: 7%;
+	float: left;
+	width: 300px;
+}
+
+.menuSonido{
+	margin-left: 50px;
+	float: left;
+	width: 300px;
+}
+
 .logo{
 	width: 50%;
 	height: 5%;
@@ -113,7 +125,11 @@ section{
 
 #flechas, #flechas2, #flechas3, #flechas4, #flechas5, #flechas6, #flechas7, #flechas8, #flechas9{
 	width: 100%;
-	padding-top: 20%;
+	padding-top: 23%;
+}
+
+#flechas10{
+	padding-top: 25%;
 }
 
 #flechas2, #flechas3, #flechas4, #flechas5, #flechas6, #flechas7, #flechas8, #flechas9{
@@ -166,6 +182,16 @@ section#f_izquierda, #f_derecha{
 #contenedor3 span{
 	font-weight:bold;
 	margin-right: 25%;
+}
+
+#niveles img{
+	border: 10px outset #cccccc;
+}
+
+#letraNiveles{
+	color: green;
+	font: 150% sans-serif;
+
 }
 
 
