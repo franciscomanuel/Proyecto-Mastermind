@@ -6,6 +6,7 @@ var color;
 var contador=0;
 var siguiente=0;
 var anterior=0;
+var obligarComprobar=0;
 
 function seleccionarColor(){
   if(color){
@@ -21,97 +22,120 @@ function seleccionarColor(){
 
   if(numColumnas==4){
     if(contador==4){
+      obligarComprobar=1;
       contador=0;
       anterior=siguiente;
-      siguiente=siguiente+1;
-      document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
-      document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');  
+      siguiente=siguiente+1;  
     }
   }else if(numColumnas==5){
     if(contador==5){
+      obligarComprobar=1;
       contador=0;
       anterior=siguiente;
       siguiente=siguiente+1;
-      document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
-      document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');
     }
   }else{
     if(contador==6){
+      obligarComprobar=1;
       contador=0;
       anterior=siguiente;
       siguiente=siguiente+1;
-      document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
-      document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');
     }
   }
 	
 }
 
-function setSrcFacil(){
-  color=true;
+function comprobar(){
 
   var tabla = document.getElementById('miTabla');
   var numColumnas = tabla.rows[0].cells.length;
 
-  var x=document.images;
-
-  if(numColumnas==4){
-    if(i%6==0){
-    	x[j].src="img/circuloRojo.png";
-    }else if(i%6==1){
-    	x[j].src="img/circuloVerde.png";
-    }else if(i%6==2){
-    	x[j].src="img/circuloAzul.png";
-    }else if(i%6==3){
-    	x[j].src="img/circuloAmarillo.png";
-    }else if(i%6==4){
-    	x[j].src="img/circuloNaranja.png";
+  if(contador==0){
+    if(numColumnas==4){
+      obligarComprobar=0;
+      document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
+      document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');
+    }else if(numColumnas==5){
+      obligarComprobar=0;
+      document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
+      document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');
     }else{
-    	x[j].src="img/circuloMorado.png";
-    }
-  }else if(numColumnas==5){
-    if(i%8==0){
-      x[j].src="img/circuloRojo.png";
-    }else if(i%8==1){
-      x[j].src="img/circuloVerde.png";
-    }else if(i%8==2){
-      x[j].src="img/circuloAzul.png";
-    }else if(i%8==3){
-      x[j].src="img/circuloAzulClaro.png";
-    }else if(i%8==4){
-      x[j].src="img/circuloAmarillo.png";
-    }else if(i%8==5){
-      x[j].src="img/circuloNaranja.png";
-    }else if(i%8==6){
-      x[j].src="img/circuloMorado.png";
-    }else{
-      x[j].src="img/circuloMoradoClaro.png";
-    }
-  }else if(numColumnas==6){
-    if(i%10==0){
-      x[j].src="img/circuloRojo.png";
-    }else if(i%10==1){
-      x[j].src="img/circuloVerde.png";
-    }else if(i%10==2){
-      x[j].src="img/circuloAzul.png";
-    }else if(i%10==3){
-      x[j].src="img/circuloAzulClaro.png";
-    }else if(i%10==4){
-      x[j].src="img/circuloVerdeOscuro.png";
-    }else if(i%10==5){
-      x[j].src="img/circuloAmarillo.png";
-    }else if(i%10==6){
-      x[j].src="img/circuloNaranja.png";
-    }else if(i%10==7){
-      x[j].src="img/circuloMorado.png";
-    }else if(i%10==8){
-      x[j].src="img/circuloMoradoClaro.png";
-    }else{
-      x[j].src="img/circuloGris.png";
+      obligarComprobar=0;
+      document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
+      document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');
     }
   }
+}
 
-    i=i+1;
+function setSrcFacil(){
+
+  if(obligarComprobar==0){
+    color=true;
+
+    var tabla = document.getElementById('miTabla');
+    var numColumnas = tabla.rows[0].cells.length;
+
+      var x=document.images;
+
+      if(numColumnas==4){
+        if(i%6==0){
+        	x[j].src="img/circuloRojo.png";
+        }else if(i%6==1){
+        	x[j].src="img/circuloVerde.png";
+        }else if(i%6==2){
+        	x[j].src="img/circuloAzul.png";
+        }else if(i%6==3){
+        	x[j].src="img/circuloAmarillo.png";
+        }else if(i%6==4){
+        	x[j].src="img/circuloNaranja.png";
+        }else{
+        	x[j].src="img/circuloMorado.png";
+        }
+      }else if(numColumnas==5){
+        if(i%8==0){
+          x[j].src="img/circuloRojo.png";
+        }else if(i%8==1){
+          x[j].src="img/circuloVerde.png";
+        }else if(i%8==2){
+          x[j].src="img/circuloAzul.png";
+        }else if(i%8==3){
+          x[j].src="img/circuloAzulClaro.png";
+        }else if(i%8==4){
+          x[j].src="img/circuloAmarillo.png";
+        }else if(i%8==5){
+          x[j].src="img/circuloNaranja.png";
+        }else if(i%8==6){
+          x[j].src="img/circuloMorado.png";
+        }else{
+          x[j].src="img/circuloMoradoClaro.png";
+        }
+      }else if(numColumnas==6){
+        if(i%10==0){
+          x[j].src="img/circuloRojo.png";
+        }else if(i%10==1){
+          x[j].src="img/circuloVerde.png";
+        }else if(i%10==2){
+          x[j].src="img/circuloAzul.png";
+        }else if(i%10==3){
+          x[j].src="img/circuloAzulClaro.png";
+        }else if(i%10==4){
+          x[j].src="img/circuloVerdeOscuro.png";
+        }else if(i%10==5){
+          x[j].src="img/circuloAmarillo.png";
+        }else if(i%10==6){
+          x[j].src="img/circuloNaranja.png";
+        }else if(i%10==7){
+          x[j].src="img/circuloMorado.png";
+        }else if(i%10==8){
+          x[j].src="img/circuloMoradoClaro.png";
+        }else{
+          x[j].src="img/circuloGris.png";
+        }
+      }
+
+        i=i+1;
+      }
+    
 }
 
 
@@ -172,7 +196,7 @@ function generaTablero(valor){
       imagen.setAttribute("width", "36");
       imagen.setAttribute("height", "36");
       imagen.setAttribute("id", "imagenFila" + i + "columna" + j);
-      imagen.setAttribute("onclick", "setSrcFacil()");
+        imagen.setAttribute("onclick", "setSrcFacil()");
       td.appendChild(imagen);
       tr.appendChild(td);
     }
@@ -464,7 +488,7 @@ function generaCombinacion(valor){
   }
 }
 
-function comprobar(){
+function mostrarCombinacion(){
   document.getElementById('regionOculta').style.display='block';
 }
 
