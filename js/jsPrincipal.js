@@ -10,6 +10,14 @@ var obligarComprobar=0; //Variable que comprueba si al concluir una fila se ha p
 var blancas=0; //Número de colores que coinciden con la combinación en distinta posición.
 var negras; //Número de colores que coinciden con la combinación en la misma posición.
 var iter=0; //Variable que incrementa el número de filas al pulsar comprobar.
+var iter2=0;
+var encontrado=false; //Si se ha encontrado una bola negra
+var vector1=[-1, -1, -1, -1];
+var vector2=[-1, -1, -1, -1];
+var vector3=[-1, -1, -1, -1, -1];
+var vector4=[-1, -1, -1, -1, -1];
+var vector5=[-1, -1, -1, -1, -1, -1];
+var vector6=[-1, -1, -1, -1, -1, -1];
 
 
 function seleccionarColor(){
@@ -49,25 +57,184 @@ function seleccionarColor(){
 	
 }
 
+/*
+
 function comprobar(){
 
   var tabla = document.getElementById('miTabla');
   var numColumnas = tabla.rows[0].cells.length;
 
-  
   if(numColumnas==4){
     negras=0;
     for(var i=iter; i<iter+4; i++){
       if(document.images[i].name==document.getElementById('secreto' +i%4).name){
         negras=negras+1;
+        vector1[i%4]=i%4;
+        vector2[i%4]=i%4;
+        vector1.sort();
+        vector2.sort();
       }
     }
-  }
-  iter=iter+4;
 
-  alert(negras);
-  /*var prueba2=document.getElementById('secreto1').name;
-  alert(prueba2);*/
+    blancas=0;
+    for(var j=0; j<4; j++){
+      for(var k=0; k<4 && !encontrado; k++){
+        alert("entro");
+        if(vector1[j]==j){
+          encontrado=true;
+          alert("hola");
+        }else{
+          if(document.images[j].name==document.getElementById('secreto' +k).name && vector2[k]!=k){
+            blancas=blancas++;
+            encontrado=true;
+            vector1[j%4]=j;
+            vector2[k%4]=k;
+            vector1.sort();
+            vector2.sort();
+          }
+        }
+      }
+      encontrado=false;
+    }
+  }
+
+    iter=iter+4;
+    alert(negras);
+
+    alert(vector1.toString());
+    alert(vector2.toString());
+
+
+
+    alert(blancas);
+
+
+  if(contador==0){
+    if(numColumnas==4){
+      obligarComprobar=0;
+      document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
+      document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');
+    }else if(numColumnas==5){
+      obligarComprobar=0;
+      document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
+      document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');
+    }else{
+      obligarComprobar=0;
+      document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
+      document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');
+    }
+  }
+}
+
+*/
+
+function comprobar(){
+
+  var tabla = document.getElementById('miTabla');
+  var numColumnas = tabla.rows[0].cells.length;
+
+  if(numColumnas==4){
+    negras=0;
+    for(var i=iter; i<iter+4; i++){
+      if(document.images[i].name==document.getElementById('secreto' +i%4).name){
+        negras=negras+1;
+        vector1[i%4]=i%4;
+        vector2[i%4]=i%4;
+      }
+    }
+    alert(negras);
+
+    blancas=0;
+    for(var j=iter2; j<iter2+4; j++){
+      if(vector1[j%4]==-1){
+        for(var k=0; k<4 && !encontrado; k++){
+          if(vector2[k]==-1){
+            if(document.images[j].name==document.getElementById('secreto' +k).name){
+              blancas++;
+              vector1[j%4]=j%4;
+              vector2[k]=k;
+              encontrado=true;
+            }
+          }
+        }
+        encontrado=false;
+      }
+    }
+    
+    alert(blancas);
+    vector1=[-1, -1, -1, -1];
+    vector2=[-1, -1, -1, -1];
+    iter=iter+4;
+    iter2=iter2+4;
+  }else if(numColumnas==5){
+    negras=0;
+    for(var i=iter; i<iter+5; i++){
+      if(document.images[i].name==document.getElementById('secreto' +i%5).name){
+        negras=negras+1;
+        vector3[i%5]=i%5;
+        vector4[i%5]=i%5;
+      }
+    }
+    alert(negras);
+
+    blancas=0;
+    for(var j=iter2; j<iter2+5; j++){
+      if(vector3[j%5]==-1){
+        for(var k=0; k<5 && !encontrado; k++){
+          if(vector4[k]==-1){
+            if(document.images[j].name==document.getElementById('secreto' +k).name){
+              blancas++;
+              vector3[j%5]=j%5;
+              vector4[k]=k;
+              encontrado=true;
+            }
+          }
+        }
+        encontrado=false;
+      }
+    }
+    
+    alert(blancas);
+    vector3=[-1, -1, -1, -1, -1];
+    vector4=[-1, -1, -1, -1, -1];
+    iter=iter+5;
+    iter2=iter2+5;
+  }else{
+    negras=0;
+    for(var i=iter; i<iter+6; i++){
+      if(document.images[i].name==document.getElementById('secreto' +i%6).name){
+        negras=negras+1;
+        vector6[i%6]=i%6;
+        vector6[i%6]=i%6;
+      }
+    }
+    alert(negras);
+
+    blancas=0;
+    for(var j=iter2; j<iter2+6; j++){
+      if(vector5[j%6]==-1){
+        for(var k=0; k<6 && !encontrado; k++){
+          if(vector6[k]==-1){
+            if(document.images[j].name==document.getElementById('secreto' +k).name){
+              blancas++;
+              vector5[j%6]=j%6;
+              vector6[k]=k;
+              encontrado=true;
+            }
+          }
+        }
+        encontrado=false;
+      }
+    }
+    
+    alert(blancas);
+    vector5=[-1, -1, -1, -1, -1, -1];
+    vector6=[-1, -1, -1, -1, -1, -1];
+    iter=iter+6;
+    iter2=iter2+6;
+  }
+  
+
 
   if(contador==0){
     if(numColumnas==4){
@@ -502,7 +669,8 @@ function generaCombinacion(valor){
         imagen.setAttribute("src", myimages[ry]); 
         imagen.setAttribute("width", "36");
         imagen.setAttribute("height", "36");
-        imagen.setAttribute("id", colorOculto);
+        imagen.setAttribute("id", "secreto" + j);
+        imagen.setAttribute("name", colorOculto);
         td.appendChild(imagen);
         tr.appendChild(td);
       }
@@ -574,7 +742,8 @@ function generaCombinacion(valor){
         imagen.setAttribute("src", myimages[ry]); 
         imagen.setAttribute("width", "36");
         imagen.setAttribute("height", "36");
-        imagen.setAttribute("id", colorOculto);
+        imagen.setAttribute("id", "secreto" + j);
+        imagen.setAttribute("name", colorOculto);
         td.appendChild(imagen);
         tr.appendChild(td);
       }
