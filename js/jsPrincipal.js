@@ -18,6 +18,7 @@ var vector3=[-1, -1, -1, -1, -1];
 var vector4=[-1, -1, -1, -1, -1];
 var vector5=[-1, -1, -1, -1, -1, -1];
 var vector6=[-1, -1, -1, -1, -1, -1];
+var cont_pos=0; //Contador para saber la iteración en el tablero lateral para poner las bolas blancas y negras
 
 
 function seleccionarColor(){
@@ -57,181 +58,116 @@ function seleccionarColor(){
 	
 }
 
-/*
-
 function comprobar(){
 
   var tabla = document.getElementById('miTabla');
   var numColumnas = tabla.rows[0].cells.length;
-
-  if(numColumnas==4){
-    negras=0;
-    for(var i=iter; i<iter+4; i++){
-      if(document.images[i].name==document.getElementById('secreto' +i%4).name){
-        negras=negras+1;
-        vector1[i%4]=i%4;
-        vector2[i%4]=i%4;
-        vector1.sort();
-        vector2.sort();
-      }
-    }
-
-    blancas=0;
-    for(var j=0; j<4; j++){
-      for(var k=0; k<4 && !encontrado; k++){
-        alert("entro");
-        if(vector1[j]==j){
-          encontrado=true;
-          alert("hola");
-        }else{
-          if(document.images[j].name==document.getElementById('secreto' +k).name && vector2[k]!=k){
-            blancas=blancas++;
-            encontrado=true;
-            vector1[j%4]=j;
-            vector2[k%4]=k;
-            vector1.sort();
-            vector2.sort();
-          }
-        }
-      }
-      encontrado=false;
-    }
-  }
-
-    iter=iter+4;
-    alert(negras);
-
-    alert(vector1.toString());
-    alert(vector2.toString());
-
-
-
-    alert(blancas);
-
 
   if(contador==0){
     if(numColumnas==4){
-      obligarComprobar=0;
-      document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
-      document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');
+      negras=0;
+      for(var i=iter; i<iter+4; i++){
+        if(document.images[i].name==document.getElementById('secreto' +i%4).name){
+          negras=negras+1;
+          vector1[i%4]=i%4;
+          vector2[i%4]=i%4;
+        }
+      }
+      //alert(negras);
+
+      blancas=0;
+      for(var j=iter2; j<iter2+4; j++){
+        if(vector1[j%4]==-1){
+          for(var k=0; k<4 && !encontrado; k++){
+            if(vector2[k]==-1){
+              if(document.images[j].name==document.getElementById('secreto' +k).name){
+                blancas++;
+                vector1[j%4]=j%4;
+                vector2[k]=k;
+                encontrado=true;
+              }
+            }
+          }
+          encontrado=false;
+        }
+      }
+      
+      //alert(blancas);
+      ponerBolas(negras, blancas);
+      vector1=[-1, -1, -1, -1];
+      vector2=[-1, -1, -1, -1];
+      iter=iter+4;
+      iter2=iter2+4;
     }else if(numColumnas==5){
-      obligarComprobar=0;
-      document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
-      document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');
+      negras=0;
+      for(var i=iter; i<iter+5; i++){
+        if(document.images[i].name==document.getElementById('secreto' +i%5).name){
+          negras=negras+1;
+          vector3[i%5]=i%5;
+          vector4[i%5]=i%5;
+        }
+      }
+      //alert(negras);
+
+      blancas=0;
+      for(var j=iter2; j<iter2+5; j++){
+        if(vector3[j%5]==-1){
+          for(var k=0; k<5 && !encontrado; k++){
+            if(vector4[k]==-1){
+              if(document.images[j].name==document.getElementById('secreto' +k).name){
+                blancas++;
+                vector3[j%5]=j%5;
+                vector4[k]=k;
+                encontrado=true;
+              }
+            }
+          }
+          encontrado=false;
+        }
+      }
+      
+      //alert(blancas);
+      ponerBolas(negras, blancas);
+      vector3=[-1, -1, -1, -1, -1];
+      vector4=[-1, -1, -1, -1, -1];
+      iter=iter+5;
+      iter2=iter2+5;
     }else{
-      obligarComprobar=0;
-      document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
-      document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');
-    }
-  }
-}
-
-*/
-
-function comprobar(){
-
-  var tabla = document.getElementById('miTabla');
-  var numColumnas = tabla.rows[0].cells.length;
-
-  if(numColumnas==4){
-    negras=0;
-    for(var i=iter; i<iter+4; i++){
-      if(document.images[i].name==document.getElementById('secreto' +i%4).name){
-        negras=negras+1;
-        vector1[i%4]=i%4;
-        vector2[i%4]=i%4;
+      negras=0;
+      for(var i=iter; i<iter+6; i++){
+        if(document.images[i].name==document.getElementById('secreto' +i%6).name){
+          negras=negras+1;
+          vector6[i%6]=i%6;
+          vector6[i%6]=i%6;
+        }
       }
-    }
-    alert(negras);
+      //alert(negras);
 
-    blancas=0;
-    for(var j=iter2; j<iter2+4; j++){
-      if(vector1[j%4]==-1){
-        for(var k=0; k<4 && !encontrado; k++){
-          if(vector2[k]==-1){
-            if(document.images[j].name==document.getElementById('secreto' +k).name){
-              blancas++;
-              vector1[j%4]=j%4;
-              vector2[k]=k;
-              encontrado=true;
+      blancas=0;
+      for(var j=iter2; j<iter2+6; j++){
+        if(vector5[j%6]==-1){
+          for(var k=0; k<6 && !encontrado; k++){
+            if(vector6[k]==-1){
+              if(document.images[j].name==document.getElementById('secreto' +k).name){
+                blancas++;
+                vector5[j%6]=j%6;
+                vector6[k]=k;
+                encontrado=true;
+              }
             }
           }
+          encontrado=false;
         }
-        encontrado=false;
       }
+      
+      //alert(blancas);
+      ponerBolas(negras, blancas);
+      vector5=[-1, -1, -1, -1, -1, -1];
+      vector6=[-1, -1, -1, -1, -1, -1];
+      iter=iter+6;
+      iter2=iter2+6;
     }
-    
-    alert(blancas);
-    vector1=[-1, -1, -1, -1];
-    vector2=[-1, -1, -1, -1];
-    iter=iter+4;
-    iter2=iter2+4;
-  }else if(numColumnas==5){
-    negras=0;
-    for(var i=iter; i<iter+5; i++){
-      if(document.images[i].name==document.getElementById('secreto' +i%5).name){
-        negras=negras+1;
-        vector3[i%5]=i%5;
-        vector4[i%5]=i%5;
-      }
-    }
-    alert(negras);
 
-    blancas=0;
-    for(var j=iter2; j<iter2+5; j++){
-      if(vector3[j%5]==-1){
-        for(var k=0; k<5 && !encontrado; k++){
-          if(vector4[k]==-1){
-            if(document.images[j].name==document.getElementById('secreto' +k).name){
-              blancas++;
-              vector3[j%5]=j%5;
-              vector4[k]=k;
-              encontrado=true;
-            }
-          }
-        }
-        encontrado=false;
-      }
-    }
-    
-    alert(blancas);
-    vector3=[-1, -1, -1, -1, -1];
-    vector4=[-1, -1, -1, -1, -1];
-    iter=iter+5;
-    iter2=iter2+5;
-  }else{
-    negras=0;
-    for(var i=iter; i<iter+6; i++){
-      if(document.images[i].name==document.getElementById('secreto' +i%6).name){
-        negras=negras+1;
-        vector6[i%6]=i%6;
-        vector6[i%6]=i%6;
-      }
-    }
-    alert(negras);
-
-    blancas=0;
-    for(var j=iter2; j<iter2+6; j++){
-      if(vector5[j%6]==-1){
-        for(var k=0; k<6 && !encontrado; k++){
-          if(vector6[k]==-1){
-            if(document.images[j].name==document.getElementById('secreto' +k).name){
-              blancas++;
-              vector5[j%6]=j%6;
-              vector6[k]=k;
-              encontrado=true;
-            }
-          }
-        }
-        encontrado=false;
-      }
-    }
-    
-    alert(blancas);
-    vector5=[-1, -1, -1, -1, -1, -1];
-    vector6=[-1, -1, -1, -1, -1, -1];
-    iter=iter+6;
-    iter2=iter2+6;
   }
   
 
@@ -251,6 +187,40 @@ function comprobar(){
       document.getElementById('botonSel' +anterior).setAttribute('style', 'visibility:hidden');
     }
   }
+}
+
+function ponerBolas(bolas_negras, bolas_bancas){
+  
+  var tabla = document.getElementById('miTabla');
+  var numColumnas = tabla.rows[0].cells.length;
+  var x=document.images;
+
+  for(var i=0; i<bolas_negras; i++){
+    x["bolas" + cont_pos].src="img/circuloRojo.png";
+    cont_pos++;
+  }
+
+  for(var j=0; j<bolas_bancas; j++){
+    x["bolas" + cont_pos].src="img/circuloBlanco.png";
+    cont_pos++;
+  }
+
+  if(numColumnas==4){
+    while(cont_pos%4!=0){
+      cont_pos++;
+    }
+  }else if(numColumnas==5){
+    while(cont_pos%5!=0){
+      cont_pos++;
+    }
+  }else{
+    while(cont_pos%6!=0){
+      cont_pos++;
+    }
+  }
+  
+  
+
 }
 
 function setSrcFacil(){
@@ -427,6 +397,8 @@ function generaTablero(valor){
 function generaTablaLateral(valor){
 
   var cont=true;
+  var cont_filas=0; //Contador para las filas
+  var cont_bolas=0; //Contador para cada imagen del tablero lateral.
 
 	var tabla2   = document.createElement("table");
     tabla2.setAttribute("id", "miTabla2");
@@ -434,64 +406,72 @@ function generaTablaLateral(valor){
 
     for(var i=0; i<8; i++){
     	var tr=document.createElement("tr");
-    	tr.setAttribute("id", "fila" +i);
+    	tr.setAttribute("id", "comprobarColores" +i);
 
     	for(var j=0; j<2; j++){
     		var tr2=document.createElement("tr");
-    		tr2.setAttribute("id", "fil" +j);
-
+    		tr2.setAttribute("id", "fil" +cont_filas);
 
         if(valor==4){
       		for(var k=0; k<2; k++){
       			var td2=document.createElement("td");
-      			td2.setAttribute("id", "col" +k);
+      			td2.setAttribute("id", "col" +k + "fil" +cont_filas);
       			var imagen=document.createElement("img");
       			imagen.setAttribute("src", "img/circulo1.png"); 
     				imagen.setAttribute("width", "14");
     				imagen.setAttribute("height", "14");
+            imagen.setAttribute("name", "bolas" +cont_bolas);
     				td2.appendChild(imagen);
     				tr2.appendChild(td2);
+            cont_bolas++;
       		}
         }else if(valor==5){
           if(cont){
             for(var k=0; k<3; k++){
               var td2=document.createElement("td");
-              td2.setAttribute("id", "col" +k);
+              td2.setAttribute("id", "col" +k + "fil" +cont_filas);
               var imagen=document.createElement("img");
               imagen.setAttribute("src", "img/circulo1.png"); 
               imagen.setAttribute("width", "14");
               imagen.setAttribute("height", "14");
+              imagen.setAttribute("name", "bolas" +cont_bolas);
               td2.appendChild(imagen);
               tr2.appendChild(td2);
+              cont_bolas++;
             }
             cont=false;
           }else{
             for(var k=0; k<2; k++){
               var td2=document.createElement("td");
-              td2.setAttribute("id", "col" +k);
+              td2.setAttribute("id", "col" +k + "fil" +cont_filas);
               var imagen=document.createElement("img");
               imagen.setAttribute("src", "img/circulo1.png"); 
               imagen.setAttribute("width", "14");
               imagen.setAttribute("height", "14");
+              imagen.setAttribute("name", "bolas" +cont_bolas);
               td2.appendChild(imagen);
               tr2.appendChild(td2);
+              cont_bolas++;
             }
             cont=true;
           }
         }else{
-          for(var k=0; k<3; k++){
-              var td2=document.createElement("td");
-              td2.setAttribute("id", "col" +k);
-              var imagen=document.createElement("img");
-              imagen.setAttribute("src", "img/circulo1.png"); 
-              imagen.setAttribute("width", "14");
-              imagen.setAttribute("height", "14");
-              td2.appendChild(imagen);
-              tr2.appendChild(td2);
-            }
-        }
+            for(var k=0; k<3; k++){
+                var td2=document.createElement("td");
+                td2.setAttribute("id", "col" +k + "fil" +cont_filas);
+                var imagen=document.createElement("img");
+                imagen.setAttribute("src", "img/circulo1.png"); 
+                imagen.setAttribute("width", "14");
+                imagen.setAttribute("height", "14");
+                imagen.setAttribute("name", "bolas" +cont_bolas);
+                td2.appendChild(imagen);
+                tr2.appendChild(td2);
+                cont_bolas++;
+              }
+          }
 
     		tr.appendChild(tr2);
+        cont_filas++;
     	}
 
 		tblBody2.appendChild(tr);
