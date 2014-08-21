@@ -1,4 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: jsPrincipal.js</title>
 
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: jsPrincipal.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
  /**
 ******************************************************
 *  @file jsPrincipal.js
@@ -213,7 +241,7 @@ function comprobar(){
   if(contador==0){
     if(numColumnas==4){
       negras=0;
-      for(var i=iter; i<iter+4; i++){
+      for(var i=iter; i&lt;iter+4; i++){
         if(document.images[i].name==document.getElementById('secreto' +i%4).name){
           negras=negras+1;
           vector1[i%4]=i%4;
@@ -223,9 +251,9 @@ function comprobar(){
       //alert(negras);
 
       blancas=0;
-      for(var j=iter2; j<iter2+4; j++){
+      for(var j=iter2; j&lt;iter2+4; j++){
         if(vector1[j%4]==-1){
-          for(var k=0; k<4 && !encontrado; k++){
+          for(var k=0; k&lt;4 &amp;&amp; !encontrado; k++){
             if(vector2[k]==-1){
               if(document.images[j].name==document.getElementById('secreto' +k).name){
                 blancas++;
@@ -247,7 +275,7 @@ function comprobar(){
       iter2=iter2+4;
     }else if(numColumnas==5){
       negras=0;
-      for(var i=iter; i<iter+5; i++){
+      for(var i=iter; i&lt;iter+5; i++){
         if(document.images[i].name==document.getElementById('secreto' +i%5).name){
           negras=negras+1;
           vector3[i%5]=i%5;
@@ -257,9 +285,9 @@ function comprobar(){
       //alert(negras);
 
       blancas=0;
-      for(var j=iter2; j<iter2+5; j++){
+      for(var j=iter2; j&lt;iter2+5; j++){
         if(vector3[j%5]==-1){
-          for(var k=0; k<5 && !encontrado; k++){
+          for(var k=0; k&lt;5 &amp;&amp; !encontrado; k++){
             if(vector4[k]==-1){
               if(document.images[j].name==document.getElementById('secreto' +k).name){
                 blancas++;
@@ -281,7 +309,7 @@ function comprobar(){
       iter2=iter2+5;
     }else{
       negras=0;
-      for(var i=iter; i<iter+6; i++){
+      for(var i=iter; i&lt;iter+6; i++){
         if(document.images[i].name==document.getElementById('secreto' +i%6).name){
           negras=negras+1;
           vector6[i%6]=i%6;
@@ -291,9 +319,9 @@ function comprobar(){
       //alert(negras);
 
       blancas=0;
-      for(var j=iter2; j<iter2+6; j++){
+      for(var j=iter2; j&lt;iter2+6; j++){
         if(vector5[j%6]==-1){
-          for(var k=0; k<6 && !encontrado; k++){
+          for(var k=0; k&lt;6 &amp;&amp; !encontrado; k++){
             if(vector6[k]==-1){
               if(document.images[j].name==document.getElementById('secreto' +k).name){
                 blancas++;
@@ -348,12 +376,12 @@ function ponerBolas(bolas_negras, bolas_bancas){
   var numColumnas = tabla.rows[0].cells.length;
   var x=document.images;
 
-  for(var i=0; i<bolas_negras; i++){
+  for(var i=0; i&lt;bolas_negras; i++){
     x["bolas" + cont_pos].src="img/circuloRojo.png";
     cont_pos++;
   }
 
-  for(var j=0; j<bolas_bancas; j++){
+  for(var j=0; j&lt;bolas_bancas; j++){
     x["bolas" + cont_pos].src="img/circuloBlanco.png";
     cont_pos++;
   }
@@ -520,8 +548,8 @@ function volverInicio(){
 function genera(){
   var Url = location.href;
   Url = Url.replace(/.*\?(.*?)/,"$1");
-  Variables = Url.split ("&");
-  for (i = 0; i < Variables.length; i++) {
+  Variables = Url.split ("&amp;");
+  for (i = 0; i &lt; Variables.length; i++) {
        Separ = Variables[i].split("=");
        eval ('var '+Separ[0]+'="'+Separ[1]+'"');
   }
@@ -540,18 +568,18 @@ function genera(){
 */
 function generaTablero(valor){
  
-  // Crea un elemento <table> y un elemento <tbody>
+  // Crea un elemento &lt;table> y un elemento &lt;tbody>
   var tabla   = document.createElement("table");
   tabla.setAttribute("id", "miTabla");
   var tblBody = document.createElement("tbody");
  
   // Crea las celdas
-  for (var i = 0; i < 8; i++) {
+  for (var i = 0; i &lt; 8; i++) {
     // Crea las hileras de la tabla
     var tr = document.createElement("tr");
     tr.setAttribute("id", "fila" +i);
  
-    for (var j = 0; j < valor; j++) {
+    for (var j = 0; j &lt; valor; j++) {
       var td = document.createElement("td");
       td.setAttribute("id", "fila" +i +"columna" +j);
       var imagen = document.createElement("img"); //Creamos la imagen con sus respectivas propiedades
@@ -569,7 +597,7 @@ function generaTablero(valor){
     tblBody.appendChild(tr);
   }
  
-  // posiciona el <tbody> debajo del elemento <table>
+  // posiciona el &lt;tbody> debajo del elemento &lt;table>
   tabla.appendChild(tblBody);
 
   miCapa = document.getElementById('resultado');
@@ -591,16 +619,16 @@ function generaTablaLateral(valor){
     tabla2.setAttribute("id", "miTabla2");
     var tblBody2 = document.createElement("tbody");
 
-    for(var i=0; i<8; i++){
+    for(var i=0; i&lt;8; i++){
     	var tr=document.createElement("tr");
     	tr.setAttribute("id", "comprobarColores" +i);
 
-    	for(var j=0; j<2; j++){
+    	for(var j=0; j&lt;2; j++){
     		var tr2=document.createElement("tr");
     		tr2.setAttribute("id", "fil" +cont_filas);
 
         if(valor==4){
-      		for(var k=0; k<2; k++){
+      		for(var k=0; k&lt;2; k++){
       			var td2=document.createElement("td");
       			td2.setAttribute("id", "col" +k + "fil" +cont_filas);
       			var imagen=document.createElement("img");
@@ -614,7 +642,7 @@ function generaTablaLateral(valor){
       		}
         }else if(valor==5){
           if(cont){
-            for(var k=0; k<3; k++){
+            for(var k=0; k&lt;3; k++){
               var td2=document.createElement("td");
               td2.setAttribute("id", "col" +k + "fil" +cont_filas);
               var imagen=document.createElement("img");
@@ -628,7 +656,7 @@ function generaTablaLateral(valor){
             }
             cont=false;
           }else{
-            for(var k=0; k<2; k++){
+            for(var k=0; k&lt;2; k++){
               var td2=document.createElement("td");
               td2.setAttribute("id", "col" +k + "fil" +cont_filas);
               var imagen=document.createElement("img");
@@ -643,7 +671,7 @@ function generaTablaLateral(valor){
             cont=true;
           }
         }else{
-            for(var k=0; k<3; k++){
+            for(var k=0; k&lt;3; k++){
                 var td2=document.createElement("td");
                 td2.setAttribute("id", "col" +k + "fil" +cont_filas);
                 var imagen=document.createElement("img");
@@ -682,11 +710,11 @@ function generaBotonSel(){
   tabla3.setAttribute("id", "miTabla3");
 
 
-  for(var i=0; i<8; i++){
+  for(var i=0; i&lt;8; i++){
       var tr=document.createElement("tr");
       tr.setAttribute("id", "fila" +i);
 
-      for(var j=0; j<1; j++){
+      for(var j=0; j&lt;1; j++){
         var td=document.createElement("td");
         td.setAttribute("id", "columna" +i);
 
@@ -754,12 +782,12 @@ function generaCombinacion(valor){
   var tblBody = document.createElement("tbody");
  
   // Crea las celdas
-  for (var i = 0; i < 1; i++) {
+  for (var i = 0; i &lt; 1; i++) {
     // Crea las hileras de la tabla
     var tr = document.createElement("tr");
     tr.setAttribute("id", "fila1");
  
-    for (var j = 0; j < valor; j++) {
+    for (var j = 0; j &lt; valor; j++) {
       var td = document.createElement("td");
       td.setAttribute("id", "columna" +j);
       var imagen = document.createElement("img"); //Creamos la imagen con sus respectivas propiedades
@@ -794,7 +822,7 @@ function generaCombinacion(valor){
     tblBody.appendChild(tr);
   }
  
-  // posiciona el <tbody> debajo del elemento <table>
+  // posiciona el &lt;tbody> debajo del elemento &lt;table>
   tabla.appendChild(tblBody);
 
   miCapa = document.getElementById('combinacion');
@@ -817,12 +845,12 @@ function generaCombinacion(valor){
     var tblBody = document.createElement("tbody");
    
     // Crea las celdas
-    for (var i = 0; i < 1; i++) {
+    for (var i = 0; i &lt; 1; i++) {
       // Crea las hileras de la tabla
       var tr = document.createElement("tr");
       tr.setAttribute("id", "fila1");
    
-      for (var j = 0; j < valor; j++) {
+      for (var j = 0; j &lt; valor; j++) {
         var td = document.createElement("td");
         td.setAttribute("id", "columna" +j);
         var imagen = document.createElement("img"); //Creamos la imagen con sus respectivas propiedades
@@ -861,7 +889,7 @@ function generaCombinacion(valor){
       tblBody.appendChild(tr);
     }
    
-    // posiciona el <tbody> debajo del elemento <table>
+    // posiciona el &lt;tbody> debajo del elemento &lt;table>
     tabla.appendChild(tblBody);
 
     miCapa = document.getElementById('combinacion');
@@ -886,12 +914,12 @@ function generaCombinacion(valor){
     var tblBody = document.createElement("tbody");
    
     // Crea las celdas
-    for (var i = 0; i < 1; i++) {
+    for (var i = 0; i &lt; 1; i++) {
       // Crea las hileras de la tabla
       var tr = document.createElement("tr");
       tr.setAttribute("id", "fila1");
    
-      for (var j = 0; j < valor; j++) {
+      for (var j = 0; j &lt; valor; j++) {
         var td = document.createElement("td");
         td.setAttribute("id", "columna" +j);
         var imagen = document.createElement("img"); //Creamos la imagen con sus respectivas propiedades
@@ -934,7 +962,7 @@ function generaCombinacion(valor){
       tblBody.appendChild(tr);
     }
    
-    // posiciona el <tbody> debajo del elemento <table>
+    // posiciona el &lt;tbody> debajo del elemento &lt;table>
     tabla.appendChild(tblBody);
 
     miCapa = document.getElementById('combinacion');
@@ -1298,3 +1326,26 @@ function generaInstruccion9(){
 
    
 
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Global</h3><ul><li><a href="global.html#activar">activar</a></li><li><a href="global.html#Array">Array</a></li><li><a href="global.html#bajarVolumen">bajarVolumen</a></li><li><a href="global.html#comprobar">comprobar</a></li><li><a href="global.html#genera">genera</a></li><li><a href="global.html#generaBotonSel">generaBotonSel</a></li><li><a href="global.html#generaColores">generaColores</a></li><li><a href="global.html#generaCombinacion">generaCombinacion</a></li><li><a href="global.html#generaInstruccion1">generaInstruccion1</a></li><li><a href="global.html#generaInstruccion2">generaInstruccion2</a></li><li><a href="global.html#generaInstruccion3">generaInstruccion3</a></li><li><a href="global.html#generaInstruccion4">generaInstruccion4</a></li><li><a href="global.html#generaInstruccion5">generaInstruccion5</a></li><li><a href="global.html#generaInstruccion6">generaInstruccion6</a></li><li><a href="global.html#generaInstruccion7">generaInstruccion7</a></li><li><a href="global.html#generaInstruccion8">generaInstruccion8</a></li><li><a href="global.html#generaInstruccion9">generaInstruccion9</a></li><li><a href="global.html#generaInstrucciones">generaInstrucciones</a></li><li><a href="global.html#generaOpciones">generaOpciones</a></li><li><a href="global.html#generaPlay">generaPlay</a></li><li><a href="global.html#generaTablaLateral">generaTablaLateral</a></li><li><a href="global.html#generaTablero">generaTablero</a></li><li><a href="global.html#mostrarCombinacion">mostrarCombinacion</a></li><li><a href="global.html#nivelDificil">nivelDificil</a></li><li><a href="global.html#nivelFacil">nivelFacil</a></li><li><a href="global.html#nivelMedio">nivelMedio</a></li><li><a href="global.html#pausar">pausar</a></li><li><a href="global.html#playPause">playPause</a></li><li><a href="global.html#ponerBolas">ponerBolas</a></li><li><a href="global.html#refresh">refresh</a></li><li><a href="global.html#seleccionarColor">seleccionarColor</a></li><li><a href="global.html#setSrcFacil">setSrcFacil</a></li><li><a href="global.html#silenciar">silenciar</a></li><li><a href="global.html#subirVolumen">subirVolumen</a></li><li><a href="global.html#Variable">Variable</a></li><li><a href="global.html#volverInicio">volverInicio</a></li><li><a href="global.html#volverMenu">volverMenu</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-dev</a> on Thu Aug 21 2014 12:30:18 GMT+0200 (CEST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
