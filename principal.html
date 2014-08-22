@@ -13,152 +13,147 @@
 <body onload="genera(),generaBotonSel();" background="img/mastermind.jpg">
 
   <br>
+
   <div align="center">
-  	<font size="+6" color="FF0000">Juego Mastermind</font>
- 
-  <table  id="tablero">
-  	<tr id="region1">
-       <!--Fila 1: Contiene los circulos para hacer combinaciones-->
-       <td>
-            <div id="resultado"></div>
-       </td>
-       <td>
-            <div id="resultado2"></div>
-       </td>
-        <td>
-            <div id="resultado3"></div>
-       </td>
-    </tr>
-    
-    <tr id="region2">
-    	<!--Contiene un espacio-->
-        <td><br/></td>
-    </tr>
+      	<font size="+6" color="FF0000">Juego Mastermind</font>
+     
 
-    <tr id="regionOculta">
-        <td>
-            <!--<table id="tablaAleatoria">
-                <tr>
-                    <p>La combinación era:</p>
-                </tr>
-                <tr>
-                    <td><img src="img/circulo1.png"></td>
-                    <td><img src="img/circulo1.png"></td>
-                    <td><img src="img/circulo1.png"></td>
-                    <td><img src="img/circulo1.png"></td>
-                </tr>
-                <tr>
-                    <td><br></td>
-                </tr>
-            </table>-->
-            <p>La combinacion era:</p>
-            <div id="combinacion"></div>
-            <br>
-        </td>
-    </tr>
-    
-    <tr id="region3">
-    	<!--Contiene los colores-->
-        <td>
-        	<table id="panelColores4">
-            	<tr id="filaColores1" bgcolor="#888888">
-                    <td><img src="img/rojo.png" id="colores1" name="rojo" alt=""/></td>
-                    <td><img src="img/verde.png" id="colores2" name="verde" alt=""/></td>
-                    <td><img src="img/azul.png" id="colores3" name="azul" alt=""/></td>
-           	    </tr>
-                <tr id="filaColores2" bgcolor="#888888">
-                    <td><img src="img/amarillo.png" id="colores4" name="amarillo" alt=""/></td>
-                    <td><img src="img/naranja.png" id="colores5" name="naranja" alt=""/></td>
-                    <td><img src="img/morado.png" id="colores6" name="morado" alt=""/></td>
-                </tr>
-            </table>
+      <table  id="tablero">
+      	<tr id="region1">
+           <!--Fila 1: Contiene los circulos para hacer combinaciones-->
+           <td>
+                <div id="resultado"></div>
+           </td>
+           <td>
+                <div id="resultado2"></div>
+           </td>
+            <td>
+                <div id="resultado3"></div>
+           </td>
+        </tr>
+        
+        <tr id="region2">
+        	<!--Contiene un espacio-->
+            <td><br/></td>
+        </tr>
 
-            <table id="panelColores5">
-                <tr id="filaColores1" bgcolor="#888888">
-                    <td><img src="img/rojo.png" id="colores1" name="rojo" alt=""/></td>
-                    <td><img src="img/verde.png" id="colores2" name="verde" alt=""/></td>
-                    <td><img src="img/azul.png" id="colores3" name="azul" alt=""/></td>
-                    <td><img src="img/azulClaro.png" id="colores4" name="azulClaro" alt=""></td>
-                </tr>
-                <tr id="filaColores2" bgcolor="#888888">
-                    <td><img src="img/amarillo.png" id="colores5" name="amarillo" alt=""/></td>
-                    <td><img src="img/naranja.png" id="colores6" name="naranja" alt=""/></td>
-                    <td><img src="img/morado.png" id="colores7" name="morado" alt=""/></td>
-                    <td><img src="img/moradoClaro.png" id="colores8" name="moradoClaro" alt=""></td>
-                </tr>
-            </table>
+        <tr id="regionOculta">
+            <td>
+                <p>La combinacion era:</p>
+                <div id="combinacion"></div>
+                <br>
+            </td>
+        </tr>
+        
+        <tr id="region3">
+        	<!--Contiene los colores-->
+            <td>
+            	<table id="panelColores4">
+                	<tr id="filaColores1" bgcolor="#888888">
+                        <td><img src="img/rojo.png" id="colores1" name="rojo" alt=""/></td>
+                        <td><img src="img/verde.png" id="colores2" name="verde" alt=""/></td>
+                        <td><img src="img/azul.png" id="colores3" name="azul" alt=""/></td>
+               	    </tr>
+                    <tr id="filaColores2" bgcolor="#888888">
+                        <td><img src="img/amarillo.png" id="colores4" name="amarillo" alt=""/></td>
+                        <td><img src="img/naranja.png" id="colores5" name="naranja" alt=""/></td>
+                        <td><img src="img/morado.png" id="colores6" name="morado" alt=""/></td>
+                    </tr>
+                </table>
 
-            <table id="panelColores6">
-                <tr id="filaColores1" bgcolor="#888888">
-                    <td><img src="img/rojo.png" id="colores1" name="rojo" alt=""/></td>
-                    <td><img src="img/verde.png" id="colores2" name="verde" alt=""/></td>
-                    <td><img src="img/azul.png" id="colores3" name="azul" alt=""/></td>
-                    <td><img src="img/azulClaro.png" id="colores4" name="azulClaro" alt=""></td>
-                    <td><img src="img/verdeOscuro.png" id="colores5" name="verdeOscuro" alt=""></td>
-                </tr>
-                <tr id="filaColores2" bgcolor="#888888">
-                    <td><img src="img/amarillo.png" id="colores6" name="amarillo" alt=""/></td>
-                    <td><img src="img/naranja.png" id="colores7" name="naranja" alt=""/></td>
-                    <td><img src="img/morado.png" id="colores8" name="morado" alt=""/></td>
-                    <td><img src="img/moradoClaro.png" id="colores9" name="moradoClaro" alt=""></td>
-                    <td><img src="img/gris.png" id="colores10" name="gris" alt=""></td>
-                </tr>
-            </table>
-            <!--<div id="resultadoColores"></div>-->
-        </td>
-    </tr>
+                <table id="panelColores5">
+                    <tr id="filaColores1" bgcolor="#888888">
+                        <td><img src="img/rojo.png" id="colores1" name="rojo" alt=""/></td>
+                        <td><img src="img/verde.png" id="colores2" name="verde" alt=""/></td>
+                        <td><img src="img/azul.png" id="colores3" name="azul" alt=""/></td>
+                        <td><img src="img/azulClaro.png" id="colores4" name="azulClaro" alt=""></td>
+                    </tr>
+                    <tr id="filaColores2" bgcolor="#888888">
+                        <td><img src="img/amarillo.png" id="colores5" name="amarillo" alt=""/></td>
+                        <td><img src="img/naranja.png" id="colores6" name="naranja" alt=""/></td>
+                        <td><img src="img/morado.png" id="colores7" name="morado" alt=""/></td>
+                        <td><img src="img/moradoClaro.png" id="colores8" name="moradoClaro" alt=""></td>
+                    </tr>
+                </table>
 
-    <!--<script>
-        $(document).ready(function(){
-            $('img').draggable();
-        });
-    </script>-->
-    
-    <tr id="region4">
-    	<!--Contiene un espacio-->
-        <td><br/></td>
+                <table id="panelColores6">
+                    <tr id="filaColores1" bgcolor="#888888">
+                        <td><img src="img/rojo.png" id="colores1" name="rojo" alt=""/></td>
+                        <td><img src="img/verde.png" id="colores2" name="verde" alt=""/></td>
+                        <td><img src="img/azul.png" id="colores3" name="azul" alt=""/></td>
+                        <td><img src="img/azulClaro.png" id="colores4" name="azulClaro" alt=""></td>
+                        <td><img src="img/verdeOscuro.png" id="colores5" name="verdeOscuro" alt=""></td>
+                    </tr>
+                    <tr id="filaColores2" bgcolor="#888888">
+                        <td><img src="img/amarillo.png" id="colores6" name="amarillo" alt=""/></td>
+                        <td><img src="img/naranja.png" id="colores7" name="naranja" alt=""/></td>
+                        <td><img src="img/morado.png" id="colores8" name="morado" alt=""/></td>
+                        <td><img src="img/moradoClaro.png" id="colores9" name="moradoClaro" alt=""></td>
+                        <td><img src="img/gris.png" id="colores10" name="gris" alt=""></td>
+                    </tr>
+                </table>
+                <!--<div id="resultadoColores"></div>-->
+            </td>
+        </tr>
 
-    <tr id="region5">
-        <!--Contiene un formulario con grupo de botones para elegir la dificultad-->
-        <td>
-                <!--<form name=miformulario>
-                    <input type="radio" name=myradio value="1" checked>Facil
-                    <input type="radio" name=myradio value="2">Medio
-                    <input type="radio" name=myradio value="3" >Dificil<br><br>
-                    <input type="Button" name="" value="Cambiar dificultad" onclick="cambiarDificultad()"> 
-                </form>-->
-                <input type="button" name="botonMenu" value="Menu principal" onclick="volverInicio()"> 
-        </td>
-    </tr>
+        <!--<script>
+            $(document).ready(function(){
+                $('img').draggable();
+            });
+        </script>-->
+        
+        <tr id="region4">
+        	<!--Contiene un espacio-->
+            <td><br/></td>
 
-    <tr id="region6">
-        <!--Contiene un espacio-->
-        <td><br/></td>
-    </tr>
-    
-    <tr id="region7">
-    	<!--Contiene los botones-->
-        <td>
-        	<table>
-                <!--<tr>
-                    <td><input type="button" id="botonSel" value="Seleccionar Color" name="color" onclick="seleccionarColor();"></td>
-                </tr>-->
-                <tr>
-                    <td><input type="button"  id="boton1" value="Comprobar" name="comprobar" onclick="comprobar()"/></td>
-                    <td><input type="button" id="boton2" value="Reiniciar" name="reiniciar" onclick="refresh()"/></td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <tr id="region8">
-        <td>
-            <input type="button" onclick="mostrarCombinacion();" id="boton3" value="Mostrar" name="mostrar"/>
-        </td>
-    </tr>
-    
+        <tr id="region5">
+            <!--Contiene un formulario con grupo de botones para elegir la dificultad-->
+            <td>
+                    <!--<form name=miformulario>
+                        <input type="radio" name=myradio value="1" checked>Facil
+                        <input type="radio" name=myradio value="2">Medio
+                        <input type="radio" name=myradio value="3" >Dificil<br><br>
+                        <input type="Button" name="" value="Cambiar dificultad" onclick="cambiarDificultad()"> 
+                    </form>-->
+                    <input type="button" id="boton0" name="botonMenu" value="Menu principal" onclick="volverInicio()"> 
+            </td>
+        </tr>
+
+        <tr id="region6">
+            <!--Contiene un espacio-->
+            <td><br/></td>
+        </tr>
+        
+        <tr id="region7">
+        	<!--Contiene los botones-->
+            <td>
+            	<table>
+                    <!--<tr>
+                        <td><input type="button" id="botonSel" value="Seleccionar Color" name="color" onclick="seleccionarColor();"></td>
+                    </tr>-->
+                    <tr>
+                        <td><input type="button"  id="boton1" value="Comprobar" name="comprobar" onclick="comprobar()"/></td>
+                        <td><input type="button" id="boton2" value="Reiniciar" name="reiniciar" onclick="refresh()"/></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr id="region8">
+            <td>
+                <input type="button" onclick="mostrarCombinacion();" id="boton3" value="Mostrar" name="mostrar"/>
+            </td>
+        </tr>
+        
+      
+      </table>
   
-  </table>
-  
+  </div>
+
+  <div id="victoria">
+    <img src="img/logo2.png" class="imagenVictoriaDerrota">
+    <br>
+    <input type="button" name="botonMenu" value="Menu principal" onclick="volverInicio()"> 
+    <input type="button" value="Reiniciar nivel" name="reiniciar" onclick="refresh()"/>
   </div>
 
   <br><br>

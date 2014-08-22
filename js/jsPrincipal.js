@@ -158,6 +158,8 @@ var vector6=[-1, -1, -1, -1, -1, -1];
  */
 var cont_pos=0; 
 
+var primeraVez=true;
+
 /**
 * Fija el color que el usuario desea colocar en una posición concreta del tablero de juego, sobre la que se está iterando.
 * 
@@ -222,29 +224,34 @@ function comprobar(){
       }
       //alert(negras);
 
-      blancas=0;
-      for(var j=iter2; j<iter2+4; j++){
-        if(vector1[j%4]==-1){
-          for(var k=0; k<4 && !encontrado; k++){
-            if(vector2[k]==-1){
-              if(document.images[j].name==document.getElementById('secreto' +k).name){
-                blancas++;
-                vector1[j%4]=j%4;
-                vector2[k]=k;
-                encontrado=true;
+      if(negras==4){
+        hasGanado();
+      }else{
+
+        blancas=0;
+        for(var j=iter2; j<iter2+4; j++){
+          if(vector1[j%4]==-1){
+            for(var k=0; k<4 && !encontrado; k++){
+              if(vector2[k]==-1){
+                if(document.images[j].name==document.getElementById('secreto' +k).name){
+                  blancas++;
+                  vector1[j%4]=j%4;
+                  vector2[k]=k;
+                  encontrado=true;
+                }
               }
             }
+            encontrado=false;
           }
-          encontrado=false;
         }
+        
+        //alert(blancas);
+        ponerBolas(negras, blancas);
+        vector1=[-1, -1, -1, -1];
+        vector2=[-1, -1, -1, -1];
+        iter=iter+4;
+        iter2=iter2+4;
       }
-      
-      //alert(blancas);
-      ponerBolas(negras, blancas);
-      vector1=[-1, -1, -1, -1];
-      vector2=[-1, -1, -1, -1];
-      iter=iter+4;
-      iter2=iter2+4;
     }else if(numColumnas==5){
       negras=0;
       for(var i=iter; i<iter+5; i++){
@@ -319,7 +326,7 @@ function comprobar(){
   
 
 
-  if(contador==0){
+  if(contador==0 && !primeraVez){
     if(numColumnas==4){
       obligarComprobar=0;
       document.getElementById('botonSel' +siguiente).setAttribute('style','visibility:visible');
@@ -393,6 +400,7 @@ function setSrcFacil(){
 
       if(numColumnas==4){
         if(i%6==0){
+          primeraVez=true;
         	x[j].src="img/circuloRojo.png";
           x[j].setAttribute("name", "rojo");
         }else if(i%6==1){
@@ -1294,6 +1302,14 @@ function generaInstruccion9(){
   document.getElementById('flechas6').style.display='none';
   document.getElementById('flechas8').style.display='none';
   document.getElementById('flechas7').style.display='none';
+}
+
+function hasGanado(){
+  document.getElementById('victoria').style.display='block';
+  document.getElementById('boton0').disabled=true;
+  document.getElementById('boton1').disabled=true;
+  document.getElementById('boton2').disabled=true;
+  document.getElementById('boton3').disabled=true;
 }
 
    
