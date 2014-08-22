@@ -400,7 +400,6 @@ function setSrcFacil(){
 
       if(numColumnas==4){
         if(i%6==0){
-          primeraVez=true;
         	x[j].src="img/circuloRojo.png";
           x[j].setAttribute("name", "rojo");
         }else if(i%6==1){
@@ -419,6 +418,7 @@ function setSrcFacil(){
         	x[j].src="img/circuloMorado.png";
           x[j].setAttribute("name", "morado");
         }
+        primeraVez=false;
       }else if(numColumnas==5){
         if(i%8==0){
           x[j].src="img/circuloRojo.png";
