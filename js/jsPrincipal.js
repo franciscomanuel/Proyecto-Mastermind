@@ -158,7 +158,19 @@ var vector6=[-1, -1, -1, -1, -1, -1];
  */
 var cont_pos=0; 
 
+/**
+ * @var {Boolean}
+ * Variable global que controla que no desaparezca el boton de "seleccionarColor" si se pulsa antes de insertar un color en la fila.
+ */
 var primeraVez=true;
+
+/**
+ * @var {Boolean}
+ * Variable global que impide que se ejecute la función "comprobar()" si no se ha insertado ningún color en la línea del tablero.
+ */
+var primeraVez2=true;
+
+var cuentaLineas=0;
 
 /**
 * Fija el color que el usuario desea colocar en una posición concreta del tablero de juego, sobre la que se está iterando.
@@ -178,6 +190,7 @@ function seleccionarColor(){
 
   if(numColumnas==4){
     if(contador==4){
+      cuentaLineas++;
       obligarComprobar=1;
       contador=0;
       anterior=siguiente;
@@ -185,6 +198,7 @@ function seleccionarColor(){
     }
   }else if(numColumnas==5){
     if(contador==5){
+      cuentaLineas++;
       obligarComprobar=1;
       contador=0;
       anterior=siguiente;
@@ -192,6 +206,7 @@ function seleccionarColor(){
     }
   }else{
     if(contador==6){
+      cuentaLineas++;
       obligarComprobar=1;
       contador=0;
       anterior=siguiente;
@@ -212,7 +227,7 @@ function comprobar(){
   var tabla = document.getElementById('miTabla');
   var numColumnas = tabla.rows[0].cells.length;
 
-  if(contador==0){
+  if(contador==0 && !primeraVez2){
     if(numColumnas==4){
       negras=0;
       for(var i=iter; i<iter+4; i++){
@@ -226,7 +241,7 @@ function comprobar(){
 
       if(negras==4){
         hasGanado();
-      }else{
+      }else if(cuentaLineas<=7){
 
         blancas=0;
         for(var j=iter2; j<iter2+4; j++){
@@ -251,6 +266,9 @@ function comprobar(){
         vector2=[-1, -1, -1, -1];
         iter=iter+4;
         iter2=iter2+4;
+        primeraVez2=true;
+      }else{
+        hasPerdido();
       }
     }else if(numColumnas==5){
       negras=0;
@@ -263,29 +281,37 @@ function comprobar(){
       }
       //alert(negras);
 
-      blancas=0;
-      for(var j=iter2; j<iter2+5; j++){
-        if(vector3[j%5]==-1){
-          for(var k=0; k<5 && !encontrado; k++){
-            if(vector4[k]==-1){
-              if(document.images[j].name==document.getElementById('secreto' +k).name){
-                blancas++;
-                vector3[j%5]=j%5;
-                vector4[k]=k;
-                encontrado=true;
+      if(negras==5){
+        hasGanado();
+      }else if(cuentaLineas<=7){
+
+        blancas=0;
+        for(var j=iter2; j<iter2+5; j++){
+          if(vector3[j%5]==-1){
+            for(var k=0; k<5 && !encontrado; k++){
+              if(vector4[k]==-1){
+                if(document.images[j].name==document.getElementById('secreto' +k).name){
+                  blancas++;
+                  vector3[j%5]=j%5;
+                  vector4[k]=k;
+                  encontrado=true;
+                }
               }
             }
+            encontrado=false;
           }
-          encontrado=false;
         }
+        
+        //alert(blancas);
+        ponerBolas(negras, blancas);
+        vector3=[-1, -1, -1, -1, -1];
+        vector4=[-1, -1, -1, -1, -1];
+        iter=iter+5;
+        iter2=iter2+5;
+        primeraVez2=true;
+      }else{
+        hasPerdido();
       }
-      
-      //alert(blancas);
-      ponerBolas(negras, blancas);
-      vector3=[-1, -1, -1, -1, -1];
-      vector4=[-1, -1, -1, -1, -1];
-      iter=iter+5;
-      iter2=iter2+5;
     }else{
       negras=0;
       for(var i=iter; i<iter+6; i++){
@@ -297,29 +323,37 @@ function comprobar(){
       }
       //alert(negras);
 
-      blancas=0;
-      for(var j=iter2; j<iter2+6; j++){
-        if(vector5[j%6]==-1){
-          for(var k=0; k<6 && !encontrado; k++){
-            if(vector6[k]==-1){
-              if(document.images[j].name==document.getElementById('secreto' +k).name){
-                blancas++;
-                vector5[j%6]=j%6;
-                vector6[k]=k;
-                encontrado=true;
+      if(negras==6){
+        hasGanado();
+      }else if(cuentaLineas<=7){
+
+        blancas=0;
+        for(var j=iter2; j<iter2+6; j++){
+          if(vector5[j%6]==-1){
+            for(var k=0; k<6 && !encontrado; k++){
+              if(vector6[k]==-1){
+                if(document.images[j].name==document.getElementById('secreto' +k).name){
+                  blancas++;
+                  vector5[j%6]=j%6;
+                  vector6[k]=k;
+                  encontrado=true;
+                }
               }
             }
+            encontrado=false;
           }
-          encontrado=false;
         }
+        
+        //alert(blancas);
+        ponerBolas(negras, blancas);
+        vector5=[-1, -1, -1, -1, -1, -1];
+        vector6=[-1, -1, -1, -1, -1, -1];
+        iter=iter+6;
+        iter2=iter2+6;
+        primeraVez2=true;
+      }else{
+        hasPerdido();
       }
-      
-      //alert(blancas);
-      ponerBolas(negras, blancas);
-      vector5=[-1, -1, -1, -1, -1, -1];
-      vector6=[-1, -1, -1, -1, -1, -1];
-      iter=iter+6;
-      iter2=iter2+6;
     }
 
   }
@@ -379,6 +413,16 @@ function ponerBolas(bolas_negras, bolas_bancas){
     }
   }
 
+  if(bolas_negras==0 && bolas_bancas==0){
+    if(numColumnas==4){
+      cont_pos+=4;
+    }else if(numColumnas==5){
+      cont_pos+=5;
+    }else{
+      cont_pos+=6;
+    }
+  }
+
 }
 
 /**
@@ -419,6 +463,7 @@ function setSrcFacil(){
           x[j].setAttribute("name", "morado");
         }
         primeraVez=false;
+        primeraVez2=false;
       }else if(numColumnas==5){
         if(i%8==0){
           x[j].src="img/circuloRojo.png";
@@ -445,6 +490,8 @@ function setSrcFacil(){
           x[j].src="img/circuloMoradoClaro.png";
           x[j].setAttribute("name", "moradoClaro");
         }
+        primeraVez=false;
+        primeraVez2=false;
       }else if(numColumnas==6){
         if(i%10==0){
           x[j].src="img/circuloRojo.png";
@@ -477,6 +524,8 @@ function setSrcFacil(){
           x[j].src="img/circuloGris.png";
           x[j].setAttribute("name", "gris");
         }
+        primeraVez=false;
+        primeraVez2=false;
       }
 
         i=i+1;
@@ -1310,6 +1359,17 @@ function hasGanado(){
   document.getElementById('boton1').disabled=true;
   document.getElementById('boton2').disabled=true;
   document.getElementById('boton3').disabled=true;
+  document.getElementById('tablero').style.display='none';
+}
+
+function hasPerdido(){
+  document.getElementById('derrota').style.display='block';
+  document.getElementById('boton0').disabled=true;
+  document.getElementById('boton1').disabled=true;
+  document.getElementById('boton2').disabled=true;
+  document.getElementById('boton3').disabled=true;
+  document.getElementById('tablero').style.display='none';
+  document.getElementById('regionOculta').style.display='block';
 }
 
    

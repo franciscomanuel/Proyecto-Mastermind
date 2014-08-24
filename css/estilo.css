@@ -121,6 +121,7 @@ h1{
 #flecha_izquierda, #flecha_derecha{
 	width: 300px;
 	height: 300px;
+	/*margin-left: 28%;*/
 }
 
 #flecha_derecha{
@@ -150,9 +151,11 @@ section#f_izquierda, #f_derecha{
 }
 
 #instrucciones1, #instrucciones2, #instrucciones3, #instrucciones4, #instrucciones5, #instrucciones6, #instrucciones7, #instrucciones8, #instrucciones9{
-	background: white;
+	/*background: white;*/
+	color: white;
+	font-size: 130%;
 	width: 650px;
-	border: 1px solid grey;
+	/*border: 1px solid grey;*/
 	margin-right: 300px;
 	margin-left: 300px;
 	display: block;
@@ -199,20 +202,36 @@ section#f_izquierda, #f_derecha{
 }
 
 #victoria{
-	position: absolute;
+	/*position: absolute;*/
 	display: none;
-	border: 1px solid red;
+	/*border: 1px solid red;*/
 	width: 500px;
 	height: 500px;
 	padding: 1em 3em;
  	margin: 1em 25%;
- 	background-color: blue;
- 	top: 50px;
+ 	/*background-color: blue;*/
+ 	/*top: 50px;*/
+}
+
+#derrota{
+	/*position: absolute;*/
+	display: none;
+	/*border: 1px solid red;*/
+	width: 500px;
+	height: 500px;
+	padding: 1em 3em;
+ 	margin: 1em 25%;
+ 	/*background-color: yellow;*/
+ 	/*top: 50px;*/
 }
 
 .imagenVictoriaDerrota{
-	width: 100%;
-	height: 60%;
+	width: 90%;
+	height: 70%;
+}
+
+.letras{
+	margin: -30%;
 }
 
 
