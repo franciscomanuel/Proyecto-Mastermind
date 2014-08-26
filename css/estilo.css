@@ -7,21 +7,25 @@ body{
 }
 
 footer{
-	background: url(../img/footer.jpeg) no-repeat center center fixed;
+	/*background: url(../img/footer.jpeg) no-repeat center center fixed;
     left: 0;
-    position: absolute;
+    position: absolute;*/
+    margin-bottom: 10%;
   	width: 100%;
   	height: 20%;
 }
 
-footer #seccion { 
+footer .seccion { 
+	color: white;
+	font-size: 130%;
+	font-weight: bold;
 	width: 400px; 
  	float:left; 
  	text-align: center;
 } 
 
 #tablero{
-	background-color: #888888;
+	background-color: #00BFFF;
 	border-left: 6px #222222 solid;
 	border-top: 8px #222222 solid;
 	border-right: 6px #222222 solid;
@@ -30,7 +34,7 @@ footer #seccion {
 }
 
 #region1{
-	background-color: #FF0000;
+	background-color: #9400D3;
 }
 
 #resultado{
@@ -172,8 +176,8 @@ section#f_izquierda, #f_derecha{
 }
 
 #instrucciones8 img{
-	width: 150px;
-	height: 200px;
+	width: 300px;
+	height: 100px;
 }
 
 
@@ -188,7 +192,7 @@ section#f_izquierda, #f_derecha{
 
 #contenedor3 span{
 	font-weight:bold;
-	margin-right: 25%;
+	margin-right: 22%;
 }
 
 #niveles img{
@@ -196,7 +200,7 @@ section#f_izquierda, #f_derecha{
 }
 
 #letraNiveles{
-	color: green;
+	color: white;
 	font: 150% sans-serif;
 
 }
@@ -232,6 +236,13 @@ section#f_izquierda, #f_derecha{
 
 .letras{
 	margin: -30%;
+}
+
+.botonesFinales{
+	width: 40%;
+	height: 30%;
+	margin-top: -3%;
+	margin-left: 6%;
 }
 
 

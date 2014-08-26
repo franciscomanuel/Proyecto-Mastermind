@@ -10,12 +10,12 @@
     
 </head>
 
-<body onload="genera(),generaBotonSel();" background="img/mastermind.jpg">
+<body onload="genera(),generaBotonSel();" background="img/azul7.jpg">
 
   <br>
 
   <div align="center">
-      	<font size="+6" color="FF0000">Juego Mastermind</font>
+      	<font size="+6" color="FFFFFF">Juego Mastermind</font>
      
 
       <table  id="tablero">
@@ -49,12 +49,12 @@
         	<!--Contiene los colores-->
             <td>
             	<table id="panelColores4">
-                	<tr id="filaColores1" bgcolor="#888888">
+                	<tr id="filaColores1" bgcolor="#00BFFF">
                         <td><img src="img/rojo.png" id="colores1" name="rojo" alt=""/></td>
                         <td><img src="img/verde.png" id="colores2" name="verde" alt=""/></td>
                         <td><img src="img/azul.png" id="colores3" name="azul" alt=""/></td>
                	    </tr>
-                    <tr id="filaColores2" bgcolor="#888888">
+                    <tr id="filaColores2" bgcolor="#00BFFF">
                         <td><img src="img/amarillo.png" id="colores4" name="amarillo" alt=""/></td>
                         <td><img src="img/naranja.png" id="colores5" name="naranja" alt=""/></td>
                         <td><img src="img/morado.png" id="colores6" name="morado" alt=""/></td>
@@ -62,13 +62,13 @@
                 </table>
 
                 <table id="panelColores5">
-                    <tr id="filaColores1" bgcolor="#888888">
+                    <tr id="filaColores1" bgcolor="#00BFFF">
                         <td><img src="img/rojo.png" id="colores1" name="rojo" alt=""/></td>
                         <td><img src="img/verde.png" id="colores2" name="verde" alt=""/></td>
                         <td><img src="img/azul.png" id="colores3" name="azul" alt=""/></td>
                         <td><img src="img/azulClaro.png" id="colores4" name="azulClaro" alt=""></td>
                     </tr>
-                    <tr id="filaColores2" bgcolor="#888888">
+                    <tr id="filaColores2" bgcolor="#00BFFF">
                         <td><img src="img/amarillo.png" id="colores5" name="amarillo" alt=""/></td>
                         <td><img src="img/naranja.png" id="colores6" name="naranja" alt=""/></td>
                         <td><img src="img/morado.png" id="colores7" name="morado" alt=""/></td>
@@ -77,14 +77,14 @@
                 </table>
 
                 <table id="panelColores6">
-                    <tr id="filaColores1" bgcolor="#888888">
+                    <tr id="filaColores1" bgcolor="#00BFFF">
                         <td><img src="img/rojo.png" id="colores1" name="rojo" alt=""/></td>
                         <td><img src="img/verde.png" id="colores2" name="verde" alt=""/></td>
                         <td><img src="img/azul.png" id="colores3" name="azul" alt=""/></td>
                         <td><img src="img/azulClaro.png" id="colores4" name="azulClaro" alt=""></td>
                         <td><img src="img/verdeOscuro.png" id="colores5" name="verdeOscuro" alt=""></td>
                     </tr>
-                    <tr id="filaColores2" bgcolor="#888888">
+                    <tr id="filaColores2" bgcolor="#00BFFF">
                         <td><img src="img/amarillo.png" id="colores6" name="amarillo" alt=""/></td>
                         <td><img src="img/naranja.png" id="colores7" name="naranja" alt=""/></td>
                         <td><img src="img/morado.png" id="colores8" name="morado" alt=""/></td>
@@ -153,8 +153,9 @@
     <img src="img/garfield.gif" class="imagenVictoriaDerrota">
     <img src="img/hasGanado1.png" class="letras">
     <br>
-    <input type="button" name="botonMenu" value="Menu principal" onclick="volverInicio()"> 
-    <input type="button" value="Reiniciar nivel" name="reiniciar" onclick="refresh()"/>
+    <!--<input type="button" name="botonMenu" value="Menu principal" onclick="volverInicio()"> -->
+    <img src="img/reiniciar.png" class="botonesFinales" onclick="refresh()">
+    <img src="img/menu.png" class="botonesFinales" onclick="volverInicio()">
   </div>
 
   <div id="derrota">
@@ -173,14 +174,33 @@
   </div>
 
   <br><br>
+
+  <footer>
+     <div class="seccion">
+        <p> Autor: <span>Francisco Manuel Sanchez Ramos </span></p>
+        <p>Email : <span>fran319@correo.ugr.es</span></p>
+    </div>
+
+     <div class="seccion">
+        <br>
+        <a href="https://twitter.com/fran_manu90"><img src="img/twitter2.jpg" name="twitter2"/></a>
+    </div>
+
+    <div class="seccion">
+        <p><a href="https://twitter.com/fran_manu90" class="twitter-follow-button" data-show-count="false" data-lang="es" data-size="large">Seguir a @fran_manu90</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></p>
+        <p></p>
+    </div>
+
+  </footer>
   
 </body>
 
-<footer>
-    <!--<section>
+<!--<footer>
+    <section>
         <p> Autor: <span>Francisco Manuel Sanchez Ramos </span></p>
         <p>Email : <span>fran319@correo.ugr.es</span></p>
-    </section>-->
+    </section>
 
     <div id="seccion">
         <p> Autor: <span>Francisco Manuel Sanchez Ramos </span></p>
@@ -198,6 +218,6 @@
         <p></p>
     </div>
 
-</footer>
+</footer>-->
 
 </html>
