@@ -4,7 +4,15 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Juego MasterMind</title>
     <script type="text/javascript" src="js/jsPrincipal.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/estilo.css">-->
+
+    <script type="text/javascript">
+    	  if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1){
+    		 document.write("<link rel='stylesheet' type='text/css' href='css/estilo.css'>"); 
+    	}else{
+    		document.write("<link rel='stylesheet' type='text/css' href='css/estilo2.css'>");
+    	}
+	</script> 
 
     <!--Sonido menu--> 
     <!--<embed src="audios/mario.mp3" autostart="true" loop="true"

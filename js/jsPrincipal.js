@@ -565,7 +565,7 @@ function nivelDificil(){
 * 
 */
 function volverInicio(){
-	window.location="menu.html#play";
+	window.location="menu.html#";
   j=0;
 }
 

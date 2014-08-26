@@ -1,0 +1,266 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	/*background: url(../img/fondo5.jpeg) no-repeat center;*/
+	/*background: url(../img/mastermind.jpg);*/
+}
+
+footer{
+	background: url(../img/footer.jpeg) no-repeat center center fixed;
+    left: 0;
+    position: absolute;
+  	width: 100%;
+  	height: 20%;
+}
+
+footer #seccion { 
+	width: 400px; 
+ 	float:left; 
+ 	text-align: center;
+} 
+
+#tablero{
+	background-color: #888888;
+	border-left: 6px #222222 solid;
+	border-top: 8px #222222 solid;
+	border-right: 6px #222222 solid;
+	border-bottom: 8px #222222 solid;
+	width: 20%;
+}
+
+#region1{
+	background-color: #FF0000;
+}
+
+#resultado{
+	margin: auto;
+}
+
+#colores{
+	padding-left: 25%;
+}
+
+#filaColores1 img{
+	width: 36px;
+	height: 36px;
+}
+
+#filaColores2 img{
+	width: 36px;
+	height: 36px;
+}
+
+#resultado3 button{
+	height: 100px;
+}
+
+/*#botonSel{
+	height: 36px;
+}*/
+
+#miTabla3 tr{
+	height: 38px;
+}
+
+#regionOculta, #panelColores4, #panelColores5, #panelColores6{
+	display: none;
+}
+
+#contenedor2, #contenedor3, #contenedor4{
+	display: none;
+}
+
+#tablaAleatoria img{
+	width: 36px;
+	height: 36px;
+}
+
+.botones{
+	width: 220px;
+	height: 220px;
+	padding-top: 70px;
+}
+
+#botonJugar{
+	width: 350px;
+	height: 350px;
+}
+
+section#instrucciones, #jugar, #opciones{
+	margin-left: 110px;
+	float: left;
+	/*border: 1px solid grey;*/
+}
+
+section{
+	float: left;
+}
+
+.menuNiveles{
+	margin-left: 7%;
+	float: left;
+	width: 300px;
+}
+
+.menuSonido{
+	margin-left: 50px;
+	float: left;
+	width: 300px;
+}
+
+.logo{
+	width: 50%;
+	height: 5%;
+}
+
+h1{
+	text-align: center;
+}
+
+#flecha_izquierda, #flecha_derecha{
+	width: 300px;
+	height: 300px;
+	/*margin-left: 28%;*/
+	padding-left: 30%;
+}
+
+#flecha_derecha{
+	padding-top: 58px;
+}
+
+#flechas, #flechas2, #flechas3, #flechas4, #flechas5, #flechas6, #flechas7, #flechas8, #flechas9{
+	width: 100%;
+	padding-top: 23%;
+}
+
+#flechas10{
+	padding-top: 25%;
+}
+
+#flechas2, #flechas3, #flechas4, #flechas5, #flechas6, #flechas7, #flechas8, #flechas9{
+	display: none;
+}
+
+#contenedor3 div{
+	position: absolute;
+}
+
+section#f_izquierda, #f_derecha{
+	float: left;
+	width: 600px;
+}
+
+#instrucciones1, #instrucciones2, #instrucciones3, #instrucciones4, #instrucciones5, #instrucciones6, #instrucciones7, #instrucciones8, #instrucciones9{
+	/*background: white;*/
+	color: white;
+	font-size: 100%;
+	width: 650px;
+	/*border: 1px solid grey;*/
+	margin-right: 300px;
+	margin-left: 300px;
+	display: block;
+}
+
+#instrucciones2, #instrucciones3, #instrucciones4, #instrucciones5, #instrucciones6, #instrucciones7, #instrucciones8, #instrucciones9{
+	display: none;
+}
+
+#instrucciones3 img{
+	margin-right: 50px;
+	width: 150px;
+	height: 200px;
+}
+
+#instrucciones8 img{
+	margin-left: 35%;
+	width: 150px;
+	height: 200px;
+}
+
+#instrucciones7 img{
+	margin-left: 25%;
+}
+
+
+#contenedor3 p{
+	font-weight:bold;
+}
+
+#contenedor3 h2{
+	font-weight:bold;
+	text-decoration: underline;
+}
+
+#contenedor3 span{
+	font-weight:bold;
+	margin-right: 25%;
+}
+
+#niveles img{
+	border: 10px outset #cccccc;
+}
+
+#letraNiveles{
+	text-align: center;
+	font-weight:bold;
+	color: green;
+	font: 150% sans-serif;
+
+}
+
+#victoria{
+	/*position: absolute;*/
+	display: none;
+	/*border: 1px solid red;*/
+	width: 500px;
+	height: 500px;
+	padding: 1em 3em;
+ 	margin: 1em 25%;
+ 	/*background-color: blue;*/
+ 	/*top: 50px;*/
+}
+
+#derrota{
+	/*position: absolute;*/
+	display: none;
+	/*border: 1px solid red;*/
+	width: 500px;
+	height: 500px;
+	padding: 1em 3em;
+ 	margin: 1em 25%;
+ 	/*background-color: yellow;*/
+ 	/*top: 50px;*/
+}
+
+.imagenVictoriaDerrota{
+	width: 90%;
+	height: 70%;
+}
+
+.letras{
+	margin: -30%;
+}
+
+
+/*img:hover {
+  border: 1px solid red;
+}*/
+
+/*img:hover {
+	/*border: 2px solid white;*/
+	/*margin: 0;
+	padding: 0;
+	border-radius: 800px;
+	overflow: hidden;
+}*/
+
+
+
+
+
+
+
+
+
+
