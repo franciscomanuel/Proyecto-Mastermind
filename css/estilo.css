@@ -133,7 +133,7 @@ h1{
 }
 
 #flechas, #flechas2, #flechas3, #flechas4, #flechas5, #flechas6, #flechas7, #flechas8, #flechas9{
-	width: 100%;
+	/*width: 100%;*/
 	padding-top: 23%;
 }
 

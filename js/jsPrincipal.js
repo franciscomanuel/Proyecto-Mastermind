@@ -170,6 +170,11 @@ var primeraVez=true;
  */
 var primeraVez2=true;
 
+/**
+ * @var {Integer}
+ * Variable global que cuenta la línea del tablero sobre la que se está iterando para que en caso de llegar a la última y no 
+ * encontrar una solución se active la pantalla de derrota.
+ */
 var cuentaLineas=0;
 
 /**
@@ -1353,6 +1358,10 @@ function generaInstruccion9(){
   document.getElementById('flechas7').style.display='none';
 }
 
+/**
+* Hace visible la pantalla de victoria.
+*
+*/
 function hasGanado(){
   document.getElementById('victoria').style.display='block';
   document.getElementById('boton0').disabled=true;
@@ -1362,6 +1371,9 @@ function hasGanado(){
   document.getElementById('tablero').style.display='none';
 }
 
+/**
+* Hace visible la pantalla de derrota.
+*/
 function hasPerdido(){
   document.getElementById('derrota').style.display='block';
   document.getElementById('boton0').disabled=true;
