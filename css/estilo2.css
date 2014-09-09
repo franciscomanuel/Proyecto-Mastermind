@@ -6,6 +6,10 @@ body{
 	/*background: url(../img/mastermind.jpg);*/
 }
 
+#conten{
+	width: 100%;
+}
+
 footer{
 	/*background: url(../img/footer.jpeg) no-repeat center center fixed;
     left: 0;
@@ -92,14 +96,14 @@ footer .seccion {
 }
 
 section#instrucciones, #jugar, #opciones{
-	margin-left: 110px;
+	margin-left: 10%;
 	float: left;
 	/*border: 1px solid grey;*/
 }
 
-section{
+/*section{
 	float: left;
-}
+}*/
 
 .menuNiveles{
 	margin-left: 7%;
@@ -129,16 +133,20 @@ h1{
 	padding-left: 30%;
 }
 
-#flecha_derecha{
+/*#flecha_derecha{
 	padding-top: 58px;
-}
+}*/
 
 #flechas, #flechas2, #flechas3, #flechas4, #flechas5, #flechas6, #flechas7, #flechas8, #flechas9{
 	width: 100%;
-	padding-top: 23%;
+	padding-top: 0%;
 }
 
 #flechas10{
+	padding-top: 23%;
+}
+
+#contenedor4 section#flechas{
 	padding-top: 25%;
 }
 
@@ -146,14 +154,22 @@ h1{
 	display: none;
 }
 
-#contenedor3 div{
+/*#contenedor3 section{
 	position: absolute;
+}*/
+
+section#f_izquierda{
+	float: left;
+	width: 50%;
 }
 
-section#f_izquierda, #f_derecha{
-	float: left;
-	width: 600px;
+section#f_derecha{
+	padding-top: 4%;
+	float: right;
+	width: 50%;
 }
+
+
 
 #instrucciones1, #instrucciones2, #instrucciones3, #instrucciones4, #instrucciones5, #instrucciones6, #instrucciones7, #instrucciones8, #instrucciones9{
 	/*background: white;*/

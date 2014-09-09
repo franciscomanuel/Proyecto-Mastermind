@@ -1,0 +1,302 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	/*background: url(../img/fondo5.jpeg) no-repeat center;*/
+	/*background: url(../img/mastermind.jpg);*/
+}
+
+/*footer{
+    margin-bottom: 10%;
+  	width: 100%;
+  	height: 20%;
+}*/
+
+#conten{
+	width: 99%;
+}
+
+footer .seccion { 
+	color: white;
+	font-size: 130%;
+	font-weight: bold;
+	width: 100%; 
+ 	/*float:left;*/
+ 	text-align: center;
+} 
+
+
+#tablero{
+	background-color: #00BFFF;
+	border-left: 6px #222222 solid;
+	border-top: 8px #222222 solid;
+	border-right: 6px #222222 solid;
+	border-bottom: 8px #222222 solid;
+	width: 20%;
+	margin-right: 10%;
+}
+
+#region1{
+	background-color: #9400D3;
+}
+
+#resultado{
+	margin: auto;
+}
+
+#colores{
+	padding-left: 25%;
+}
+
+#filaColores1 img{
+	width: 36px;
+	height: 36px;
+}
+
+#filaColores2 img{
+	width: 36px;
+	height: 36px;
+}
+
+#resultado3 button{
+	height: 100px;
+}
+
+/*#botonSel{
+	height: 36px;
+}*/
+
+#miTabla3 tr{
+	height: 38px;
+}
+
+#regionOculta, #panelColores4, #panelColores5, #panelColores6{
+	display: none;
+}
+
+#contenedor2, #contenedor3, #contenedor4{
+	display: none;
+}
+
+#tablaAleatoria img{
+	width: 36px;
+	height: 36px;
+}
+
+.botones{
+	width: 220px;
+	height: 220px;
+	padding-top: 70px;
+}
+
+#botonJugar{
+	width: 350px;
+	height: 350px;
+}
+
+section#instrucciones, #jugar, #opciones{
+	/*margin-left: 4%;
+	float: left;
+	width: 100%;*/
+
+
+}
+
+
+/*section{
+	float: left;
+}*/
+
+.menuNiveles{
+	/*float: left;
+	margin-left: 25%;*/
+	margin-bottom: 10%;
+}
+
+.menuSonido{
+	/*float: left;*/
+	/*margin-left: 4%;*/
+	/*width: 100%;*/
+}
+
+.logo{
+	width: 80%;
+	height: 20%;
+}
+
+h1{
+	text-align: center;
+}
+
+#flecha_izquierda, #flecha_derecha{
+	width: 50%;
+	height: 50%;
+	/*margin-left: 28%;*/
+}
+
+#flecha_derecha{
+	padding-top: 20px;
+}
+
+#flechas, #flechas2, #flechas3, #flechas4, #flechas5, #flechas6, #flechas7, #flechas8, #flechas9{
+	/*width: 100%;*/
+	padding-top: 0%;
+}
+
+#flechas10{
+	padding-top: 21%;
+}
+
+#contenedor4 section#flechas{
+	padding-top: 23%;
+}
+
+#flechas2, #flechas3, #flechas4, #flechas5, #flechas6, #flechas7, #flechas8, #flechas9{
+	display: none;
+}
+
+/*#contenedor3 section{
+	position: absolute;
+}*/
+
+section#f_izquierda{
+	float: left;
+	width: 50%;
+}
+
+section#f_derecha{
+	padding-top: 4%;
+	float: right;
+	width: 50%;
+}
+
+#instrucciones1, #instrucciones2, #instrucciones3, #instrucciones4, #instrucciones5, #instrucciones6, #instrucciones7, #instrucciones8, #instrucciones9{
+	/*background: white;*/
+	color: white;
+	font-size: 130%;
+	/*width: 100%;*/
+	/*border: 1px solid grey;*/
+	/*margin-right: 300px;
+	margin-left: 300px;*/
+	display: block;
+	margin-left: 10%;
+	margin-right: 10%;
+	width: 90%;
+}
+
+
+#instrucciones2, #instrucciones3, #instrucciones4, #instrucciones5, #instrucciones6, #instrucciones7, #instrucciones8, #instrucciones9{
+	display: none;
+}
+
+#instrucciones3 img{
+	/*margin-right: 50px;*/
+	margin-right: 5%;
+	width: 20%;
+	height: 30%;
+}
+
+#instrucciones7 img{
+	width: 40%;
+	height: 10%;
+	
+}
+
+#instrucciones8 img{
+	width: 40%;
+	height: 20%;
+}
+
+#contenedor3 p{
+	font-weight:bold;
+	text-align: left;
+}
+
+#contenedor3 h2{
+	font-weight:bold;
+	text-decoration: underline;
+	text-align: center;
+}
+
+#contenedor3 span{
+	font-weight:bold;
+	margin-right: 15%;
+	margin-left: 10%;
+	float: left;
+}
+
+#niveles img{
+	border: 10px outset #cccccc;
+}
+
+#letraNiveles{
+	color: white;
+	font: 150% sans-serif;
+
+}
+
+#victoria{
+	/*position: absolute;*/
+	display: none;
+	/*border: 1px solid red;*/
+	width: 80%;
+	height: 50%;
+	/*padding: 1em 3em;
+ 	margin: 1em 25%;*/
+ 	/*background-color: blue;*/
+ 	/*top: 50px;*/
+}
+
+#derrota{
+	/*position: absolute;*/
+	display: none;
+	/*border: 1px solid red;*/
+	width: 500px;
+	height: 500px;
+	padding: 1em 3em;
+ 	margin: 1em 25%;
+ 	/*background-color: yellow;*/
+ 	/*top: 50px;*/
+}
+
+.imagenVictoriaDerrota{
+	margin: 15%;
+	width: 90%;
+	height: 70%;
+}
+
+.letras{
+	margin-left: 15%;
+	margin-right: 15%;
+	width: 100%;
+	height: 40%;
+}
+
+.botonesFinales{
+	width: 30%;
+	height: 25%;
+	margin-left: 15%;
+}
+
+
+/*img:hover {
+  border: 1px solid red;
+}*/
+
+/*img:hover {
+	/*border: 2px solid white;*/
+	/*margin: 0;
+	padding: 0;
+	border-radius: 800px;
+	overflow: hidden;
+}*/
+
+
+
+
+
+
+
+
+
+

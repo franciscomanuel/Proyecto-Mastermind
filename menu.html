@@ -2,17 +2,26 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Juego MasterMind</title>
     <script type="text/javascript" src="js/jsPrincipal.js"></script>
     <!--<link rel="stylesheet" type="text/css" href="css/estilo.css">-->
 
-    <script type="text/javascript">
-    	  if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1){
-    		 document.write("<link rel='stylesheet' type='text/css' href='css/estilo.css'>"); 
-    	}else{
-    		document.write("<link rel='stylesheet' type='text/css' href='css/estilo2.css'>");
-    	}
-	</script> 
+     <script type="text/javascript">
+          if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1){
+             document.write("<link rel='stylesheet' type='text/css' href='css/estilo.css' media='screen and (min-width: 481px)'>"); 
+             document.write("<link rel='stylesheet' type='text/css' href='css/movil.css' media='handheld, only screen and (max-device-width: 480px)'>"); 
+
+        }else{
+            document.write("<link rel='stylesheet' type='text/css' href='css/tablet.css' media='handheld, only screen and (max-device-width: 1024px)'>");
+            document.write("<link rel='stylesheet' type='text/css' href='css/estilo2.css' media='screen and (min-width: 1025px)''>");
+        }
+    </script>
+
+    <audio id="volumen" autoplay="autoplay">
+		<source src="audios/musica.mp3" type="audio/mpeg"/>
+		<source src="audios/musica.ogg" type="audio/ogg"/>
+	</audio>
 
     <!--Sonido menu--> 
     <!--<embed src="audios/mario.mp3" autostart="true" loop="true"
@@ -37,10 +46,11 @@
 
 	}
 	</script>-->
+	<div id="conten">
 
 	<h1><img src="img/logo2.png" class="logo"></h1>
 
-	<div id="contenedor1">
+	<section id="contenedor1">
 		<section id="instrucciones">
 			<a href="#instrucciones" onclick="generaInstrucciones()"><img src="img/instrucciones.png" onmouseover="this.width=260;this.height=260;" onmouseout="this.width=220;this.height=220;" width="220" height="220" /></a>
 		</section>
@@ -52,16 +62,16 @@
 		<section id="opciones">
 			<a href="#opciones" onclick='generaOpciones()'><img src="img/opciones.png" onmouseover="this.width=260;this.height=260;" onmouseout="this.width=220;this.height=220;" width="220" height="220" /></a>
 		</section>
-	</div>
+	</section>
 	
 
-	<div id="contenedor2">
+	<section id="contenedor2">
 		<section>
-			<audio id="volumen" autoplay="autoplay">
+			<!--<audio id="volumen" autoplay="autoplay">
 				<source src="audios/musica.mp3" type="audio/mpeg"/>
-			</audio>
+			</audio>-->
 
-			<div>
+			<section>
 				<section class="menuSonido">
 					<img src="img/play-stop.png" onclick="playPause();" onmouseover="this.width=460;this.height=260;" onmouseout="this.width=400;this.height=200;" width="400" height="200" />
 				</section>
@@ -73,111 +83,111 @@
 				<section class="menuSonido">
 					<img src="img/bajar.png" onclick="bajarVolumen();" onmouseover="this.width=460;this.height=260;" onmouseout="this.width=400;this.height=200;" width="400" height="200" />
 				</section>
-			</div>
+			</section>
 
-			<div id="flechas10">
+			<section id="flechas10">
 				<section id="f_izquierda">
 					<a href="#" onclick="volverMenu()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
 				</section>	
-			</div>				
+			</section>				
 		</section>
-	</div>
+	</section>
 
-	<div id="contenedor3">
+	<section id="contenedor3">
 
-		<div id="instrucciones1">
+		<section id="instrucciones1">
 			<h2>Descripción:</h2>
 			<p>Mastermind es un juego de lógica para ser jugado por una persona contra el ordenador. Este juego puede considerarse educativo ya que ayuda a desarrollar ciertas destrezas en el área lógico matemática. El objetivo es descifrar el código de colores que creó la máquina. Para hacerlo necesitarás ir descartando posibilidades según las pistas que te proporcionará.</p>
-		</div>
+		</section>
 
-		<div id="flechas">
+		<section id="flechas">
 			<section id="f_izquierda">
 				<a href="#" onclick="volverMenu()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
 			</section>	
 			<section id="f_derecha">
 				<a href="#instrucciones" onclick="generaInstruccion2()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
 			</section>
-		</div>
+		</section>
 
-		<div id="instrucciones2">
+		<section id="instrucciones2">
 			<h2>Tablero</h2>
 			<p>El tablero puede ser de distintas dimensiones según se seleccione el nivel de dificultad. Siendo de 4x8 para el nivel
 				facil, 5x8 para nivel medio y de 6x8 para nivel dificil. También el número de colores para escoger dependerá del nivel seleccionado: 6 colores para el nivel facil, 8 para medio y 10 para dificil.</p>
-		</div>
+		</section>
 
-		<div id="flechas2">
+		<section id="flechas2">
 			<section id="f_izquierda">
 				<a href="#instrucciones" onclick="generaInstruccion1()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
 			</section>	
 			<section id="f_derecha">
 				<a href="#instrucciones" onclick="generaInstruccion3()" ><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
 			</section>
-		</div>
+		</section>
 
-		<div id="instrucciones3">
+		<section id="instrucciones3">
 			<h2>Niveles:</h2>
 			<img src="img/nivelFacil.png">
 			<img src="img/nivelMedio.png">
-			<img src="img/nivelDificil.png"></br>
+			<img src="img/nivelDificil.png"></br><br><br>
 			<span>Facil</span>
 			<span>Medio</span>
 			<span>Dificil</span>
-		</div>
+		</section>
 
-		<div id="flechas3">
+		<section id="flechas3">
 			<section id="f_izquierda">
 				<a href="#instrucciones" onclick="generaInstruccion2()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
 			</section>	
 			<section id="f_derecha">
 				<a href="#instrucciones" onclick="generaInstruccion4()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
 			</section>
-		</div>
+		</section>
 
-		<div id="instrucciones4">
+		<section id="instrucciones4">
 			<h2>Combinación secreta:</h2>
 			<p>Una vez seleccionado el nivel de dificultad que uno desee, se generará automáticamente una combinación secreta con los distintos colores posibles. Esta combinación permanecerá oculta hasta que el jugador la adivine o se quede sin más filas para probar combinaciones. </p>
-		</div>
+		</section>
 
-		<div id="flechas4">
+		<section id="flechas4">
 			<section id="f_izquierda">
 				<a href="#instrucciones" onclick="generaInstruccion3()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
 			</section>	
 			<section id="f_derecha">
 				<a href="#instrucciones" onclick="generaInstruccion5()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
 			</section>
-		</div>
+		</section>
 
-		<div id="instrucciones5">
+		<section id="instrucciones5">
 			<h2>Objetivo:</h2>
 			<p>El objetivo de este juego es que el jugador adivine esta combinación antes de que se quede sin más opciones (se rellene todo el tablero y no se encuentre la combinación). </p>
-		</div>
+		</section>
 
-		<div id="flechas5">
+		<section id="flechas5">
 			<section id="f_izquierda">
 				<a href="#instrucciones" onclick="generaInstruccion4()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
 			</section>	
 			<section id="f_derecha">
 				<a href="#instrucciones" onclick="generaInstruccion6()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
 			</section>
-		</div>
+		</section>
 
-		<div id="instrucciones6">
+		<section id="instrucciones6">
 			<h2>Como jugar:</h2>
 			<p>Según el nivel seleccionado el tablero tendrá distintas dimensiones. A modo de ejemplo vamos a suponer que se ha seleccionado el nivel facil, por lo tanto el tablero tendrá una dimension de 8 filas por 4 columnas cada fila. El jugador deberá ir rellenando cada fila en orden, empezando por la fila de arriba del tablero y acabando por la de abajo. No se podrá rellenar una fila inferior antes que una superior.</p>
 			<p>Lo mismo ocurre con las columnas para una fila. Se rellenan de izquierda a derecha. </p>
 			<p>Tampoco está permitido dejarse una fila sin rellenar o una columna.</p>
-		</div>
+		</section>
 
-		<div id="flechas6">
+		<section id="flechas6">
 			<section id="f_izquierda">
 				<a href="#instrucciones" onclick="generaInstruccion4()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
 			</section>	
 			<section id="f_derecha">
 				<a href="#instrucciones" onclick="generaInstruccion7()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
 			</section>
-		</div>
+		</section>
 
-		<div id="instrucciones7">
+		<section id="instrucciones7">
 			<h2>Como rellenar la primera fila:</h2>
 			<p>Para poner el primer color en el tablero es necesario situarse en la primera columna de la primera fila y pinchar repetidas veces sobre la casilla. Por cada vez que se pinche aparecerá un color distinto de entre todos los colores posibles. Para poder fijar el color que más se desee el jugador deberá apretar el boton de "seleccionar color a su derecha". Esto fijará el color para esa columna y ahora debemos repetir lo mismo para la siguiente columna, y así sucesivamente hasta rellenar los cuatro colores de la primera fila. </p>
 
@@ -185,62 +195,62 @@
 
 			<p>Los colores debajo del tablero solo sirven para indicar al jugador que colores tiene para realizar las posibles combinaciones, no se usan para nada.</p>
 
-		</div>
+		</section>
 
-		<div id="flechas7">
+		<section id="flechas7">
 			<section id="f_izquierda">
 				<a href="#instrucciones" onclick="generaInstruccion6()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
 			</section>	
 			<section id="f_derecha">
 				<a href="#instrucciones" onclick="generaInstruccion8()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
 			</section>
-		</div>
+		</section>
 
-		<div id="instrucciones8">
+		<section id="instrucciones8">
 			<h2>Comprobar la fila:</h2>
 			<p>El siguiente paso para cuando el jugador haya rellenado la primera fila es comprobarla con la combinación secreta. No se puede rellenar una segunda fila si la primera no ha sido comprobada antes. Para comprobar la fila insertada se debe apretar el botón "comprobar" al final del tablero. Esto comparará tu combinación con la secreta y devolverá en la tabla a la derecha de la fila tantas bolas negras como colores hayan coincidido en la misma posición y tantas bolas blancas como colores hayan coincidido pero en posiciones distintas.</p>
 
 			<img src="img/comprobar.png">
 			<br>
 
-		</div>
+		</section>
 
-		<div id="flechas8">
+		<section id="flechas8">
 			<section id="f_izquierda">
 				<a href="#instrucciones" onclick="generaInstruccion7()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
 			</section>	
 			<section id="f_derecha">
 				<a href="#instrucciones" onclick="generaInstruccion9()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
 			</section>
-		</div>
+		</section>
 
-		<div id="instrucciones9">
+		<section id="instrucciones9">
 			<h2>Finalizar juego</h2>
 			<p>El juego finaliza cuando el jugador dá con la combinación secreta o cuando se queda sin filas para poder seguir probando nuevas combinaciones. </p>
 
-		</div>
+		</section>
 
-		<div id="flechas9">
+		<section id="flechas9">
 			<section id="f_izquierda">
 				<a href="#instrucciones" onclick="generaInstruccion8()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
 			</section>	
 			<section id="f_derecha">
 				<a href="#" onclick="volverMenu()"><img src="img/flecha_derecha.png" id="flecha_derecha"></a>
 			</section>
-		</div>
+		</section>
 
 
 
-	</div>
+	</section>
 
-	<div id="contenedor4">
+	<section id="contenedor4">
 
 		<p id="letraNiveles">Seleccionar nivel de dificultad:</p>
 		<!--<input type="button" name="botonFacil" id="botonFacil" value="Facil" onclick="nivelFacil();">
 		<input type="button" name="botonMedio" id="botonMedio" value="Medio" onclick="nivelMedio();">
 		<input type="button" name="botonDificil" id="botonDificil" value="Dificil" onclick="nivelDificil();">-->
 
-		<div id="niveles">
+		<section id="niveles">
 			<section class="menuNiveles">
 					<a href="#" onclick="nivelFacil();"><img src="img/nivelFacil.png" onclick="nivelFacil();" onmouseover="this.width=230;this.height=270;" onmouseout="this.width=180;this.height=230;" width="180" height="230" /></a>
 			</section>
@@ -252,16 +262,17 @@
 			<section class="menuNiveles">
 					<a href="#" onclick="nivelDificil();"><img src="img/nivelDificil.png" onclick="nivelDificil();" onmouseover="this.width=230;this.height=270;" onmouseout="this.width=180;this.height=230;" width="180" height="230" /></a>
 			</section>
-		</div>
+		</section>
 		
-		<div id="flechas">
+		<section id="flechas">
 			<section id="f_izquierda">
 				<a href="#" onclick="volverMenu()"><img src="img/flecha_izquierda.png" id="flecha_izquierda"></a>
 			</section>	
-		</div>
+		</section>
 
-	</div>
+	</section>
 	
+	</div>
 
 </body>
 

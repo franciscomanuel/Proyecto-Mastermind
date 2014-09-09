@@ -2,11 +2,23 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Juego MasterMind</title>
     <script type="text/javascript" src="js/jsPrincipal.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/estilo.css"> 
+    <!--<link rel="stylesheet" type="text/css" href="css/estilo.css"> -->
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+          if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1){
+             document.write("<link rel='stylesheet' type='text/css' href='css/estilo.css' media='screen and (min-width: 481px)'>"); 
+             document.write("<link rel='stylesheet' type='text/css' href='css/movil.css' media='handheld, only screen and (max-device-width: 480px)'>"); 
+
+        }else{
+            document.write("<link rel='stylesheet' type='text/css' href='css/tablet.css' media='handheld, only screen and (max-device-width: 1024px)'>");
+            document.write("<link rel='stylesheet' type='text/css' href='css/estilo2.css' media='screen and (min-width: 1025px)''>");
+        }
+    </script>
     
 </head>
 
@@ -149,16 +161,16 @@
   
   </div>
 
-  <div id="victoria">
+  <section id="victoria">
     <img src="img/garfield.gif" class="imagenVictoriaDerrota">
     <img src="img/hasGanado1.png" class="letras">
     <br>
     <!--<input type="button" name="botonMenu" value="Menu principal" onclick="volverInicio()"> -->
     <img src="img/reiniciar.png" class="botonesFinales" onclick="refresh()">
     <img src="img/menu.png" class="botonesFinales" onclick="volverInicio()">
-  </div>
+  </section>
 
-  <div id="derrota">
+  <section id="derrota">
     <img src="img/garfield2.gif" class="imagenVictoriaDerrota">
     <img src="img/hasPerdido.png" class="letras">
     <br>
@@ -171,26 +183,26 @@
              <br>
         </td>
     </tr>-->
-  </div>
+  </section>
 
   <br><br>
 
   <footer>
-     <div class="seccion">
+     <section class="seccion">
         <p> Autor: <span>Francisco Manuel Sanchez Ramos </span></p>
         <p>Email : <span>fran319@correo.ugr.es</span></p>
-    </div>
+    </section>
 
-     <div class="seccion">
+     <section class="seccion">
         <br>
         <a href="https://twitter.com/fran_manu90"><img src="img/twitter2.jpg" name="twitter2"/></a>
-    </div>
+    </section>
 
-    <div class="seccion">
+    <section class="seccion">
         <p><a href="https://twitter.com/fran_manu90" class="twitter-follow-button" data-show-count="false" data-lang="es" data-size="large">Seguir a @fran_manu90</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></p>
         <p></p>
-    </div>
+    </section>
 
   </footer>
   
